@@ -57,7 +57,7 @@ public class Main_page extends Application {
                 + "-fx-background-repeat: stretch;"
                 + "-fx-background-size: 1000 700;"
                 + "-fx-background-position: center center;"
-                +"-fx-background-color: linear-gradient(to bottom right, #00C9FF, #92FE9D);"
+                +"-fx-background-color: linear-gradient(to bottom right, #00d2ff, #3a47d5);"
         );
 
         //styling buttons
