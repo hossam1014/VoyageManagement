@@ -1,0 +1,11 @@
+.btn_user_info{
+    -fx-background-color: #05BFDB;
+    -fx-text-fill: #0A4D68;
+    -fx-background-radius: 20px;
+
+}
+
+.back{
+    
+    -fx-background-color: Red;
+}
