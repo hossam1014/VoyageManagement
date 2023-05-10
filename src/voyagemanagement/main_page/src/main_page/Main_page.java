@@ -22,12 +22,15 @@ public class Main_page extends Application {
 
         HBox home_pane = new HBox();
         VBox root = new VBox(10);
+        root.setId("root");
         VBox navigator = new VBox(10);
+        navigator.setId("navigator");
         HBox h1 = new HBox(10);
         root.setAlignment(Pos.CENTER);
         h1.setAlignment(Pos.CENTER);
 
         Button btn_login = new Button("Login");
+        btn_login.setId("btn");
         Button btn_signup = new Button("Sign up");
         Button travel_booking = new Button("Traveling");
         Button hotel_booking = new Button("Hotels");
@@ -53,53 +56,19 @@ public class Main_page extends Application {
         root.setStyle("-fx-background-image: url('images/background_main.png');"
                 + "-fx-background-repeat: stretch;"
                 + "-fx-background-size: 1000 700;"
-                + "-fx-background-position: center center;");
+                + "-fx-background-position: center center;"
+                +"-fx-background-color: linear-gradient(to bottom right, #00C9FF, #92FE9D);"
+        );
 
         //styling buttons
         btn_login.setMinSize(150, 35);
-        btn_login.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
-
+        btn_login.getStyleClass().add("btn");
         btn_signup.setMinSize(150, 35);
-        btn_signup.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
-
         travel_booking.setMinSize(150, 35);
-        travel_booking.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
         hotel_booking.setMinSize(150, 35);
-        hotel_booking.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
         btn_voiage_info.setMinSize(150, 35);
-        btn_voiage_info.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
         btn_user_info.setMinSize(150, 35);
-        btn_user_info.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
         btn_tools.setMinSize(150, 35);
-        btn_tools.setStyle(
-                "-fx-background-color: #05BFDB;"
-                + "-fx-text-fill: #0A4D68;"
-                + "-fx-background-radius: 20px;"
-        );
 
         //styling labels
         lbl_username.setPadding(new Insets(100));
@@ -107,8 +76,7 @@ public class Main_page extends Application {
         //styling panes
         navigator.setAlignment(Pos.TOP_CENTER);
         navigator.setMinSize(200, 760);
-        navigator.setStyle("-fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA)");
-
+        navigator.getStyleClass().add("navigator");
         home_pane.setMinSize(200, 760);
 
         // adding noods to the h & v box
@@ -126,10 +94,15 @@ public class Main_page extends Application {
             primaryStage.setScene(home_page);
         });
 
-        // creating the scene
+        // creating the scenes
         scene = new Scene(root, 1250, 760);
         home_page = new Scene(home_pane, 1250, 760);
 
+        // adding css to the scenes
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        home_page.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+        // stage proberites
         primaryStage.setTitle("Main");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);

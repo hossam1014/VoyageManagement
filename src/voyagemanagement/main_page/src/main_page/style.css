@@ -1,11 +1,27 @@
-.btn_user_io{
+.button{
     -fx-background-color: #05BFDB;
     -fx-text-fill: #0A4D68;
     -fx-background-radius: 20px;
 
 }
 
-.back{
-    
-    -fx-background-color: Red;
+.button:hover{
+    -fx-background-radius: 10px;
+    -fx-background-color: #27E1C1;
+    -fx-font-weight: bold;
+    -fx-vgap: 50px;
+    -fx-cursor: hand;
 }
+
+.btn{
+    -fx-background-color: #6780E2;
+
+    -fx-border-radius: 20px;
+
+}
+
+#navigator{
+    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);
+}
+
+
