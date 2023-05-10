@@ -72,3 +72,42 @@
 }
 
 
+/* *************************** signUp Page *********************** */
+
+
+.signUp-box {
+    -fx-background-color: #fff;
+    -fx-padding: 30px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #ddd;
+    -fx-border-width: 2px;
+}
+
+.text-field {
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+    -fx-background-color: #f7f7f7;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+}
+
+
+
+.signUpBtn {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-border-radius: 5px;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+}
+
+.signUpBtn:hover {
+    -fx-background-color: #3e8941;
+    -fx-border-radius: 5px;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+}
+
+
