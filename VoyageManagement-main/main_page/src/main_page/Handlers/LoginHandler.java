@@ -26,11 +26,20 @@ public class LoginHandler implements EventHandler<ActionEvent> {
     
     private String UserName;
     private String Password;
+    
+    private int userId;
+    
+    private boolean isLoggedIn = false;
+
 
     
     public LoginHandler(String userName, String password) {
         UserName = userName;
         Password = password;
+    }
+    
+    public LoginHandler() {
+        
     }
     
 
@@ -60,12 +69,17 @@ public class LoginHandler implements EventHandler<ActionEvent> {
 
                 if (result.next()) {
                     // User exists in database, show success message
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Login successful!");
+//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                    alert.setTitle("Information Message");
+//                    alert.setHeaderText(null);
+//                    alert.setContentText("Login successful!");
                     System.out.println(result.getString("FullName"));
-                    alert.showAndWait();
+                    userId = result.getInt("Id");
+                    isLoggedIn = true;
+                    
+                    
+
+//                    alert.showAndWait();
                     Database.close();
                 } else {
                     // User does not exist in database, show error message
@@ -81,6 +95,14 @@ public class LoginHandler implements EventHandler<ActionEvent> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    public int getUserId() {
+        return userId;
+    }
+    
+    public boolean isLoggedIn() {
+        return isLoggedIn;
     }
 
 }

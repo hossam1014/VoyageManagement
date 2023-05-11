@@ -111,3 +111,18 @@
 }
 
 
+/* *************************** MyReservationsPage *******************/
+
+
+.table-view .column-header .label {
+    -fx-font-size: 18px;
+    -fx-font-family: Arial;
+}
+
+/* Set font and size of table rows */
+.table-row-cell {
+    -fx-font-size: 16px;
+    -fx-font-family: Arial;
+}
+
+

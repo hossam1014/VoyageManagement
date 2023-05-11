@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Handlers.GetUsersHandler;
 import main_page.Handlers.LoginHandler;
+import main_page.Handlers.MyReservationsHandler;
 
 /**
  *
@@ -40,6 +41,12 @@ public class LoginPage extends Scene {
         btn.setOnAction(event -> {
             LoginHandler loginHandler = new LoginHandler(txtUserName.getText(), txtPassword.getText());
             loginHandler.handle(event);
+            if (loginHandler.isLoggedIn())
+            {
+                MyReservationsHandler reservationsHandler = new MyReservationsHandler();
+                reservationsHandler.handle(event);
+                primaryStage.setScene(new MyReservationPage(primaryStage));
+            }
         });
 
         Button btnUsers = new Button("Users");
