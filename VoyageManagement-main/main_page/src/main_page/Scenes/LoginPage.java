@@ -4,9 +4,9 @@
  */
 package main_page.Scenes;
 
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import main_page.Handlers.GetUsersHandler;
 import main_page.Handlers.LoginHandler;
 import main_page.Handlers.MyReservationsHandler;
+import main_page.Helpers.AlertHelper;
 
 /**
  *
@@ -43,9 +44,9 @@ public class LoginPage extends Scene {
             loginHandler.handle(event);
             if (loginHandler.isLoggedIn())
             {
-                MyReservationsHandler reservationsHandler = new MyReservationsHandler();
+                MyReservationsHandler reservationsHandler = new MyReservationsHandler(loginHandler.getUserId());
                 reservationsHandler.handle(event);
-                primaryStage.setScene(new MyReservationPage(primaryStage));
+                primaryStage.setScene(new MyReservationPage(primaryStage, reservationsHandler));
             }
         });
 
@@ -77,7 +78,7 @@ public class LoginPage extends Scene {
 
 //        primaryStage.setScene(this);
 
-        primaryStage.setTitle("Login");
-        primaryStage.show();
+//        primaryStage.setTitle("Login");
+//        primaryStage.show();
     }
 }

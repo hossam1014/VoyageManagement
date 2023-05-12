@@ -26,34 +26,34 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
     private PreparedStatement prepare;
     private ResultSet result;
     
-    List<Reservation> reservations = new ArrayList<Reservation>();
+    final List<Reservation>  reservations = new ArrayList<>();
 
 
-//    private String UserName;
-//    private String Password;
+    private int UserId;
 //
 //    
-//    public MyReservationsHandler(String userName, String password) {
-//        UserName = userName;
-//        Password = password;
-//    }
+    public MyReservationsHandler(int userId) {
+        UserId = userId;
+    }
+    
+    
     @Override
     public void handle(ActionEvent event) {
 
         try {
             connection = Database.connectDB();
-
-            LoginHandler loginHandler = new LoginHandler();
-
-            int userId = loginHandler.getUserId();
+            
+            System.out.println(UserId);
 
             String sql = "SELECT * FROM Reservations WHERE UserId = ?";
 
             prepare = connection.prepareStatement(sql);
 
-            prepare.setInt(1, userId);
+            prepare.setInt(1, UserId);
 
             result = prepare.executeQuery();
+            
+//            System.out.println(result);
 
             while (result.next()) {
                 Reservation reservation = new Reservation(result.getInt("Id"),
@@ -67,7 +67,10 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
                 reservations.add(reservation);
             }
             
-            System.out.println(reservations);
+//            System.out.println(reservations);
+
+            Database.close();
+            
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,6 +78,8 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
     }
     
     public List<Reservation> getMyReservations() {
+        System.out.println(this.reservations);
+
         return this.reservations;
     }
 
