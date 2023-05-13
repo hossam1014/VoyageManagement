@@ -44,9 +44,11 @@ public class LoginPage extends Scene {
             loginHandler.handle(event);
             if (loginHandler.isLoggedIn())
             {
-                MyReservationsHandler reservationsHandler = new MyReservationsHandler(loginHandler.getUserId());
-                reservationsHandler.handle(event);
-                primaryStage.setScene(new MyReservationPage(primaryStage, reservationsHandler));
+//                MyReservationsHandler reservationsHandler = new MyReservationsHandler(loginHandler.getUserId());
+//                reservationsHandler.handle(event);
+//                primaryStage.setScene(new MyReservationPage(primaryStage, reservationsHandler));
+                  primaryStage.setScene(new ReportsPage(primaryStage));
+
             }
         });
 

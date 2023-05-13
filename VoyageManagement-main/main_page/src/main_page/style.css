@@ -54,7 +54,7 @@
     -fx-text-fill: #ffffff;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-padding: 10px 20px;
+    -fx-padding: 10 20 10 20;
 }
 
 .login-box Button#login-button:hover {
@@ -99,7 +99,7 @@
     -fx-border-radius: 5px;
     -fx-font-size: 16px;
     -fx-text-fill: white;
-    -fx-padding: 10px 20px;
+    -fx-padding: 10 20 10 20;
 }
 
 .signUpBtn:hover {
@@ -107,7 +107,7 @@
     -fx-border-radius: 5px;
     -fx-font-size: 16px;
     -fx-text-fill: white;
-    -fx-padding: 10px 20px;
+    -fx-padding: 10 20 10 20;
 }
 
 
@@ -125,4 +125,38 @@
     -fx-font-family: Arial;
 }
 
+
+
+/** ******************************a***** Reports Page ********************/
+
+.report-page {
+  width: 1250px;
+  height: 760px;
+  background-color: red;
+  padding: 20px;
+}
+
+#report-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#card {
+  width: 400px;
+  /*margin: 0 auto;*/
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+#card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#card-count {
+  font-size: 16px;
+  margin-top: 10px;
+}
 
