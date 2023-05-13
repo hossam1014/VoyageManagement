@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import main_page.Scenes.DistanceCalculatorPage;
 import main_page.Scenes.LoginPage;
 import main_page.Scenes.SignUpPage;
 
@@ -90,7 +91,9 @@ public class Main_page extends Application {
 
         // event handling
         btn_login.setOnAction(e -> {
-            primaryStage.setScene(new LoginPage(primaryStage));
+//            primaryStage.setScene(new LoginPage(primaryStage));
+            primaryStage.setScene(new DistanceCalculatorPage(primaryStage));
+
         });
         btn_signup.setOnAction(e -> {
             primaryStage.setScene(new SignUpPage(primaryStage));
