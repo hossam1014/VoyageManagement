@@ -38,9 +38,6 @@ public class LoginHandler implements EventHandler<ActionEvent> {
         Password = password;
     }
     
-    public LoginHandler() {
-        
-    }
     
 
     @Override
