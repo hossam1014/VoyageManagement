@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main_page.Scenes;
 
 import javafx.geometry.Pos;
@@ -13,11 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main_page.Handlers.SignUpHandler;
 
 /**
  *
- * @author hossam
+ * @author hossam & amir
  */
 public class SignUpPage extends Scene {
 
@@ -43,9 +39,7 @@ public class SignUpPage extends Scene {
         Button btn = new Button("Sign Up");
 
         btn.setOnAction(event -> {
-            SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
-                    txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
-            signUpHandler.handle(event);
+            primaryStage.setScene(new LoginPage(primaryStage));
         });
 
         VBox vBox = (VBox) this.getRoot();
@@ -87,8 +81,8 @@ public class SignUpPage extends Scene {
         txtPassword.getStyleClass().add("text-field");
         btn.getStyleClass().add("signUpBtn");
 
-        primaryStage.setTitle("SignUp");
-        primaryStage.show();
+//        primaryStage.setTitle("SignUp");
+//        primaryStage.show();
     }
 
 }

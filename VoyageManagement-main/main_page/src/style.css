@@ -1,4 +1,4 @@
-.button{
+/*.button{
     -fx-background-color: #05BFDB;
     -fx-text-fill: #0A4D68;
     -fx-background-radius: 20px;
@@ -25,7 +25,7 @@
 }
 
 
-/* ********************* Start login Page *********************** */
+ ********************* Start login Page *********************** 
 
 
 .login-box {
@@ -34,7 +34,7 @@
     -fx-spacing: 10px;
     -fx-alignment: center;
     -fx-border-width: 2px;
-    /*-fx-border-color: #0071c5;*/
+    -fx-border-color: #0071c5;
 }
 
 .login-box Label {
@@ -72,7 +72,7 @@
 }
 
 
-/* *************************** signUp Page *********************** */
+ *************************** signUp Page *********************** 
 
 
 .signUp-box {
@@ -95,7 +95,7 @@
 
 
 .signUpBtn {
-    -fx-background-color: #4CAF50; /* Green */
+    -fx-background-color: #4CAF50;  Green 
     -fx-border-radius: 5px;
     -fx-font-size: 16px;
     -fx-text-fill: white;
@@ -111,7 +111,7 @@
 }
 
 
-/* *************************** MyReservationsPage *******************/
+ *************************** MyReservationsPage ******************
 
 
 .table-view .column-header .label {
@@ -119,7 +119,7 @@
     -fx-font-family: Arial;
 }
 
-/* Set font and size of table rows */
+ Set font and size of table rows 
 .table-row-cell {
     -fx-font-size: 16px;
     -fx-font-family: Arial;
@@ -127,7 +127,7 @@
 
 
 
-/** ******************************a***** Reports Page ********************/
+* ******************************a***** Reports Page *******************
 
 .report-page {
   width: 1250px;
@@ -144,7 +144,7 @@
 
 #card {
   width: 400px;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 5px;
@@ -159,4 +159,65 @@
   font-size: 16px;
   margin-top: 10px;
 }
+*/
 
+/* 
+    Created on : May 13, 2023, 6:48:45 PM
+    Author     : amir
+*/
+
+#navigator{
+    /*    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);*/
+    -fx-background-color: #393E46;
+}
+
+.button{
+    -fx-background-color: #3D84A8;
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-border-style: none;
+}
+.button:hover{
+    -fx-background-color: #46CDCF;
+    -fx-cursor: hand;
+}
+
+
+.label{
+    -fx-background-radius: 20px;
+}
+
+.text-field {
+    -fx-border-radius: 20px;
+    -fx-border-color: gray;
+    -fx-border-width: 2px;
+    -fx-background-radius: 20px;
+}
+#home_page_info{
+    -fx-background-size: cover;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+.label{
+    -fx-font-family: Arial;
+    -fx-font-size: 20px;
+    -fx-font-color: green;
+}
+
+#main_page{
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1000 700;
+    -fx-background-position: center center;
+    -fx-background-color: linear-gradient(to bottom right, #DAF5FF, #B9E9FC);
+}
+
+#user_name_nav{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+#login_card{
+    -fx-background-color: linear-gradient(to bottom right, #DAF5FF, #B9E9FC);
+}
