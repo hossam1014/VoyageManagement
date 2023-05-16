@@ -1,4 +1,4 @@
-package main_page;
+    package main_page;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -8,8 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Scenes.LoginPage;
+import main_page.Scenes.user_reports_page;
 import main_page.Scenes.SignUpPage;
-
 
 public class Main_page extends Application {
 
@@ -20,6 +20,7 @@ public class Main_page extends Application {
         main_page.getStyleClass().add("main_page");
         HBox buttons_box = new HBox(20);
 
+//        Button test = new Button("test");
         Button login_btn = new Button("Log in");
         Button signup_btn = new Button("Sign up");
         buttons_box.getChildren().addAll(login_btn, signup_btn);
@@ -42,6 +43,9 @@ public class Main_page extends Application {
             primaryStage.setScene(new SignUpPage(primaryStage));
         });
 
+//        test.setOnAction(e -> {
+//            primaryStage.setScene(new user_reports_page(primaryStage));
+//        });
         Scene scene = new Scene(main_page, 1250, 760);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
@@ -53,7 +57,6 @@ public class Main_page extends Application {
     /**
      * @param args the command line arguments
      */
-
     public static void main(String[] args) {
         launch(args);
     }

@@ -168,17 +168,19 @@
 
 #navigator{
     /*    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);*/
-    -fx-background-color: #393E46;
+    /*-fx-background-color: #393E46;*/
+    -fx-background-color: #1d5c6c;
+
 }
 
 .button{
-    -fx-background-color: #3D84A8;
+    -fx-background-color: #21798c;
     -fx-background-radius: 20px;
     -fx-text-fill: white;
     -fx-border-style: none;
 }
 .button:hover{
-    -fx-background-color: #46CDCF;
+    -fx-background-color: #196e80;
     -fx-cursor: hand;
 }
 
@@ -194,9 +196,10 @@
     -fx-background-radius: 20px;
 }
 #home_page_info{
-    -fx-background-size: cover;
+/*    -fx-background-size: cover;
     -fx-background-repeat: stretch;
-    -fx-background-position: center center;
+    -fx-background-position: center center;*/
+    -fx-background-color: #efefef
 }
 
 .label{
