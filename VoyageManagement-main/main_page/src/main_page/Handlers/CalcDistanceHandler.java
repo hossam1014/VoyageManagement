@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+ 
 package main_page.Handlers;
 
 import java.sql.Connection;
@@ -13,10 +13,10 @@ import javafx.event.EventHandler;
 import main_page.Database;
 import main_page.Models.Location;
 
-/**
+
  *
  * @author hossam
- */
+ 
 public class CalcDistanceHandler implements EventHandler<ActionEvent> {
 
     private Connection connection;
@@ -79,3 +79,4 @@ statement.setString(1, startCity);
         }
     }
 }
+*/

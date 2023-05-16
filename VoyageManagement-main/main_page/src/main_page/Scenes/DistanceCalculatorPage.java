@@ -21,7 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.stage.Stage;
 import main_page.Database;
-import main_page.Handlers.CalcDistanceHandler;
+//import main_page.Handlers.CalcDistanceHandler;
 import main_page.Models.Location;
 
 /**
@@ -70,10 +70,10 @@ public class DistanceCalculatorPage extends Scene {
                 return;
             }
             
-            CalcDistanceHandler calcDistanceHandler = new CalcDistanceHandler(startCityComboBox.getValue(),
-                    endCityComboBox.getValue());
+           // CalcDistanceHandler calcDistanceHandler = new CalcDistanceHandler(startCityComboBox.getValue(),
+             //       endCityComboBox.getValue());
 
-            calcDistanceHandler.handle(event);
+            //calcDistanceHandler.handle(event);
         });
 
         this.getComboBoxesValues();
