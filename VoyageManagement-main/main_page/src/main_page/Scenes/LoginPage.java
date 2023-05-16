@@ -60,12 +60,16 @@ public class LoginPage extends Scene {
         hBox1.setAlignment(Pos.CENTER);
         HBox hBox2 = new HBox(15);
         hBox2.setAlignment(Pos.CENTER);
+        HBox hBox3 = new HBox(15);
+        hBox3.setAlignment(Pos.CENTER);
 
         hBox1.getChildren().addAll(lblUserName, txtUserName);
 
         hBox2.getChildren().addAll(lblPassword, txtPassword);
+        
+        hBox3.getChildren().addAll(btn, btnUsers);
 
-        vBox.getChildren().addAll(hBox1, hBox2, btn, btnUsers);
+        vBox.getChildren().addAll(hBox1, hBox2, hBox3);
 
         vBox.setAlignment(Pos.CENTER);
 
