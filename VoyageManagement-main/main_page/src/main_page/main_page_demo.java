@@ -15,6 +15,10 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import main_page.Scenes.Admin_reports_page;
+import main_page.Scenes.MyReservationPage;
+import main_page.Scenes.TravellingPage;
+import main_page.Scenes.user_reports_page;
 
 /**
  *
@@ -63,13 +67,32 @@ public class main_page_demo extends Scene {
         img_circle.setFill(new ImagePattern(user_photo));
 
         // there will be some action handling here amir
-        Button btn_tarvel = new Button("Traveling");
+        Button btn_travel = new Button("Traveling");
         Button btn_hotel = new Button("Hotels");
         Button btn_tools = new Button("Tools");
+        Button btn_report = new Button("Admi Reports");
+        Button btn_user_report = new Button("User Reports");
 
-        btn_tarvel.setMinSize(150, 35);
+        btn_report.setOnAction(e -> {
+            primaryStage.setScene(new Admin_reports_page(primaryStage));
+        });
+
+        btn_travel.setOnAction(e -> {
+            primaryStage.setScene(new TravellingPage(primaryStage));
+        });
+        
+        btn_user_report.setOnAction(e -> {
+            primaryStage.setScene(new user_reports_page(primaryStage));
+        });
+
+//        btn_hotel.setOnAction(e->{
+//        primaryStage.setScene(new MyReservationPage(primaryStage));
+//        });
+        btn_travel.setMinSize(150, 35);
         btn_hotel.setMinSize(150, 35);
         btn_tools.setMinSize(150, 35);
+        btn_report.setMinSize(150, 35);
+        btn_user_report.setMinSize(150, 35);
 
         // there will be some database code here so dont forget hosam  -----------------------------------------------------------------------------------------
         Label user_name = new Label("Adel Shakal");
@@ -155,7 +178,8 @@ public class main_page_demo extends Scene {
         trip_info.add(txt_hotel_name, 1, 3);
         trip_info.add(change, 0, 4, 2, 1);
 
-        navigator.getChildren().addAll(img_circle, user_name, l1, btn_tarvel, btn_hotel, btn_tools);
+        navigator.getChildren().addAll(img_circle, user_name, l1, btn_travel, btn_hotel,
+                btn_tools, btn_report, btn_user_report);
 
         info.getChildren().addAll(lbl_user_info, user_info, lbl_trave_info, trip_info);
 
