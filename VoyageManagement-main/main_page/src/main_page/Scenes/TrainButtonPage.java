@@ -22,9 +22,9 @@ import javafx.stage.Stage;
  *
  * @author hp
  */
-public class CarButtonPage extends Scene {
+public class TrainButtonPage extends Scene {
     
-    public CarButtonPage( Stage primaryStage) {
+    public TrainButtonPage(Stage primaryStage) {
         super(new AnchorPane(),1050 ,400);
         
     RadioButton rad_b1 = new RadioButton("trip1");
@@ -111,15 +111,16 @@ public class CarButtonPage extends Scene {
     Line l3 =new Line();
     l3.setEndX(1050);
     
+    //add button conferm
     Button btnconferm =new Button("confirm");
     btnconferm.setPrefSize(100, 48);
-    
+   
+    //add vbox to insert element in it
     VBox v1 = new VBox(10);
     v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
     
-    AnchorPane carPage = (AnchorPane) this.getRoot();
-    carPage.getChildren().addAll(v1);
+    AnchorPane trainPage = (AnchorPane) this.getRoot();
+    trainPage.getChildren().addAll(v1);
     }
-    
     
 }
