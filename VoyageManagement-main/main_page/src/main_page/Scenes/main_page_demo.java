@@ -1,4 +1,4 @@
-package main_page;
+package main_page.Scenes;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -30,7 +30,7 @@ public class main_page_demo extends Scene {
         super(new VBox(20), 1250, 760);
         VBox vBox = (VBox) this.getRoot();
         vBox.setAlignment(Pos.CENTER);
-        vBox.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         HBox main_page = new HBox(20);
 
@@ -39,7 +39,7 @@ public class main_page_demo extends Scene {
         info.setPrefSize(1050, 760);
         info.setId("home_page_info");
         info.getStyleClass().add("home_page_info");
-        vBox.setStyle("-fx-background-image: url('images/sky.png');");
+//        vBox.setStyle("-fx-background-image: url('images/sky.png');");
 
         VBox navigator = new VBox(20);
         navigator.setPadding(new Insets(10));
@@ -109,7 +109,7 @@ public class main_page_demo extends Scene {
         l1.setStartY(0);
         l1.setEndX(212);
         l1.setEndY(0);
-        l1.setStroke(Color.valueOf("#00FFCA"));
+        l1.setStroke(Color.WHITE);
         navigator.setPadding(new Insets(20));
 
         //user_info part

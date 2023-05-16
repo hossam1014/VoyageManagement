@@ -11,7 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Handlers.GetUsersHandler;
 import main_page.Handlers.LoginHandler;
-import main_page.main_page_demo;
 
 
 /**

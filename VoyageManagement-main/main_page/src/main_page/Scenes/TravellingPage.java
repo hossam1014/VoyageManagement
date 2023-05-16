@@ -74,6 +74,10 @@ public class TravellingPage extends Scene  {
             btncar.setLayoutX(110);
             btncar.setLayoutY(300);
             btncar.setPrefSize(120, 48);
+            
+            btncar.setOnAction(event -> {
+                primaryStage.setScene(new CarButtonPage(primaryStage));
+            });
     
             Button btntrain =new Button("Train");
             btntrain.setLayoutX(250);
