@@ -84,3 +84,11 @@
     -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
     -fx-background-blur: 30px;
 }
+
+/*admin reports part*/
+.label_admin{
+    -fx-background-color: linear-gradient(to bottom right, #87C3FF, #4C9BFF);
+    -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
+    -fx-background-blur: 30px;    
+    -fx-background-radius: 30;
+}
