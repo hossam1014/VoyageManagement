@@ -8,8 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Scenes.LoginPage;
-import main_page.Scenes.user_reports_page;
 import main_page.Scenes.SignUpPage;
+import main_page.Scenes.main_page_demo;
 
 public class Main_page extends Application {
 
@@ -34,7 +34,6 @@ public class Main_page extends Application {
 
         main_page.setStyle("-fx-background-image: url('images/background_main.png');");
 
-        // will be edited to connect login and sign up pages ======================================================================
         login_btn.setOnAction(e -> {
             primaryStage.setScene(new LoginPage(primaryStage));
         });
@@ -43,15 +42,11 @@ public class Main_page extends Application {
             primaryStage.setScene(new SignUpPage(primaryStage));
         });
 
-//        test.setOnAction(e -> {
-//            primaryStage.setScene(new user_reports_page(primaryStage));
-//        });
         Scene scene = new Scene(main_page, 1250, 760);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         primaryStage.setTitle("main page");
-//        primaryStage.setScene(scene);
-        primaryStage.setScene(new LoginPage(primaryStage));
+        primaryStage.setScene(new main_page_demo(primaryStage));
         primaryStage.show();
     }
 
