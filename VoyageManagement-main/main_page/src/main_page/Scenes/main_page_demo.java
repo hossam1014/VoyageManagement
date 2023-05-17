@@ -81,6 +81,10 @@ public class main_page_demo extends Scene {
             primaryStage.setScene(new TravellingPage(primaryStage));
         });
         
+        btn_hotel.setOnAction(e -> {
+            primaryStage.setScene(new Hotel_Resevation(primaryStage));
+        });
+        
         btn_user_report.setOnAction(e -> {
             primaryStage.setScene(new user_reports_page(primaryStage));
         });
