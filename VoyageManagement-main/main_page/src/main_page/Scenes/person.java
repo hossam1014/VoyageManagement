@@ -12,28 +12,28 @@ package main_page.Scenes;
  */
 public class person {
 
-    private String firs_name;
+    private String first_name;
     private String email;
     private int age;
 
     public person() {
-        this.firs_name = "";
+        this.first_name = "ds";
         this.age = 18;
         this.email = "";
     }
 
     public person(String first_name, String email, int age) {
-        this.firs_name = first_name;
+        this.first_name = first_name;
         this.age = age;
         this.email = email;
     }
 
-    public String getFirs_name() {
-        return firs_name;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirs_name(String firs_name) {
-        this.firs_name = firs_name;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getEmail() {

@@ -88,3 +88,31 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
     -fx-cursor: hand;
 }
+.table-view {
+    -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
+    -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
+    -fx-background-blur: 30px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #40c9ff;
+    -fx-text-fill: #FFFFFF;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #F0F0F0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
+    -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
+    -fx-background-blur: 30px;
+    -fx-text-fill: #FFFFFF;
+}
+#admin_background{
+    -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
+}

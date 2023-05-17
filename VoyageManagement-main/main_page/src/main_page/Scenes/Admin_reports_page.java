@@ -24,6 +24,7 @@ public class Admin_reports_page extends Scene {
 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
         VBox root = (VBox) this.getRoot();
+        root.setId("admin_background");
         root.setAlignment(Pos.TOP_CENTER);
         root.setPadding(new Insets(20));
 
@@ -79,6 +80,20 @@ public class Admin_reports_page extends Scene {
         TableColumn age_col = new TableColumn<person, Integer>("Age");
         age_col.setCellValueFactory(new PropertyValueFactory<person, String>("age"));
 
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        
+//        addint data to the table 
+        
+        table.getItems().add(new person("amir", "amiralsayed123@gmail.com", 21));
+        table.getItems().add(new person("hosam", "hosam14@gmail.com", 21));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
+        
         table.getColumns().addAll(firs_name_col, email_col, age_col);
         root.getChildren().addAll(lables_box, table, button_box);
 
