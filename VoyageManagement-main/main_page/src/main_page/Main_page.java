@@ -50,7 +50,8 @@ public class Main_page extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         primaryStage.setTitle("main page");
-        primaryStage.setScene(scene);
+//        primaryStage.setScene(scene);
+        primaryStage.setScene(new LoginPage(primaryStage));
         primaryStage.show();
     }
 
