@@ -24,7 +24,7 @@ public class TravellingPage extends Scene {
 
     public TravellingPage(Stage primaryStage) {
         super(new HBox(20), 1250, 760);
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
@@ -84,11 +84,11 @@ public class TravellingPage extends Scene {
         btnfly.setLayoutX(390);
         btnfly.setLayoutY(300);
         btnfly.setPrefSize(120, 48);
-=======
+//=======
                 this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         //Travelling Reservation Page 
->>>>>>> d07c005a6090082f588e1efd76ccdf45d1154dfd
+//>>>>>>> d07c005a6090082f588e1efd76ccdf45d1154dfd
         
             Button btnbus = new Button("Bus");
         btnbus.setLayoutX(530);
