@@ -27,28 +27,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
             errorAlert.showAndWait();
         }   
         else{
-                try{
-                /* Checks if the user entres amount of money more than 13 digit */
-                int amount_length = amount.getText().length();
-                if(13 < amount_length){
-                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                    errorAlert.setHeaderText("Incorrect amount");
-                    errorAlert.setContentText("Please, Enter a vaild number of money");
-                    errorAlert.showAndWait(); 
-                    return;
-                }
-
-                /* Checks if the user entres a non-valid amount of money */
-                for(int i = 0 ; i < amount_length ; i++){
-                    if(!('0' <= amount.getText().charAt(i) && '9' >= amount.getText().charAt(i)) && '.' != amount.getText().charAt(i)){
-                        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                        errorAlert.setHeaderText("Incorrect amount");
-                        errorAlert.setContentText("Please, Enter a vaild number of money");
-                        errorAlert.showAndWait();
-                        return;
-                    }
-                }
-
+            try{
                 /* Calculating the converted currency */
                 Double amount_val = Double.parseDouble(amount.getText());
                 Double currency = 0.0;

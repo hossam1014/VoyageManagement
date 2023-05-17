@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  */
 public class Bill extends Scene {
     public Bill(Stage primaryStage) {
-        super(new StackPane(),1250, 760);
+        super(new StackPane(),600, 600);
         StackPane root = (StackPane)this.getRoot();
         
         VBox page = new VBox(50);
