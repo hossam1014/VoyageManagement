@@ -26,7 +26,8 @@ public class TrainButtonPage extends Scene {
     
     public TrainButtonPage(Stage primaryStage) {
         super(new AnchorPane(),1050 ,400);
-        
+                this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+
     RadioButton rad_b1 = new RadioButton("trip1");
     rad_b1.setPrefSize(120, 38);
     

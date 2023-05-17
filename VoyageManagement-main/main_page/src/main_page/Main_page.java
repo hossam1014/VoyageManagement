@@ -26,8 +26,8 @@ public class Main_page extends Application {
         buttons_box.getChildren().addAll(login_btn, signup_btn);
         buttons_box.setAlignment(Pos.CENTER);
 
-        login_btn.setMinSize(150, 35);
-        signup_btn.setMinSize(150, 35);
+        login_btn.setMinSize(150, 40);
+        signup_btn.setMinSize(150, 40);
 
         main_page.getChildren().addAll(buttons_box);
         main_page.setAlignment(Pos.CENTER);

@@ -5,6 +5,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,33 +29,59 @@ public class Admin_reports_page extends Scene {
 
         HBox lables_box = new HBox(20);
         lables_box.setAlignment(Pos.CENTER);
+        
+        HBox button_box = new HBox();
 
         Button back = new Button("Back");
+        back.setPrefSize(120, 40);
+        back.getStyleClass().add("custom-button");
 
-        Label lbl_1 = new Label("label 1");
-        Label lbl_2 = new Label("label 2");
-        Label lbl_3 = new Label("label 3");
-        Label lbl_4 = new Label("label 4");
-        
+        back.setOnAction(e -> {
+            primaryStage.setScene(new main_page_demo(primaryStage));
+        });
+
+        Label lbl_1 = new Label("150\n Users");
+        Label lbl_2 = new Label("132 \n Reservations");
+        Label lbl_3 = new Label("24 \n Loged in");
+        Label lbl_4 = new Label("35000 $ \n Profit");
+
         lbl_1.setMinSize(160, 100);
         lbl_1.setAlignment(Pos.CENTER);
         lbl_1.getStyleClass().add("label_admin");
-        
+
         lbl_2.setMinSize(160, 100);
         lbl_2.setAlignment(Pos.CENTER);
         lbl_2.getStyleClass().add("label_admin");
-        
+
         lbl_3.setMinSize(160, 100);
         lbl_3.setAlignment(Pos.CENTER);
         lbl_3.getStyleClass().add("label_admin");
-        
+
         lbl_4.setMinSize(160, 100);
         lbl_4.setAlignment(Pos.CENTER);
         lbl_4.getStyleClass().add("label_admin");
 
+        button_box.getChildren().add(back);
+        button_box.setAlignment(Pos.BASELINE_LEFT);
         lables_box.getChildren().addAll(lbl_1, lbl_2, lbl_3, lbl_4);
 
-        root.getChildren().addAll(lables_box);
-        primaryStage.setTitle("Reports");
+//        table bart of code.
+        //the <person> is the type of opject we want to add
+        TableView table = new TableView<person>();
+        table.getStyleClass().add("table");
+//                  neme of table                  opject, type        name of column.
+        TableColumn firs_name_col = new TableColumn<person, String>("Firs Name");
+        firs_name_col.setCellValueFactory(new PropertyValueFactory<person, String>("first_name"));
+
+        TableColumn email_col = new TableColumn<person, String>("Email");
+        email_col.setCellValueFactory(new PropertyValueFactory<person, String>("email"));
+
+        TableColumn age_col = new TableColumn<person, Integer>("Age");
+        age_col.setCellValueFactory(new PropertyValueFactory<person, String>("age"));
+
+        table.getColumns().addAll(firs_name_col, email_col, age_col);
+        root.getChildren().addAll(lables_box, table, button_box);
+
+        primaryStage.setTitle("Admin Reports");
     }
 }

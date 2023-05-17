@@ -1,35 +1,20 @@
 
 #navigator{
-    /*    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);*/
-    /*-fx-background-color: #393E46;*/
     -fx-background-color: rgba(33, 121, 140, 0.6);
-    /*-fx-background-color: #21798c ;*/
-
 }
 
-/*.button{
-    -fx-background-color: #21798c;
-    -fx-background-radius: 20px;
-    -fx-text-fill: white;
-    -fx-border-style: none;
-}
-.button:hover{
-    -fx-background-color: #196e80;
-    -fx-cursor: hand;
-}*/
+
 .button{
     -fx-background-color: #21798c;
-    -fx-background-radius: 20px;
+    -fx-background-radius: 30px;
     -fx-text-fill: white;
     -fx-border-style: none;
 }
 .button:hover{
     -fx-background-color: linear-gradient(to bottom, #21798c, #2d9bbb);
-    -fx-background-radius: 30;
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
     -fx-cursor: hand;
 }
-
 
 .label{
     -fx-background-radius: 20px;
@@ -42,15 +27,16 @@
     -fx-text-fill: white;
     -fx-font-size: 16px;
 }
+
 .text-field:hover{
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
 
 }
+
 #home_page_info{
     -fx-background-size: cover;
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
-    /*    -fx-background-color: #efefef*/
 }
 
 .label{
@@ -87,8 +73,18 @@
 
 /*admin reports part*/
 .label_admin{
-    -fx-background-color: linear-gradient(to bottom right, #87C3FF, #4C9BFF);
+    -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
     -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
-    -fx-background-blur: 30px;    
+    -fx-background-blur: 30px;
     -fx-background-radius: 30;
+}
+
+.custom-button {
+    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
+
+}
+.custom-button:hover{
+    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
+    -fx-cursor: hand;
 }

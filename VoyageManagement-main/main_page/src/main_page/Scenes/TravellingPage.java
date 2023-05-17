@@ -29,6 +29,8 @@ public class TravellingPage extends Scene  {
    
     public TravellingPage(Stage primaryStage) {
         super(new HBox(20), 1250, 760);
+                this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+
         //Travelling Reservation Page 
         
             AnchorPane navigator = new AnchorPane();
