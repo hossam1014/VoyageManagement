@@ -1,211 +1,49 @@
-/*.button{
-    -fx-background-color: #05BFDB;
-    -fx-text-fill: #0A4D68;
-    -fx-background-radius: 20px;
-
-}
-
-.button:hover{
-    -fx-background-radius: 10px;
-    -fx-background-color: #27E1C1;
-    -fx-font-weight: bold;
-    -fx-vgap: 50px;
-    -fx-cursor: hand;
-}
-
-.btn{
-    -fx-background-color: #6780E2;
-
-    -fx-border-radius: 20px;
-
-}
 
 #navigator{
-    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);
+    -fx-background-color: rgba(33, 121, 140, 0.6);
 }
 
-
- ********************* Start login Page *********************** 
-
-
-.login-box {
-    -fx-background-color: #ffffff;
-    -fx-padding: 20px;
-    -fx-spacing: 10px;
-    -fx-alignment: center;
-    -fx-border-width: 2px;
-    -fx-border-color: #0071c5;
-}
-
-.login-box Label {
-    -fx-font-size: 18px;
-    -fx-text-fill: #333333;
-    -fx-font-weight: bold;
-}
-
-.login-box TextField {
-    -fx-background-color: #f0f0f0;
-    -fx-padding: 5px;
-    -fx-font-size: 16px;
-}
-
-.login-box Button#login-button {
-    -fx-background-color: #0071c5;
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-padding: 10 20 10 20;
-}
-
-.login-box Button#login-button:hover {
-    -fx-background-color: #0062a3;
-}
-
-.login-box Button#users-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: #0071c5;
-    -fx-font-size: 14px;
-}
-
-.login-box Button#users-button:hover {
-    -fx-text-fill: #0062a3;
-}
-
-
- *************************** signUp Page *********************** 
-
-
-.signUp-box {
-    -fx-background-color: #fff;
-    -fx-padding: 30px;
-    -fx-border-radius: 10px;
-    -fx-border-color: #ddd;
-    -fx-border-width: 2px;
-}
-
-.text-field {
-    -fx-padding: 8px;
-    -fx-font-size: 14px;
-    -fx-background-color: #f7f7f7;
-    -fx-border-radius: 5px;
-    -fx-border-color: #ddd;
-    -fx-border-width: 1px;
-}
-
-
-
-.signUpBtn {
-    -fx-background-color: #4CAF50;  Green 
-    -fx-border-radius: 5px;
-    -fx-font-size: 16px;
-    -fx-text-fill: white;
-    -fx-padding: 10 20 10 20;
-}
-
-.signUpBtn:hover {
-    -fx-background-color: #3e8941;
-    -fx-border-radius: 5px;
-    -fx-font-size: 16px;
-    -fx-text-fill: white;
-    -fx-padding: 10 20 10 20;
-}
-
-
- *************************** MyReservationsPage ******************
-
-
-.table-view .column-header .label {
-    -fx-font-size: 18px;
-    -fx-font-family: Arial;
-}
-
- Set font and size of table rows 
-.table-row-cell {
-    -fx-font-size: 16px;
-    -fx-font-family: Arial;
-}
-
-
-
-* ******************************a***** Reports Page *******************
-
-.report-page {
-  width: 1250px;
-  height: 760px;
-  background-color: red;
-  padding: 20px;
-}
-
-#report-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#card {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 5px;
-}
-
-#card-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#card-count {
-  font-size: 16px;
-  margin-top: 10px;
-}
-*/
-
-/* 
-    Created on : May 13, 2023, 6:48:45 PM
-    Author     : amir
-*/
-
-#navigator{
-    /*    -fx-background-color: linear-gradient(to bottom right, #0A4D68, #00FFCA);*/
-    /*-fx-background-color: #393E46;*/
-    -fx-background-color: #1d5c6c;
-
-}
 
 .button{
     -fx-background-color: #21798c;
-    -fx-background-radius: 20px;
+    -fx-background-radius: 30px;
     -fx-text-fill: white;
     -fx-border-style: none;
 }
 .button:hover{
-    -fx-background-color: #196e80;
+    -fx-background-color: linear-gradient(to bottom, #21798c, #2d9bbb);
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
     -fx-cursor: hand;
 }
-
 
 .label{
     -fx-background-radius: 20px;
 }
 
 .text-field {
-    -fx-border-radius: 20px;
-    -fx-border-color: gray;
-    -fx-border-width: 2px;
-    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to bottom, #1f6d82, #288fad);
+    -fx-background-radius: 30;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
 }
+
+.text-field:hover{
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
+
+}
+
 #home_page_info{
-/*    -fx-background-size: cover;
+    -fx-background-size: cover;
     -fx-background-repeat: stretch;
-    -fx-background-position: center center;*/
-    -fx-background-color: #efefef
+    -fx-background-position: center center;
 }
 
 .label{
     -fx-font-family: Arial;
-    -fx-font-size: 20px;
-    -fx-font-color: green;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+
 }
 
 #main_page{
@@ -218,9 +56,35 @@
 #user_name_nav{
     -fx-text-fill: white;
     -fx-font-weight: bold;
+
 }
 
 
 #login_card{
     -fx-background-color: linear-gradient(to bottom right, #DAF5FF, #B9E9FC);
+}
+
+#user_info{
+    -fx-background-color: rgba(33, 121, 140, 0.3);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
+    -fx-background-blur: 30px;
+}
+
+/*admin reports part*/
+.label_admin{
+    -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
+    -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
+    -fx-background-blur: 30px;
+    -fx-background-radius: 30;
+}
+
+.custom-button {
+    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
+
+}
+.custom-button:hover{
+    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
+    -fx-cursor: hand;
 }

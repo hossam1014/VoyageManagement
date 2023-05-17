@@ -15,10 +15,6 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import main_page.Scenes.Admin_reports_page;
-import main_page.Scenes.MyReservationPage;
-import main_page.Scenes.TravellingPage;
-import main_page.Scenes.user_reports_page;
 
 /**
  *
@@ -27,19 +23,20 @@ import main_page.Scenes.user_reports_page;
 public class main_page_demo extends Scene {
 
     public main_page_demo(Stage primaryStage) {
-        super(new VBox(20), 1250, 760);
+        super(new VBox(), 1250, 760);
         VBox vBox = (VBox) this.getRoot();
         vBox.setAlignment(Pos.CENTER);
         vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+
+        vBox.setStyle("-fx-background-image: url('images/home_page_demo_background.jpg');");
 
         HBox main_page = new HBox(20);
 
         VBox info = new VBox(20);
         info.setAlignment(Pos.CENTER);
-        info.setPrefSize(1050, 760);
         info.setId("home_page_info");
         info.getStyleClass().add("home_page_info");
-//        vBox.setStyle("-fx-background-image: url('images/sky.png');");
+//        vBox.setStyle("-fx-background-image: url('/images/home_page_demo_background.jpg');");
 
         VBox navigator = new VBox(20);
         navigator.setPadding(new Insets(10));
@@ -49,16 +46,21 @@ public class main_page_demo extends Scene {
         navigator.getStyleClass().add("navigator");
 
         GridPane user_info = new GridPane();
-        user_info.setPadding(new Insets(10));
-        user_info.setHgap(10);
+        user_info.setPadding(new Insets(20));
+        user_info.setHgap(200);
         user_info.setVgap(10);
+        user_info.setAlignment(Pos.CENTER);
+        user_info.setPrefSize(800, 200);
         user_info.setId("user_info");
 
         GridPane trip_info = new GridPane();
-        trip_info.setPadding(new Insets(10));
-        trip_info.setHgap(10);
+        trip_info.setPadding(new Insets(20));
+
+        trip_info.setHgap(200);
         trip_info.setVgap(10);
-        trip_info.setId("trip_info");
+        trip_info.setAlignment(Pos.CENTER);
+        trip_info.setPrefSize(800, 200);
+        trip_info.setId("user_info");
 
         // navigator part of code //
         // adding the photo of the user, dont forget to change adel shakal's photo :)
@@ -80,7 +82,15 @@ public class main_page_demo extends Scene {
         btn_travel.setOnAction(e -> {
             primaryStage.setScene(new TravellingPage(primaryStage));
         });
-        
+
+        btn_hotel.setOnAction(e -> {
+            primaryStage.setScene(new Hotel_Resevation(primaryStage));
+        });
+
+        btn_tools.setOnAction(e -> {
+            primaryStage.setScene(new Currency_Converter(primaryStage));
+        });
+
         btn_user_report.setOnAction(e -> {
             primaryStage.setScene(new user_reports_page(primaryStage));
         });
@@ -88,11 +98,11 @@ public class main_page_demo extends Scene {
 //        btn_hotel.setOnAction(e->{
 //        primaryStage.setScene(new MyReservationPage(primaryStage));
 //        });
-        btn_travel.setMinSize(150, 35);
-        btn_hotel.setMinSize(150, 35);
-        btn_tools.setMinSize(150, 35);
-        btn_report.setMinSize(150, 35);
-        btn_user_report.setMinSize(150, 35);
+        btn_travel.setMinSize(150, 40);
+        btn_hotel.setMinSize(150, 40);
+        btn_tools.setMinSize(150, 40);
+        btn_report.setMinSize(150, 40);
+        btn_user_report.setMinSize(150, 40);
 
         // there will be some database code here so dont forget hosam  -----------------------------------------------------------------------------------------
         Label user_name = new Label("Adel Shakal");
@@ -117,9 +127,11 @@ public class main_page_demo extends Scene {
         lbl_user_info.getStyleClass().add("user_name_nav");
         Label lbl_user_name = new Label("User name");
         Label lbl_email = new Label("Email");
-        Label lbl_number = new Label("Phone number");
+        Label lbl_number = new Label("Phone number         ");
         Label lbl_age = new Label("Age");
 
+        Button change = new Button("Change");
+        
         // back end and database part -----------------------------------------------------------------------------------------------------------------------------
         // you have to get all these data from sign, login, traveling and hotel pages
         TextField txt_user_name = new TextField();
@@ -127,6 +139,7 @@ public class main_page_demo extends Scene {
         TextField txt_number = new TextField();
         TextField txt_age = new TextField();
 
+        txt_user_name.setPrefWidth(400);
         txt_user_name.setEditable(false);
         txt_email.setEditable(false);
         txt_number.setEditable(false);
@@ -140,6 +153,7 @@ public class main_page_demo extends Scene {
         user_info.add(txt_number, 1, 2);
         user_info.add(lbl_age, 0, 3);
         user_info.add(txt_age, 1, 3);
+        user_info.add(change, 0, 4, 2, 1);
 //        user_info.add(change, 0, 4, 2, 1);
 
         // trip info part
@@ -153,20 +167,22 @@ public class main_page_demo extends Scene {
         TextField txt_current_location = new TextField();
         TextField txt_hotel_name = new TextField();
 
-        txt_destination.setEditable(false);
-        txt_current_location.setEditable(false);
-        txt_hotel_name.setEditable(false);
+//        txt_destination.setEditable(false);
+//        txt_current_location.setEditable(false);
+//        txt_hotel_name.setEditable(false);
 
-        Button change = new Button("Change");
+        txt_destination.setPrefWidth(400);
+
+        
 
         change.setOnAction(e -> {
             txt_user_name.setEditable(true);
             txt_email.setEditable(true);
             txt_number.setEditable(true);
             txt_age.setEditable(true);
-            txt_destination.setEditable(true);
-            txt_current_location.setEditable(true);
-            txt_hotel_name.setEditable(true);
+//            txt_destination.setEditable(true);
+//            txt_current_location.setEditable(true);
+//            txt_hotel_name.setEditable(true);
 
         });
 
@@ -176,7 +192,7 @@ public class main_page_demo extends Scene {
         trip_info.add(txt_current_location, 1, 2);
         trip_info.add(lbl_hotel_name, 0, 3);
         trip_info.add(txt_hotel_name, 1, 3);
-        trip_info.add(change, 0, 4, 2, 1);
+        
 
         navigator.getChildren().addAll(img_circle, user_name, l1, btn_travel, btn_hotel,
                 btn_tools, btn_report, btn_user_report);

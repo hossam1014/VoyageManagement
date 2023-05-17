@@ -1,0 +1,57 @@
+
+/* 
+    Created on : May 17, 2023, 10:36:06 AM
+    Author     : amir
+*/
+.root{
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-blend-mode: overlay;
+    -fx-background-color: linear-gradient(to bottom, rgba(33, 121, 140, 0.8), rgba(33, 121, 140, 0.2));
+}
+#login_putton{
+
+
+}
+#card {
+    -fx-background-color: rgba(33, 121, 140, 0.7);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 15, 0, 0, 0);
+    -fx-background-blur: 20px;
+}
+/*#card{
+   -fx-background-color: rgba(33, 121, 140, 0.8);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
+}*/
+#card:hover{
+}
+
+.text-field {
+    -fx-background-color: linear-gradient(to bottom, #1f6d82, #288fad);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-font: bold;
+}
+
+.button{
+    -fx-background-color: #21798c;
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-border-style: none;
+}
+.button:hover{
+    -fx-background-color: linear-gradient(to bottom, #21798c, #2d9bbb);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+

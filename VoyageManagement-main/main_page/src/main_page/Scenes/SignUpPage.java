@@ -21,10 +21,11 @@ public class SignUpPage extends Scene {
     public SignUpPage(Stage primaryStage) {
 
         super(new VBox(20), 1250, 760);
-        this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+        this.getStylesheets().add(getClass().getResource("/main_page/login_signup_style.css").toExternalForm());
         VBox vBox = (VBox) this.getRoot();
         vBox.getStyleClass().add("signUp-box");
         vBox.setAlignment(Pos.CENTER);
+        vBox.setStyle("-fx-background-image: url('images/login+backgrond2.jpg');");
         
         HBox centr_box = new HBox(20);
         centr_box.setAlignment(Pos.CENTER);
@@ -33,7 +34,11 @@ public class SignUpPage extends Scene {
         sign_up_box.setPadding(new Insets(20));
         sign_up_box.setHgap(40);
         sign_up_box.setVgap(10);
+        sign_up_box.setPrefSize(400, 400);
+        sign_up_box.setAlignment(Pos.CENTER);
+        sign_up_box.setId("card");
 
+        
         Label lblFullName = new Label("fullname");
         TextField txtFullName = new TextField();
 
@@ -50,6 +55,7 @@ public class SignUpPage extends Scene {
         PasswordField txtPassword = new PasswordField();
 
         Button btn_sign_up = new Button("Sign Up");
+        btn_sign_up.setPrefSize(120, 40);
 
         btn_sign_up.setOnAction(event -> {
             primaryStage.setScene(new LoginPage(primaryStage));
@@ -65,7 +71,6 @@ public class SignUpPage extends Scene {
         sign_up_box.add(txtUserName, 1, 3);
         sign_up_box.add(lblPassword, 0, 4);
         sign_up_box.add(txtPassword, 1, 4);
-//        sign_up_box.add(btn_sign_up, 0, 5, 2, 1);
 
         centr_box.getChildren().addAll(sign_up_box);
         

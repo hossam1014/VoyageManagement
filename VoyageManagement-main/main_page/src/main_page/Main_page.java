@@ -8,8 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Scenes.LoginPage;
-import main_page.Scenes.user_reports_page;
 import main_page.Scenes.SignUpPage;
+import main_page.Scenes.main_page_demo;
 
 public class Main_page extends Application {
 
@@ -26,15 +26,14 @@ public class Main_page extends Application {
         buttons_box.getChildren().addAll(login_btn, signup_btn);
         buttons_box.setAlignment(Pos.CENTER);
 
-        login_btn.setMinSize(150, 35);
-        signup_btn.setMinSize(150, 35);
+        login_btn.setMinSize(150, 40);
+        signup_btn.setMinSize(150, 40);
 
         main_page.getChildren().addAll(buttons_box);
         main_page.setAlignment(Pos.CENTER);
 
         main_page.setStyle("-fx-background-image: url('images/background_main.png');");
 
-        // will be edited to connect login and sign up pages ======================================================================
         login_btn.setOnAction(e -> {
             primaryStage.setScene(new LoginPage(primaryStage));
         });
@@ -43,13 +42,11 @@ public class Main_page extends Application {
             primaryStage.setScene(new SignUpPage(primaryStage));
         });
 
-//        test.setOnAction(e -> {
-//            primaryStage.setScene(new user_reports_page(primaryStage));
-//        });
         Scene scene = new Scene(main_page, 1250, 760);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         primaryStage.setTitle("main page");
+//        primaryStage.setScene(new main_page_demo(primaryStage));
         primaryStage.setScene(scene);
         primaryStage.show();
     }
