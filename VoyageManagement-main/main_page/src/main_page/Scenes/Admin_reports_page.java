@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Models.User;
 
 /**
  *
@@ -13,7 +14,7 @@ import javafx.stage.Stage;
  */
 public class Admin_reports_page extends Scene {
 
-    public Admin_reports_page(Stage primaryStage) {
+    public Admin_reports_page(Stage primaryStage, User user) {
 
         super(new VBox(20), 1250, 760);
 
@@ -27,7 +28,7 @@ public class Admin_reports_page extends Scene {
        back.setId("back");
        
        back.setOnAction(e -> {
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
 
         // Users section

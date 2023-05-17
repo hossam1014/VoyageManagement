@@ -16,6 +16,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import main_page.Handlers.HotelFillInfoHandler;
+import main_page.Models.User;
 
 /**
  *
@@ -33,7 +34,8 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage) {
+    public Hotel_Resevation(Stage primaryStage, User user) {
+        
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
@@ -415,12 +417,12 @@ public class Hotel_Resevation extends Scene {
         
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
-            primaryStage.setScene(new Bill(primaryStage));
+            primaryStage.setScene(new Bill(primaryStage, user));
         });
         
         /* Previous page */
         prev_page.setOnAction(e->{
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
     }
 }

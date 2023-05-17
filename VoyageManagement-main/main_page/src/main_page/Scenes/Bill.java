@@ -14,13 +14,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Models.User;
 
 /**
  *
  * @author Ehab
  */
 public class Bill extends Scene {
-    public Bill(Stage primaryStage) {
+    public Bill(Stage primaryStage, User user) {
         super(new StackPane(),600, 600);
         StackPane root = (StackPane)this.getRoot();
         
@@ -65,7 +66,7 @@ public class Bill extends Scene {
         Button goToMainPage = new Button("Main Page");
         
         goToMainPage.setOnAction(e->{
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
         
         /* get children of the page */

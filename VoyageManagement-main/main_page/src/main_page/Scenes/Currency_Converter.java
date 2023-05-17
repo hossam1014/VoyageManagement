@@ -18,6 +18,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Handlers.CurrencyConverterHandler;
+import main_page.Models.User;
 
 /**
  *
@@ -40,7 +41,7 @@ public class Currency_Converter extends Scene {
     ));
     public static TextField converted_currency = new TextField();
     
-    public Currency_Converter(Stage primaryStage) {
+    public Currency_Converter(Stage primaryStage, User user) {
         super(new StackPane(),600, 600);
         StackPane root = (StackPane)this.getRoot();
         
@@ -88,7 +89,7 @@ public class Currency_Converter extends Scene {
         /* Return to main Page */
         Button main_page = new Button("main page");
         main_page.setOnAction(e->{
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
         
         /* Get Children of the page */

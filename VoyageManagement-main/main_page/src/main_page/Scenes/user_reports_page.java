@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Models.User;
 
 /**
  *
@@ -19,7 +20,7 @@ import javafx.stage.Stage;
  */
 public class user_reports_page extends Scene{
     
-    public user_reports_page(Stage primaryStage) {
+    public user_reports_page(Stage primaryStage, User user) {
         super(new VBox(20), 1250, 760);
         VBox main_box = (VBox) this.getRoot();
         HBox btn_box = new HBox(20);
@@ -37,7 +38,7 @@ public class user_reports_page extends Scene{
         btn_back.setId("btn_back");
         
         btn_back.setOnAction(e->{
-        primaryStage.setScene(new main_page_demo(primaryStage));
+        primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
         
         btn_box.getChildren().addAll(btn_supmit, btn_back);

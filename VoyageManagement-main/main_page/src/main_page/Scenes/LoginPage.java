@@ -11,6 +11,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Handlers.LoginHandler;
+import main_page.Handlers.MyReservationsHandler;
 
 /**
  *
@@ -47,7 +49,21 @@ public class LoginPage extends Scene {
         btn_log_in.setPrefSize(120, 40);
 
         btn_log_in.setOnAction(event -> {
-            primaryStage.setScene(new main_page_demo(primaryStage));
+//            primaryStage.setScene(new main_page_demo(primaryStage));
+            
+
+//            مش تمسح حاجه الله يكرمك . اعملها كومنت
+
+            LoginHandler loginHandler = new LoginHandler(txtUserName.getText(), txtPassword.getText());
+            loginHandler.handle(event);
+            if (loginHandler.isLoggedIn())
+            {
+                main_page_demo mainPage = new main_page_demo(primaryStage, loginHandler.getUser());
+//                reservationsHandler.handle(event);
+//                primaryStage.setScene(new MyReservationPage(primaryStage, reservationsHandler));
+                primaryStage.setScene(mainPage);
+
+            }
         });
         
         log_in_box.add(lblUserName, 0, 0);

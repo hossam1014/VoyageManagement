@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import main_page.Models.User;
 
 /**
  *
@@ -27,7 +28,7 @@ public class TravellingPage extends Scene  {
 
     private Connection connection;
    
-    public TravellingPage(Stage primaryStage) {
+    public TravellingPage(Stage primaryStage, User user) {
         super(new HBox(20), 1250, 760);
         //Travelling Reservation Page 
         
