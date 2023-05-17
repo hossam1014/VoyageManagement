@@ -9,34 +9,20 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import static main_page.Scenes.Hotel_Resevation.confirm;
+import static main_page.Scenes.Hotel_Resevation.var_hotel_type;
+import static main_page.Scenes.Hotel_Resevation.var_room_capacity;
+import static main_page.Scenes.Hotel_Resevation.var_room_price;
 
 /**
  *
  * @author Ehab
  */
 public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
-
-    public int hotel_type;
-    public int room_price;
-    public int room_capacity;
     
     public LocalDate start_date;
     public LocalDate end_date;
     public DatePicker date_in;
     public DatePicker date_out; 
-    
-    /* Setters (Hotel Type - room Price - Room Capacity) */
-    public void setHotel_type(int hotel_type){
-        this.hotel_type = hotel_type;
-    }
-    
-    public void setRoom_price(int room_price){
-        this.room_price = room_price;
-    }
-    
-    public void setRoom_capacity(int room_capacity){
-        this.room_capacity = room_capacity;
-    }
 
     public void setStart_date(LocalDate start_date) {
         this.start_date = start_date;
@@ -88,7 +74,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 date_out.setValue(null);
             }
             else{
-                information_isFilled = checkInformation(hotel_type,room_price,room_capacity,start_date,end_date);
+                information_isFilled = checkInformation(start_date,end_date);
                 if(information_isFilled){
                     /***
                     *       Calculate total price 
@@ -104,21 +90,20 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     }
     
     /* Check if the user fill all the information */
-    public boolean checkInformation(int hotel_type,int room_price,int room_capacity
-                                            ,LocalDate start_date, LocalDate end_date){
-        if(0 == hotel_type){
+    public boolean checkInformation(LocalDate start_date, LocalDate end_date){
+        if(0 == var_hotel_type){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Please, Select Hotel Type");
             errorAlert.showAndWait();
             return false;
         }
-        if(0 == room_price){
+        if(0 == var_room_price){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Please, Select Room Price");
             errorAlert.showAndWait();
             return false;
         }
-        if(0 == room_capacity){
+        if(0 == var_room_capacity){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Please, Select Room Capacity");
             errorAlert.showAndWait();

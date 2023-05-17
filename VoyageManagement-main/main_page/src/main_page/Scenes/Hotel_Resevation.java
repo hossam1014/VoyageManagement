@@ -27,6 +27,10 @@ public class Hotel_Resevation extends Scene {
     public static Label total_price = new Label("380 $");
     public static Boolean information_isFilled = false;
     public static Button confirm = new Button("Confirm Booking");
+    
+    public static int var_hotel_type = 0;
+    public static int var_room_price = 0;
+    public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
     public Hotel_Resevation(Stage primaryStage) {
@@ -80,15 +84,6 @@ public class Hotel_Resevation extends Scene {
         rads[1].setText("4 Star");
         rads[2].setText("3 Star");
         rads[3].setText("Motel");
-        
-        /* hotel type select button */
-        Button hotel_type_select = new Button("Select");
-        hotel_type_select.setPrefSize(83, 38);
-        hotel_type_select.setLayoutX(1000);
-        hotel_type_select.setLayoutY(99);
-        hotel_type_select.setFont(font_buttons);
-        hotel_type_select.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
-        hotel_type_select.setTextFill(Color.WHITE);
         /************      End of Hotel Type        **************/
         
         /************      Hotel Room      ************/
@@ -136,13 +131,6 @@ public class Hotel_Resevation extends Scene {
         rads[8].setText("Double");      
         rads[9].setText("More");    
         
-        Button room_type_select = new Button("Select");
-        room_type_select.setPrefSize(83, 38);
-        room_type_select.setLayoutX(1000);
-        room_type_select.setLayoutY(360);
-        room_type_select.setFont(font_buttons);
-        room_type_select.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
-        room_type_select.setTextFill(Color.WHITE);
         /************     End of Hotel Room      ************/
         
         /************       Check-In & Check-out Date       ************/
@@ -232,142 +220,148 @@ public class Hotel_Resevation extends Scene {
         /**********     End of page Lines      *********/
         
         /* get Children of page */
-        page.getChildren().addAll(prev_page,H_type,hotelTypeRB,hotel_type_select,R_type,line1_horz,
-        r_price,roomPriceRB,r_capacity,roomCapacityRB,room_type_select,line2_horz,line3_vertical,
+        page.getChildren().addAll(prev_page,H_type,hotelTypeRB,R_type,line1_horz,
+        r_price,roomPriceRB,r_capacity,roomCapacityRB,line2_horz,line3_vertical,
         chk_in,chk_out,date_in,date_out,infoDone,line4_horz,booking_price,total_price,confirm);
-        /************************
-        *       End of GUI      *
-        ************************/  
         
         //////////////////////////////////////////////////
         
         /************************
         *       Back-End        * 
         ************************/
-        
-        /* Make only one button selected at a time */
-        /* Hotel Type Radio Button package */
+
+        /* Hotel Type Radio Button */
         rads[0].setOnAction(e->{
-            rads[1].setSelected(false);
-            rads[2].setSelected(false);
-            rads[3].setSelected(false);
+            if(false == rads[0].isSelected()){
+                rads[0].setSelected(true);
+            }
+            else{
+                var_hotel_type = 4;
+                rads[1].setSelected(false);
+                rads[2].setSelected(false);
+                rads[3].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[1].setOnAction(e->{
-            rads[0].setSelected(false);
-            rads[2].setSelected(false);
-            rads[3].setSelected(false);
+            if(false == rads[1].isSelected()){
+                rads[1].setSelected(true);
+            }
+            else{
+                var_hotel_type = 3;
+                rads[0].setSelected(false);
+                rads[2].setSelected(false);
+                rads[3].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[2].setOnAction(e->{
-            rads[0].setSelected(false);
-            rads[1].setSelected(false);
-            rads[3].setSelected(false);
+            if(false == rads[2].isSelected()){
+                rads[2].setSelected(true);
+            }
+            else{
+                var_hotel_type = 2;
+                rads[0].setSelected(false);
+                rads[1].setSelected(false);
+                rads[3].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[3].setOnAction(e->{
-            rads[0].setSelected(false);
-            rads[1].setSelected(false);
-            rads[2].setSelected(false);
+            if(false == rads[3].isSelected()){
+                rads[3].setSelected(true);
+            }
+            else{
+                var_hotel_type = 1;
+                rads[0].setSelected(false);
+                rads[1].setSelected(false);
+                rads[2].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         
-        /** Price Radio Button package **/
+        /** Price Radio Button **/
         rads[4].setOnAction(e->{
-            rads[5].setSelected(false);
-            rads[6].setSelected(false);
+            if(false == rads[4].isSelected()){
+                rads[4].setSelected(true);
+            }
+            else{
+                var_room_price = 1;
+                rads[5].setSelected(false);
+                rads[6].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[5].setOnAction(e->{
-            rads[4].setSelected(false);
-            rads[6].setSelected(false);
+            if(false == rads[5].isSelected()){
+                rads[5].setSelected(true);
+            }
+            else{
+                var_room_price = 2;
+                rads[4].setSelected(false);
+                rads[6].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[6].setOnAction(e->{
-            rads[4].setSelected(false);
-            rads[5].setSelected(false);
+            if(false == rads[6].isSelected()){
+                rads[6].setSelected(true);
+            }
+            else{
+                var_room_price = 1;
+                rads[4].setSelected(false);
+                rads[5].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         
-        /** Capacity Radio Button package **/
+        /** Capacity Radio Button **/
         rads[7].setOnAction(e->{
-            rads[8].setSelected(false);
-            rads[9].setSelected(false);
+            if(false == rads[7].isSelected()){
+                rads[7].setSelected(true);
+            }
+            else{
+                var_room_capacity = 1;
+                rads[8].setSelected(false);
+                rads[9].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[8].setOnAction(e->{
-            rads[7].setSelected(false);
-            rads[9].setSelected(false);
+            if(false == rads[8].isSelected()){
+                rads[8].setSelected(true);
+            }
+            else{
+                var_room_capacity = 2;
+                rads[7].setSelected(false);
+                rads[9].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         rads[9].setOnAction(e->{
-            rads[7].setSelected(false);
-            rads[8].setSelected(false);
+            if(false == rads[9].isSelected()){
+                rads[9].setSelected(true);
+            }
+            else{
+                var_room_capacity = 3;
+                rads[7].setSelected(false);
+                rads[8].setSelected(false);
+                total_price.setVisible(false);
+                confirm.setDisable(true);
+            }
         });
         
         /* Hotel Fill Informations Handler object */
         HotelFillInfoHandler done_reservation = new HotelFillInfoHandler();
-
-        /* Handle hotel Type Select Button */
-        int []selected_type = new int[1];
-        selected_type[0] = 0;
-        hotel_type_select.setOnAction(e->{
-            total_price.setVisible(false);
-            confirm.setDisable(true);
-            if(true == rads[0].isSelected()){
-                selected_type[0] = 4;
-            }
-            else if(true == rads[1].isSelected()){
-                selected_type[0] = 3;
-            }
-            else if(true == rads[2].isSelected()){
-                selected_type[0] = 2;
-            }
-            else if(true == rads[3].isSelected()){
-                selected_type[0] = 1;
-            }
-            else{
-                selected_type[0] = 0;
-                Alert errorAlert = new Alert(AlertType.ERROR);
-                errorAlert.setHeaderText("Please, Select Hotel type");
-                errorAlert.showAndWait();   
-            }
-            done_reservation.setHotel_type(selected_type[0]);
-        });
-        
-        /* Handle Room Type Select Button */
-        int []selected_price = new int[1];
-        selected_price[0] = 0;
-        int []selected_capacity = new int[1];
-        selected_capacity[0] = 0;
-        room_type_select.setOnAction(e->{
-            total_price.setVisible(false);
-            confirm.setDisable(true);
-            if(true == rads[4].isSelected()){
-                selected_price[0] = 1;
-            }
-            else if(true == rads[5].isSelected()){
-                selected_price[0] = 2;
-            }
-            else if(true == rads[6].isSelected()){
-                selected_price[0] = 3;
-            }
-            else{
-                selected_price[0] = 0;
-                Alert errorAlert = new Alert(AlertType.ERROR);
-                errorAlert.setHeaderText("Please, Select Room Price");
-                errorAlert.showAndWait();   
-            }
-            done_reservation.setRoom_price(selected_price[0]);
-     
-            if(true == rads[7].isSelected()){
-                selected_capacity[0] = 1;
-            }
-            else if(true == rads[8].isSelected()){
-                selected_capacity[0] = 2;
-            }
-            else if(true == rads[9].isSelected()){
-                selected_capacity[0] = 3;
-            }
-            else{
-                selected_capacity[0] = 0;
-                Alert errorAlert = new Alert(AlertType.ERROR);
-                errorAlert.setHeaderText("Please, Select Room Capacity");
-                errorAlert.showAndWait();   
-            }
-            done_reservation.setRoom_capacity(selected_capacity[0]);
-        });
         
         /** Current Date **/
         LocalDate current_date = LocalDate.now();

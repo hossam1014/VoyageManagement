@@ -85,6 +85,10 @@ public class main_page_demo extends Scene {
             primaryStage.setScene(new Hotel_Resevation(primaryStage));
         });
         
+        btn_tools.setOnAction(e->{
+            primaryStage.setScene(new Currency_Converter(primaryStage));
+        });
+        
         btn_user_report.setOnAction(e -> {
             primaryStage.setScene(new user_reports_page(primaryStage));
         });

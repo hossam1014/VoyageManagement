@@ -30,6 +30,9 @@ public class Bill extends Scene {
         
         GridPane bill_gridPane = new GridPane();
         bill_gridPane.setAlignment(Pos.CENTER);
+        bill_gridPane.setPadding(new Insets(20));
+        bill_gridPane.setHgap(30);
+        bill_gridPane.setVgap(15);
         
         /* Labels */
         Label username = new Label("Username:");   
@@ -47,12 +50,7 @@ public class Bill extends Scene {
         Label tranportaionType_val = new Label("------");
         Label tripDate_val = new Label("------");
         Label hotelCheckInDate_val = new Label("------");
-        Label hotelCheckOutDate_val = new Label("------");
-        
-        /* Set Size of GridPane */
-        bill_gridPane.setPadding(new Insets(20));
-        bill_gridPane.setHgap(30);
-        bill_gridPane.setVgap(15);
+        Label hotelCheckOutDate_val = new Label("------");  
         
         /* Adding Labels & Values */
         bill_gridPane.addRow(0,username,username_val);
