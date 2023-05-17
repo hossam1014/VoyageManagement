@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Scenes.Admin_reports_page;
 import main_page.Scenes.LoginPage;
 import main_page.Scenes.SignUpPage;
 import main_page.Scenes.main_page_demo;
@@ -26,8 +27,8 @@ public class Main_page extends Application {
         buttons_box.getChildren().addAll(login_btn, signup_btn);
         buttons_box.setAlignment(Pos.CENTER);
 
-        login_btn.setMinSize(150, 35);
-        signup_btn.setMinSize(150, 35);
+        login_btn.setMinSize(150, 40);
+        signup_btn.setMinSize(150, 40);
 
         main_page.getChildren().addAll(buttons_box);
         main_page.setAlignment(Pos.CENTER);
@@ -48,6 +49,10 @@ public class Main_page extends Application {
         primaryStage.setTitle("main page");
 //        primaryStage.setScene(new main_page_demo(primaryStage));
         primaryStage.setScene(scene);
+
+
+//        primaryStage.setScene(new Admin_reports_page(primaryStage));
+//        primaryStage.setScene(scene);
 
         primaryStage.show();
     }

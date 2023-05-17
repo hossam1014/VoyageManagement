@@ -21,29 +21,34 @@ import main_page.Models.User;
  * @author Ehab
  */
 public class Bill extends Scene {
+    
+    
     public Bill(Stage primaryStage, User user) {
         super(new StackPane(),600, 600);
         StackPane root = (StackPane)this.getRoot();
         
+        this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+
+
         VBox page = new VBox(50);
         root.getChildren().add(page);
         page.setAlignment(Pos.CENTER);
-        
+
         GridPane bill_gridPane = new GridPane();
         bill_gridPane.setAlignment(Pos.CENTER);
         bill_gridPane.setPadding(new Insets(20));
         bill_gridPane.setHgap(30);
         bill_gridPane.setVgap(15);
-        
+
         /* Labels */
-        Label username = new Label("Username:");   
+        Label username = new Label("Username:");
         Label travllingFrom = new Label("Travlling From: ");
         Label travllingTo = new Label("Travlling To: ");
         Label tranportaionType = new Label("Tranportaion Type: ");
         Label tripDate = new Label("Trip Date: ");
         Label hotelCheckInDate = new Label("Hotel Check-in Date: ");
         Label hotelCheckOutDate = new Label("Hotel Check-out Date: ");
-        
+
         /* Values from DataBase */
         Label username_val = new Label("-----");
         Label travllingFrom_val = new Label("------");
@@ -51,25 +56,30 @@ public class Bill extends Scene {
         Label tranportaionType_val = new Label("------");
         Label tripDate_val = new Label("------");
         Label hotelCheckInDate_val = new Label("------");
-        Label hotelCheckOutDate_val = new Label("------");  
-        
+        Label hotelCheckOutDate_val = new Label("------");
+
         /* Adding Labels & Values */
-        bill_gridPane.addRow(0,username,username_val);
-        bill_gridPane.addRow(1,travllingFrom,travllingFrom_val);
-        bill_gridPane.addRow(2,travllingTo,travllingTo_val);
-        bill_gridPane.addRow(3,tranportaionType,tranportaionType_val);
-        bill_gridPane.addRow(4,tripDate,tripDate_val);
-        bill_gridPane.addRow(5,hotelCheckInDate,hotelCheckInDate_val);
-        bill_gridPane.addRow(6,hotelCheckOutDate,hotelCheckOutDate_val);
-        
+        bill_gridPane.addRow(0, username, username_val);
+        bill_gridPane.addRow(1, travllingFrom, travllingFrom_val);
+        bill_gridPane.addRow(2, travllingTo, travllingTo_val);
+        bill_gridPane.addRow(3, tranportaionType, tranportaionType_val);
+        bill_gridPane.addRow(4, tripDate, tripDate_val);
+        bill_gridPane.addRow(5, hotelCheckInDate, hotelCheckInDate_val);
+        bill_gridPane.addRow(6, hotelCheckOutDate, hotelCheckOutDate_val);
+
         /* Button to go back to main page */
-        Button goToMainPage = new Button("Main Page");
-        
-        goToMainPage.setOnAction(e->{
+//        Button goToMainPage = new Button("Main Page");
+//        
+//        goToMainPage.setOnAction(e->{
+//            primaryStage.setScene(new main_page_demo(primaryStage, user));
+        Button goToMainPage = new Button("Back");
+        goToMainPage.getStyleClass().add("custom-button");
+
+        goToMainPage.setOnAction(x -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
-        
+
         /* get children of the page */
-        page.getChildren().addAll(bill_gridPane,goToMainPage);
+        page.getChildren().addAll(bill_gridPane, goToMainPage);
     }
 }

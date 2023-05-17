@@ -22,12 +22,11 @@ import javafx.stage.Stage;
  *
  * @author hp
  */
-public class TrainButtonPage extends Scene {
+public class FlaghtButtonPage extends Scene {
     
-    public TrainButtonPage(Stage primaryStage) {
+    public FlaghtButtonPage(Stage primaryStage) {
         super(new AnchorPane(),1050 ,400);
-                this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-
+        
     RadioButton rad_b1 = new RadioButton("trip1");
     rad_b1.setPrefSize(120, 38);
     
@@ -120,8 +119,8 @@ public class TrainButtonPage extends Scene {
     VBox v1 = new VBox(10);
     v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
     
-    AnchorPane trainPage = (AnchorPane) this.getRoot();
-    trainPage.getChildren().addAll(v1);
+    AnchorPane flaghtPage = (AnchorPane) this.getRoot();
+    flaghtPage.getChildren().addAll(v1);
     }
     
 }

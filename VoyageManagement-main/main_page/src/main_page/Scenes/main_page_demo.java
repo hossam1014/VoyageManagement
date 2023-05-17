@@ -105,11 +105,11 @@ public class main_page_demo extends Scene {
 //        btn_hotel.setOnAction(e->{
 //        primaryStage.setScene(new MyReservationPage(primaryStage));
 //        });
-        btn_travel.setMinSize(150, 35);
-        btn_hotel.setMinSize(150, 35);
-        btn_tools.setMinSize(150, 35);
-        btn_report.setMinSize(150, 35);
-        btn_user_report.setMinSize(150, 35);
+        btn_travel.setMinSize(150, 40);
+        btn_hotel.setMinSize(150, 40);
+        btn_tools.setMinSize(150, 40);
+        btn_report.setMinSize(150, 40);
+        btn_user_report.setMinSize(150, 40);
 
         // there will be some database code here so dont forget hosam  -----------------------------------------------------------------------------------------
         Label user_name = new Label(this.loggedUser.getFullName());
