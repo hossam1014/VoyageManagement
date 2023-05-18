@@ -25,7 +25,7 @@ import main_page.Models.User;
 public class Hotel_Resevation extends Scene {
 
     /* Global Variables used in Handler class */
-    public static Label total_price = new Label("380 $");
+    public static TextField total_price = new TextField();
     public static Boolean information_isFilled = false;
     public static Button confirm = new Button("Confirm Booking");
 
@@ -201,12 +201,13 @@ public class Hotel_Resevation extends Scene {
         booking_price.setFont(Font.font("Serif", FontWeight.BOLD, FontPosture.REGULAR, 24));
         /* Total Price value */
         total_price.setAlignment(Pos.CENTER);
-        total_price.setLayoutX(540);
+        total_price.setLayoutX(560);
         total_price.setLayoutY(600);
-        total_price.setPrefSize(111, 38);
-        total_price.setTextFill(Color.DARKBLUE);
+        total_price.setMaxWidth(100);
+        total_price.setMinWidth(100);
+        total_price.setPromptText("0.0");
         total_price.setFont(Font.font("Serif", FontWeight.BOLD, FontPosture.REGULAR, 24));
-        total_price.setVisible(false);
+        total_price.setEditable(false);
 
         /* Confirm Booking Button */
         confirm.setLayoutX(555);
@@ -267,7 +268,7 @@ public class Hotel_Resevation extends Scene {
                 rads[1].setSelected(false);
                 rads[2].setSelected(false);
                 rads[3].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -279,7 +280,7 @@ public class Hotel_Resevation extends Scene {
                 rads[0].setSelected(false);
                 rads[2].setSelected(false);
                 rads[3].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -291,7 +292,7 @@ public class Hotel_Resevation extends Scene {
                 rads[0].setSelected(false);
                 rads[1].setSelected(false);
                 rads[3].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -303,7 +304,7 @@ public class Hotel_Resevation extends Scene {
                 rads[0].setSelected(false);
                 rads[1].setSelected(false);
                 rads[2].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -318,7 +319,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_price = 1;
                 rads[5].setSelected(false);
                 rads[6].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -329,7 +330,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_price = 2;
                 rads[4].setSelected(false);
                 rads[6].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -340,7 +341,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_price = 1;
                 rads[4].setSelected(false);
                 rads[5].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -355,7 +356,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_capacity = 1;
                 rads[8].setSelected(false);
                 rads[9].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -366,7 +367,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_capacity = 2;
                 rads[7].setSelected(false);
                 rads[9].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -377,7 +378,7 @@ public class Hotel_Resevation extends Scene {
                 var_room_capacity = 3;
                 rads[7].setSelected(false);
                 rads[8].setSelected(false);
-                total_price.setVisible(false);
+                total_price.setPromptText("0.0");
                 confirm.setDisable(true);
             }
         });
@@ -400,7 +401,7 @@ public class Hotel_Resevation extends Scene {
          * Check-in Date *
          */
         date_in.setOnAction(e -> {
-            total_price.setVisible(false);
+            total_price.setPromptText("0.0");
             confirm.setDisable(true);
             /**
              * Checks if Check-in date not set *
@@ -424,7 +425,7 @@ public class Hotel_Resevation extends Scene {
          * Check-out Date *
          */
         date_out.setOnAction(e -> {
-            total_price.setVisible(false);
+            total_price.setPromptText("0.0");
             confirm.setDisable(true);
             /**
              * Checks if Check-out date not set *
@@ -449,6 +450,7 @@ public class Hotel_Resevation extends Scene {
 
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
+            total_price.setPromptText("0.0");
             primaryStage.setScene(new Bill(primaryStage, user));
                     });
 
