@@ -19,7 +19,8 @@ import main_page.Models.User;
  */
 public class Admin_reports_page extends Scene {
 
-    public Admin_reports_page(Stage primaryStage, User user) {
+    public Admin_reports_page(Stage primaryStage) {
+//    public Admin_reports_page(Stage primaryStage, User user) {
 
         super(new VBox(20), 1250, 760);
 
@@ -45,7 +46,8 @@ public class Admin_reports_page extends Scene {
         back.getStyleClass().add("custom-button");
 
         back.setOnAction(e -> {
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+//            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage));
         });
 
         Label lbl_1 = new Label("150\n Users");

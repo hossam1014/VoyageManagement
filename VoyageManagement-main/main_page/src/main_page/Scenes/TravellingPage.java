@@ -23,7 +23,8 @@ public class TravellingPage extends Scene {
 
     private Connection connection;
    
-    public TravellingPage(Stage primaryStage, User user) {
+    public TravellingPage(Stage primaryStage) {
+//    public TravellingPage(Stage primaryStage, User user) {
 
 
         super(new HBox(20), 1250, 760);
@@ -106,7 +107,7 @@ public class TravellingPage extends Scene {
         HBox hBox = (HBox) this.getRoot();
         hBox.getChildren().addAll(navigator, right);
 
-        getComboBoxesValues();
+//        getComboBoxesValues();
 }
 
 // handle two cmboboxs

@@ -102,7 +102,8 @@ public class Bill extends Scene {
         goToMainPage.getStyleClass().add("custom-button");
 
         goToMainPage.setOnAction(x -> {
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+//            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage));
         });
 
         /* get children of the page */

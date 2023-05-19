@@ -35,8 +35,8 @@
 
 #home_page_info{
     -fx-background-size: cover;
-    -fx-background-repeat: stretch;
-    -fx-background-position: center center;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
 
 .label{
@@ -78,7 +78,11 @@
     -fx-background-blur: 30px;
     -fx-background-radius: 30;
 }
-
+.label_admin:hover{
+    /*-fx-background-color: linear-gradient(to bottom, #21798c, #2d9bbb);*/
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.4), 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
 .custom-button {
     -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
 
@@ -88,6 +92,8 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
     -fx-cursor: hand;
 }
+
+/*admin table style*/
 .table-view {
     -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
     -fx-effect: dropshadow(gaussian, rgba(33, 121, 140, 0.3), 10, 0, 0, 0);
@@ -115,4 +121,75 @@
 }
 #admin_background{
     -fx-background-color: linear-gradient(to bottom right, #145277, #83d0cb);
+}
+
+
+/*user report page style*/
+
+
+#user_reports{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-effect: innershadow(gaussian, rgba(255, 255, 255, 0.5), 10, 0.5, 0, 0);
+}
+
+#user_reports .content {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+    -fx-text-fill: red;
+    -fx-background-radius: 20;
+}
+
+/*hoete booking styleing*/ 
+
+.date-picker {
+    -fx-control-inner-background: linear-gradient(to bottom, #1f6d82, #288fad);
+    -fx-background-color: derive(-fx-control-inner-background, 30%);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    -fx-padding: 2px;
+}
+
+.date-picker:hover {
+    -fx-background-color: derive(-fx-control-inner-background, -10%);
+}
+
+.date-picker:disabled {
+    -fx-opacity: 0.6;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: derive(-fx-control-inner-background, 10%);
+    -fx-padding: 10px;
+}
+
+
+.radio-button {
+    -fx-background-color: #1f6d82;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+}
+
+.radio-button:selected {
+    -fx-background-color: #288fad;
+    -fx-text-fill: white;
+}
+
+.radio-button .radio {
+    -fx-background-color: transparent;
+}
+
+.radio-button .radio-mark {
+    -fx-background-color: white;
+}
+
+.radio-button:selected .radio-mark {
+    -fx-background-color: white;
 }

@@ -34,18 +34,17 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
 
     /* End of Global Variable Declerations */
-    
-    public Hotel_Resevation(Stage primaryStage, User user) {
-        
-        super(new StackPane(),1250, 760);
-        StackPane root = (StackPane)this.getRoot();
-        
+    public Hotel_Resevation(Stage primaryStage) {
+//    public Hotel_Resevation(Stage primaryStage, User user) {
+
+        super(new StackPane(), 1250, 760);
+        StackPane root = (StackPane) this.getRoot();
 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-
+        root.setStyle("-fx-background-image: url('images/currency_converter.jpg');");
 
         AnchorPane page = new AnchorPane();
-        page.setStyle("-fx-background-color: white");
+//        page.setStyle("-fx-background-color: white");
 
         root.getChildren().addAll(page);
 
@@ -74,7 +73,7 @@ public class Hotel_Resevation extends Scene {
         }
 
         /**
-         * ********** Hotel Type        *************
+         * ********** Hotel Type *************
          */
         /* Hotel Type Label */
         Label H_type = new Label("Hotel Type");
@@ -96,11 +95,11 @@ public class Hotel_Resevation extends Scene {
         rads[2].setText("3 Star");
         rads[3].setText("Motel");
         /**
-         * ********** End of Hotel Type        *************
+         * ********** End of Hotel Type *************
          */
 
         /**
-         * ********** Hotel Room      ***********
+         * ********** Hotel Room ***********
          */
         Label R_type = new Label("Room Type");
         R_type.setAlignment(Pos.CENTER);
@@ -147,10 +146,10 @@ public class Hotel_Resevation extends Scene {
         rads[9].setText("More");
 
         /**
-         * ********** End of Hotel Room      ***********
+         * ********** End of Hotel Room ***********
          */
         /**
-         * ********** Check-In & Check-out Date       ***********
+         * ********** Check-In & Check-out Date ***********
          */
         Label chk_in = new Label("Check-in Date:");
         Label chk_out = new Label("Check-out Date:");
@@ -182,14 +181,14 @@ public class Hotel_Resevation extends Scene {
         infoDone.setLayoutX(800);
         infoDone.setLayoutY(600);
         infoDone.setFont(font_buttons);
-        infoDone.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
+//        infoDone.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
         infoDone.setTextFill(Color.WHITE);
         /**
-         * ********** End of Check-In & Check-out Date       ***********
+         * ********** End of Check-In & Check-out Date ***********
          */
 
         /**
-         * ********** Booking Confirmation      ************
+         * ********** Booking Confirmation ************
          */
         /* Total Price Label */
         Label booking_price = new Label("Total Price: ");
@@ -203,8 +202,7 @@ public class Hotel_Resevation extends Scene {
         total_price.setAlignment(Pos.CENTER);
         total_price.setLayoutX(560);
         total_price.setLayoutY(600);
-        total_price.setMaxWidth(100);
-        total_price.setMinWidth(100);
+        total_price.setPrefSize(120, 40);
         total_price.setPromptText("0.0");
         total_price.setFont(Font.font("Serif", FontWeight.BOLD, FontPosture.REGULAR, 24));
         total_price.setEditable(false);
@@ -214,15 +212,15 @@ public class Hotel_Resevation extends Scene {
         confirm.setLayoutY(680);
         confirm.setPrefSize(165, 48);
         confirm.setFont(font_buttons);
-        confirm.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
+//        confirm.setStyle("-fx-background-color: linear-gradient(to bottom right, #150a57, #5167bf)");
         confirm.setTextFill(Color.WHITE);
         confirm.setDisable(true);
 
         /**
-         * ********** End of Booking Confirmation      ************
+         * ********** End of Booking Confirmation ************
          */
         /**
-         * ******** page Lines      ********
+         * ******** page Lines ********
          */
         Line line1_horz = new Line(-150, 9, 510, 9);
         line1_horz.setLayoutX(436);
@@ -244,7 +242,7 @@ public class Hotel_Resevation extends Scene {
         line4_horz.setLayoutY(560);
         line4_horz.setStroke(Color.valueOf("#22406b"));
         /**
-         * ******** End of page Lines      ********
+         * ******** End of page Lines ********
          */
 
         /* get Children of page */
@@ -255,8 +253,7 @@ public class Hotel_Resevation extends Scene {
         //////////////////////////////////////////////////
         /**
          * **********************
-         * Back-End * 
-        ***********************
+         * Back-End * **********************
          */
 
         /* Hotel Type Radio Button */
@@ -449,16 +446,15 @@ public class Hotel_Resevation extends Scene {
         infoDone.setOnAction(done_reservation);
 
         /* Confirm Booking & Bill */
-        confirm.setOnAction(e->{
-            total_price.setPromptText("0.0");
-            primaryStage.setScene(new Bill(primaryStage, user));
-                    });
-
-
+//        confirm.setOnAction(e->{
+//            total_price.setPromptText("0.0");
+//            primaryStage.setScene(new Bill(primaryStage, user));
+//                    });
         /* Previous page */
-        prev_page.setOnAction(x ->{
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+        prev_page.setOnAction(x -> {
+//            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage));
         });
-       
+
     }
 }
