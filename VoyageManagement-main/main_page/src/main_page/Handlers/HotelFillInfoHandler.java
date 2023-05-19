@@ -45,14 +45,14 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {  
         try{
             if(null == date_in || null == date_out || null == start_date || null == end_date){
-                total_price.setPromptText("0.0");
+                total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Please, Enter Check Date");
                 errorAlert.showAndWait();
             }
             else if(start_date.compareTo(end_date) >= 0){
-                total_price.setPromptText("0.0");
+                total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Invalid Date");
@@ -62,7 +62,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 date_out.setValue(null);
             }
             else if(ChronoUnit.DAYS.between(start_date, end_date) > 14){
-                total_price.setPromptText("0.0");
+                total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Invalid Date");
@@ -73,10 +73,10 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
             else{
                 information_isFilled = checkInformation(start_date,end_date);
                 if(information_isFilled){
-                    /***
-                    *       Calculate total price 
-                    ***/
-                    total_price.setText("130"+ " $");
+                    int number_of_days = (int)ChronoUnit.DAYS.between(start_date, end_date);
+                    int total_price_value = number_of_days * var_hotel_type + var_room_capacity;
+                    total_price_value += (((double)var_room_price/2) * total_price_value);
+                    total_price.setText(total_price_value+ " $");
                     confirm.setDisable(false);
                 }
             }

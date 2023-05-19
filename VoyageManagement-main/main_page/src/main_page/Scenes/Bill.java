@@ -25,7 +25,7 @@ public class Bill extends Scene {
     
     
     public Bill(Stage primaryStage, User user) {
-        super(new StackPane(),500, 600);
+        super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
@@ -94,16 +94,11 @@ public class Bill extends Scene {
         bill_gridPane.addRow(6, hotelCheckOutDate, hotelCheckOutDate_val);
 
         /* Button to go back to main page */
-//        Button goToMainPage = new Button("Main Page");
-//        
-//        goToMainPage.setOnAction(e->{
-//            primaryStage.setScene(new main_page_demo(primaryStage, user));
         Button goToMainPage = new Button("Back");
         goToMainPage.getStyleClass().add("custom-button");
 
         goToMainPage.setOnAction(x -> {
-//            primaryStage.setScene(new main_page_demo(primaryStage, user));
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
 
         /* get children of the page */
