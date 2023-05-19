@@ -30,7 +30,7 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage, User user) {
+    public Hotel_Resevation(Stage primaryStage/*, User user*/) {
         
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
@@ -148,7 +148,6 @@ public class Hotel_Resevation extends Scene {
         /* Booking Confirmation */
         /* Total Price Label */
         Label booking_price = new Label("Total Price: ");
-        booking_price.setAlignment(Pos.CENTER_RIGHT);
         booking_price.setLayoutX(420);
         booking_price.setLayoutY(600);
         booking_price.setPrefSize(130, 38);
@@ -286,7 +285,7 @@ public class Hotel_Resevation extends Scene {
             if (false == rads[7].isSelected()) {
                 rads[7].setSelected(true);
             } else {
-                var_room_capacity = 5;
+                var_room_capacity = 1;
                 rads[8].setSelected(false);
                 rads[9].setSelected(false);
                 total_price.setText("");
@@ -297,7 +296,7 @@ public class Hotel_Resevation extends Scene {
             if (false == rads[8].isSelected()) {
                 rads[8].setSelected(true);
             } else {
-                var_room_capacity = 15;
+                var_room_capacity = 2;
                 rads[7].setSelected(false);
                 rads[9].setSelected(false);
                 total_price.setText("");
@@ -308,7 +307,7 @@ public class Hotel_Resevation extends Scene {
             if (false == rads[9].isSelected()) {
                 rads[9].setSelected(true);
             } else {
-                var_room_capacity = 31;
+                var_room_capacity = 4;
                 rads[7].setSelected(false);
                 rads[8].setSelected(false);
                 total_price.setText("");
@@ -372,12 +371,12 @@ public class Hotel_Resevation extends Scene {
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
             total_price.setText("");
-            primaryStage.setScene(new Bill(primaryStage, user));
+            primaryStage.setScene(new Bill(primaryStage/*, user*/));
         });
 
         /* Previous page */
         prev_page.setOnAction(x ->{
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage/*, user*/));
         }); 
     }
 }

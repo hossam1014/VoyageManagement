@@ -74,8 +74,9 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 information_isFilled = checkInformation(start_date,end_date);
                 if(information_isFilled){
                     int number_of_days = (int)ChronoUnit.DAYS.between(start_date, end_date);
-                    int total_price_value = number_of_days * var_hotel_type + var_room_capacity;
+                    int total_price_value = number_of_days * var_hotel_type;
                     total_price_value += (((double)var_room_price/2) * total_price_value);
+                    total_price_value += (((double)var_room_capacity/3) * total_price_value);
                     total_price.setText(total_price_value+ " $");
                     confirm.setDisable(false);
                 }

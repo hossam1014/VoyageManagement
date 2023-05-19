@@ -24,7 +24,7 @@ import main_page.Models.User;
 public class Bill extends Scene {
     
     
-    public Bill(Stage primaryStage, User user) {
+    public Bill(Stage primaryStage/*, User user*/) {
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
@@ -42,13 +42,13 @@ public class Bill extends Scene {
         bill_gridPane.setVgap(15);
 
         /* Labels */
-        Label username = new Label("Username:");
-        Label travllingFrom = new Label("Travlling From: ");
-        Label travllingTo = new Label("Travlling To: ");
-        Label tranportaionType = new Label("Tranportaion Type: ");
+        Label username = new Label("Username");
+        Label travllingFrom = new Label("Travlling From");
+        Label travllingTo = new Label("Travlling To");
+        Label tranportaionType = new Label("Tranportaion Type");
         Label tripDate = new Label("Trip Date: ");
-        Label hotelCheckInDate = new Label("Hotel Check-in Date: ");
-        Label hotelCheckOutDate = new Label("Hotel Check-out Date: ");
+        Label hotelCheckInDate = new Label("Hotel Check-in Date");
+        Label hotelCheckOutDate = new Label("Hotel Check-out Date ");
 
         /* Values from DataBase */
         TextField username_val = new TextField();
@@ -98,7 +98,7 @@ public class Bill extends Scene {
         goToMainPage.getStyleClass().add("custom-button");
 
         goToMainPage.setOnAction(x -> {
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage/*, user*/));
         });
 
         /* get children of the page */
