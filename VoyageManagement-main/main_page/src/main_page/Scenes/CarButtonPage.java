@@ -22,26 +22,25 @@ import javafx.stage.Stage;
  *
  * @author hp
  */
-public class CarButtonPage extends Scene {
+public class CarButtonPage extends AnchorPane {
 
-   
+
     
     
-    public    AnchorPane carPage = (AnchorPane) this.getRoot();
+//    public    AnchorPane carPage = (AnchorPane) this.getRoot();
    
-    public CarButtonPage( Stage primaryStage) {
-        super(new AnchorPane(),1050 ,400);
+    public CarButtonPage() {
+//        super(new AnchorPane(),1050 ,400);
         
     
-    }
+//    }
 
-    CarButtonPage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    this.setLayoutX(20);
+    this.setLayoutY(350);
 
     
     
-    public void displayPage() {
+//    public void displayPage() {
         RadioButton rad_b1 = new RadioButton("trip1");
     rad_b1.setPrefSize(120, 38);
     
@@ -132,6 +131,8 @@ public class CarButtonPage extends Scene {
     VBox v1 = new VBox(10);
     v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
     
-    carPage.getChildren().addAll(v1);
+    this.getChildren().addAll(v1);
+    
+//    carPage.getChildren().addAll(v1);
     }
 }

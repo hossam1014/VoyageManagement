@@ -84,11 +84,12 @@
     -fx-cursor: hand;
 }
 .custom-button {
-    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
-
+    /*-fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);*/
+    -fx-background-color: #9e2325;
 }
 .custom-button:hover{
-    -fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);
+    /*-fx-background-color: linear-gradient(to right, #b429f9,#26c5f3);*/
+    -fx-background-color: #9b2b2d;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
     -fx-cursor: hand;
 }

@@ -24,7 +24,7 @@ import main_page.Models.User;
 public class Bill extends Scene {
     
     
-    public Bill(Stage primaryStage/*, User user*/) {
+    public Bill(Stage primaryStage, User user) {
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
@@ -98,7 +98,7 @@ public class Bill extends Scene {
         goToMainPage.getStyleClass().add("custom-button");
 
         goToMainPage.setOnAction(x -> {
-            primaryStage.setScene(new main_page_demo(primaryStage/*, user*/));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
 
         /* get children of the page */

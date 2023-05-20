@@ -30,7 +30,7 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage/*, User user*/) {
+    public Hotel_Resevation(Stage primaryStage, User user) {
         
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
@@ -371,12 +371,12 @@ public class Hotel_Resevation extends Scene {
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
             total_price.setText("");
-            primaryStage.setScene(new Bill(primaryStage/*, user*/));
+            primaryStage.setScene(new Bill(primaryStage, user));
         });
 
         /* Previous page */
         prev_page.setOnAction(x ->{
-            primaryStage.setScene(new main_page_demo(primaryStage/*, user*/));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         }); 
     }
 }

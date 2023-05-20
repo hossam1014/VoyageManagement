@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import main_page.Database;
 import main_page.Models.User;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -47,7 +48,7 @@ public class LoginHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         try {
-            connection = Database.connectDB();
+            connection = SqlLiteDB.connectDB();
             String sql = "SELECT * FROM Users WHERE UserName = ? AND Password = ?";
 
             prepare = connection.prepareStatement(sql);

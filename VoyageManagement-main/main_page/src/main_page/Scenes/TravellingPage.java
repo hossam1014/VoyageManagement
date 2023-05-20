@@ -1,9 +1,6 @@
 package main_page.Scenes;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,12 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import main_page.Models.User;
-import main_page.Database;
 import  main_page.Scenes.CarButtonPage;
-import static main_page.Scenes.CarButtonPage.impl_setAllowPGAccess;
-import main_page.Scenes.BusButtonPage;
-import main_page.Scenes.FlaghtButtonPage;
-import main_page.Scenes.TrainButtonPage;
 
 public class TravellingPage extends Scene {
 
@@ -27,28 +19,24 @@ public class TravellingPage extends Scene {
     private final ComboBox<String> endCityComboBox;
 
     private Connection connection;
-<<<<<<< HEAD
     public static Button btncar = new Button("Car");
     public static Button btnbus = new Button("Bus");
     public static Button btntrain = new Button("Train");
     public static Button btnflaght = new Button("Flaght");
 
-=======
    
->>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
-    public TravellingPage(Stage primaryStage) {
-//    public TravellingPage(Stage primaryStage, User user) {
+//    public TravellingPage(Stage primaryStage) {
+    public TravellingPage(Stage primaryStage, User user) {
 
 
         super(new HBox(20), 1250, 760);
-<<<<<<< HEAD
 
-=======
->>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
         navigator.setId("navigator");
+        
+        
         AnchorPane right = new AnchorPane();
 
         //styling panes
@@ -91,24 +79,22 @@ public class TravellingPage extends Scene {
         btncar.setPrefSize(120, 48);
 
         btncar.setOnAction(event -> {
-            primaryStage.setScene(new CarButtonPage(primaryStage));
+//            primaryStage.setScene(new CarButtonPage(primaryStage));
         });
 
         btntrain.setLayoutX(250);
         btntrain.setLayoutY(300);
         btntrain.setPrefSize(120, 48);
 
-<<<<<<< HEAD
         btnflaght.setLayoutX(390);
         btnflaght.setLayoutY(300);
         btnflaght.setPrefSize(120, 48);
                 this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-=======
+
         Button btnfly = new Button("Flaght");
         btnfly.setLayoutX(390);
         btnfly.setLayoutY(300);
         btnfly.setPrefSize(120, 48);
->>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
 
         //Travelling Reservation Page 
         
@@ -123,58 +109,67 @@ public class TravellingPage extends Scene {
         h1.setPrefSize(604, 48);
         h1.setLayoutX(20);
         h1.setLayoutY(42);
+        
+//        AnchorPane changedPane = new AnchorPane();
+//        changedPane.setLayoutX(20);
+//        changedPane.setLayoutY(400);
+
 
         right.getChildren().addAll(h1, l_in, date_in, btncar, btnbus, btntrain, btnflaght);
+        
+        btncar.setOnAction(x -> {
+            right.getChildren().add(new CarButtonPage());
+        });
+        
+        
         HBox hBox = (HBox) this.getRoot();
         hBox.getChildren().addAll(navigator, right);
 
-<<<<<<< HEAD
-        getComboBoxesValues();
+//        getComboBoxesValues();
         
         // handler for Previous page button
         btnback.setOnAction(e -> {
-            primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
         
         // handler for car button
-        btncar.setOnAction(e -> {
-            CarButtonPage show = new CarButtonPage();
-            show.displayPage();
-        });
+//        btncar.setOnAction(e -> {
+//            CarButtonPage show = new CarButtonPage();
+//            show.displayPage();
+//        });
 }        
               
              
-=======
+
 //        getComboBoxesValues();
 }
 
->>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
-// handle two cmboboxs
-private void getComboBoxesValues() {
-    
-        try {
+//// handle two cmboboxs
+//private void getComboBoxesValues() {
+//    
+//        try {
+//
+//            connection = Database.connectDB();
+//
+//            String sql = "SELECT * FROM Locations";
+//
+//            // Execute the SQL statement
+//            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
+//
+//                // Add the city names to the combo boxes
+//                while (resultSet.next()) {
+//                    String cityName = resultSet.getString("CityName");
+//                    startCityComboBox.getItems().add(cityName);
+//                    endCityComboBox.getItems().add(cityName);
+//                }
+//
+//                Database.close();
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//}
 
-            connection = Database.connectDB();
-
-            String sql = "SELECT * FROM Locations";
-
-            // Execute the SQL statement
-            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
-
-                // Add the city names to the combo boxes
-                while (resultSet.next()) {
-                    String cityName = resultSet.getString("CityName");
-                    startCityComboBox.getItems().add(cityName);
-                    endCityComboBox.getItems().add(cityName);
-                }
-
-                Database.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-}
-}
 
 
 
