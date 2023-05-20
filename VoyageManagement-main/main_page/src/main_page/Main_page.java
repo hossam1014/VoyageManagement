@@ -7,9 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Scenes.Admin_reports_page;
+import main_page.Scenes.Currency_Converter;
+import main_page.Scenes.Hotel_Resevation;
 import main_page.Scenes.LoginPage;
 import main_page.Scenes.SignUpPage;
 import main_page.Scenes.main_page_demo;
+import main_page.Scenes.user_reports_page;
 
 public class Main_page extends Application {
 
@@ -47,12 +51,26 @@ public class Main_page extends Application {
 
         primaryStage.setTitle("main page");
 //        primaryStage.setScene(new main_page_demo(primaryStage));
+//        primaryStage.setScene(scene);
+//        primaryStage.setScene(new Admin_reports_page(primaryStage));
+//        primaryStage.setScene(new user_reports_page(primaryStage));
+//        primaryStage.setScene(new Currency_Converter(primaryStage));
+//        primaryStage.setScene(new Hotel_Resevation(primaryStage));
         primaryStage.setScene(scene);
+
         primaryStage.show();
     }
 
     /**
      * @param args the command line arguments
+     * 
+     * remaining parts
+     * 1 - distance calculator
+     * 2 - styling currency_converter
+     *     hotel booking
+     *     flight booking and its sub pages
+     * 
+     * 
      */
     public static void main(String[] args) {
         launch(args);

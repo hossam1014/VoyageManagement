@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main_page.Handlers.SignUpHandler;
 
 /**
  *
@@ -59,6 +60,10 @@ public class SignUpPage extends Scene {
 
         btn_sign_up.setOnAction(event -> {
             primaryStage.setScene(new LoginPage(primaryStage));
+
+//            SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
+//                    txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
+//            signUpHandler.handle(event);
         });
 
         sign_up_box.add(lblFullName, 0, 0);

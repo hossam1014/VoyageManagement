@@ -45,17 +45,15 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {  
         try{
             if(null == date_in || null == date_out || null == start_date || null == end_date){
-                total_price.setVisible(false);
+                total_price.setText("");
                 confirm.setDisable(true);
-                total_price.setVisible(false);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Please, Enter Check Date");
                 errorAlert.showAndWait();
             }
             else if(start_date.compareTo(end_date) >= 0){
-                total_price.setVisible(false);
+                total_price.setText("");
                 confirm.setDisable(true);
-                total_price.setVisible(false);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Invalid Date");
                 errorAlert.setContentText("Please, Enter a valid Check Date");
@@ -64,9 +62,8 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 date_out.setValue(null);
             }
             else if(ChronoUnit.DAYS.between(start_date, end_date) > 14){
-                total_price.setVisible(false);
+                total_price.setText("");
                 confirm.setDisable(true);
-                total_price.setVisible(false);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Invalid Date");
                 errorAlert.setContentText("Sorry, You Can't book more than 14 days");
@@ -76,10 +73,11 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
             else{
                 information_isFilled = checkInformation(start_date,end_date);
                 if(information_isFilled){
-                    /***
-                    *       Calculate total price 
-                    ***/
-                    total_price.setVisible(true);
+                    int number_of_days = (int)ChronoUnit.DAYS.between(start_date, end_date);
+                    int total_price_value = number_of_days * var_hotel_type;
+                    total_price_value += (((double)var_room_price/2) * total_price_value);
+                    total_price_value += (((double)var_room_capacity/3) * total_price_value);
+                    total_price.setText(total_price_value+ " $");
                     confirm.setDisable(false);
                 }
             }

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import main_page.Database;
+import main_page.Models.User;
 
 /**
  *
@@ -27,7 +28,9 @@ public class LoginHandler implements EventHandler<ActionEvent> {
     private String UserName;
     private String Password;
     
-    private int userId;
+//    private int userId;
+    
+    private User loggedUser;
     
     private boolean isLoggedIn = false;
 
@@ -71,7 +74,13 @@ public class LoginHandler implements EventHandler<ActionEvent> {
 //                    alert.setHeaderText(null);
 //                    alert.setContentText("Login successful!");
                     System.out.println(result.getString("FullName"));
-                    userId = result.getInt("Id");
+//                    userId = result.getInt("Id");
+                    this.loggedUser = new User(result.getInt("Id"),
+                            result.getString("UserName"), result.getString("FullName"),
+                            result.getString("Email"), result.getString("PhoneNumber"),
+                            result.getString("Password"), result.getBoolean("IsAdmin"));
+                    
+                    
                     isLoggedIn = true;
                     
                     
@@ -94,8 +103,8 @@ public class LoginHandler implements EventHandler<ActionEvent> {
         }
     }
     
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return loggedUser;
     }
     
     public boolean isLoggedIn() {

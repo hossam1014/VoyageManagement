@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import main_page.Models.User;
 import main_page.Database;
 import  main_page.Scenes.CarButtonPage;
 import static main_page.Scenes.CarButtonPage.impl_setAllowPGAccess;
@@ -26,14 +27,24 @@ public class TravellingPage extends Scene {
     private final ComboBox<String> endCityComboBox;
 
     private Connection connection;
+<<<<<<< HEAD
     public static Button btncar = new Button("Car");
     public static Button btnbus = new Button("Bus");
     public static Button btntrain = new Button("Train");
     public static Button btnflaght = new Button("Flaght");
 
+=======
+   
+>>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
     public TravellingPage(Stage primaryStage) {
-        super(new HBox(20), 1250, 760);
+//    public TravellingPage(Stage primaryStage, User user) {
 
+
+        super(new HBox(20), 1250, 760);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
@@ -87,10 +98,17 @@ public class TravellingPage extends Scene {
         btntrain.setLayoutY(300);
         btntrain.setPrefSize(120, 48);
 
+<<<<<<< HEAD
         btnflaght.setLayoutX(390);
         btnflaght.setLayoutY(300);
         btnflaght.setPrefSize(120, 48);
                 this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
+=======
+        Button btnfly = new Button("Flaght");
+        btnfly.setLayoutX(390);
+        btnfly.setLayoutY(300);
+        btnfly.setPrefSize(120, 48);
+>>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
 
         //Travelling Reservation Page 
         
@@ -110,6 +128,7 @@ public class TravellingPage extends Scene {
         HBox hBox = (HBox) this.getRoot();
         hBox.getChildren().addAll(navigator, right);
 
+<<<<<<< HEAD
         getComboBoxesValues();
         
         // handler for Previous page button
@@ -125,6 +144,11 @@ public class TravellingPage extends Scene {
 }        
               
              
+=======
+//        getComboBoxesValues();
+}
+
+>>>>>>> 2594c6436f3644c07dfea60404c7967425aaab69
 // handle two cmboboxs
 private void getComboBoxesValues() {
     
