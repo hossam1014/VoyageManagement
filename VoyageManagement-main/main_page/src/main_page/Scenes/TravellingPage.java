@@ -14,6 +14,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import main_page.Database;
+import  main_page.Scenes.CarButtonPage;
+import static main_page.Scenes.CarButtonPage.impl_setAllowPGAccess;
+import main_page.Scenes.BusButtonPage;
+import main_page.Scenes.FlaghtButtonPage;
+import main_page.Scenes.TrainButtonPage;
 
 public class TravellingPage extends Scene {
 
@@ -21,10 +26,14 @@ public class TravellingPage extends Scene {
     private final ComboBox<String> endCityComboBox;
 
     private Connection connection;
+    public static Button btncar = new Button("Car");
+    public static Button btnbus = new Button("Bus");
+    public static Button btntrain = new Button("Train");
+    public static Button btnflaght = new Button("Flaght");
 
     public TravellingPage(Stage primaryStage) {
         super(new HBox(20), 1250, 760);
-<<<<<<< HEAD
+
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
@@ -66,7 +75,6 @@ public class TravellingPage extends Scene {
         date_in.setPrefSize(203, 38);
         date_in.setPromptText("DD-MM-YYYY");
 
-        Button btncar = new Button("Car");
         btncar.setLayoutX(110);
         btncar.setLayoutY(300);
         btncar.setPrefSize(120, 48);
@@ -75,22 +83,17 @@ public class TravellingPage extends Scene {
             primaryStage.setScene(new CarButtonPage(primaryStage));
         });
 
-        Button btntrain = new Button("Train");
         btntrain.setLayoutX(250);
         btntrain.setLayoutY(300);
         btntrain.setPrefSize(120, 48);
 
-        Button btnfly = new Button("Flaght");
-        btnfly.setLayoutX(390);
-        btnfly.setLayoutY(300);
-        btnfly.setPrefSize(120, 48);
-=======
+        btnflaght.setLayoutX(390);
+        btnflaght.setLayoutY(300);
+        btnflaght.setPrefSize(120, 48);
                 this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         //Travelling Reservation Page 
->>>>>>> d07c005a6090082f588e1efd76ccdf45d1154dfd
         
-            Button btnbus = new Button("Bus");
         btnbus.setLayoutX(530);
         btnbus.setLayoutY(300);
         btnbus.setPrefSize(120, 48);
@@ -103,13 +106,25 @@ public class TravellingPage extends Scene {
         h1.setLayoutX(20);
         h1.setLayoutY(42);
 
-        right.getChildren().addAll(h1, l_in, date_in, btncar, btnbus, btntrain, btnfly);
+        right.getChildren().addAll(h1, l_in, date_in, btncar, btnbus, btntrain, btnflaght);
         HBox hBox = (HBox) this.getRoot();
         hBox.getChildren().addAll(navigator, right);
 
         getComboBoxesValues();
-}
-
+        
+        // handler for Previous page button
+        btnback.setOnAction(e -> {
+            primaryStage.setScene(new main_page_demo(primaryStage));
+        });
+        
+        // handler for car button
+        btncar.setOnAction(e -> {
+            CarButtonPage show = new CarButtonPage();
+            show.displayPage();
+        });
+}        
+              
+             
 // handle two cmboboxs
 private void getComboBoxesValues() {
     

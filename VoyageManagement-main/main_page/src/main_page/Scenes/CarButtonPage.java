@@ -7,6 +7,7 @@ package main_page.Scenes;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,11 +23,26 @@ import javafx.stage.Stage;
  * @author hp
  */
 public class CarButtonPage extends Scene {
+
+   
     
+    
+    public    AnchorPane carPage = (AnchorPane) this.getRoot();
+   
     public CarButtonPage( Stage primaryStage) {
         super(new AnchorPane(),1050 ,400);
         
-    RadioButton rad_b1 = new RadioButton("trip1");
+    
+    }
+
+    CarButtonPage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
+    public void displayPage() {
+        RadioButton rad_b1 = new RadioButton("trip1");
     rad_b1.setPrefSize(120, 38);
     
     Label lblprice1 = new Label("price");
@@ -116,9 +132,6 @@ public class CarButtonPage extends Scene {
     VBox v1 = new VBox(10);
     v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
     
-    AnchorPane carPage = (AnchorPane) this.getRoot();
     carPage.getChildren().addAll(v1);
     }
-    
-    
 }
