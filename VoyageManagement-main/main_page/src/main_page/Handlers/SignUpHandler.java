@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import main_page.Database;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -40,7 +41,7 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         try {
-            connection = Database.connectDB();
+            connection = SqlLiteDB.connectDB();
             String sql = "INSERT INTO Users (FullName, Email, PhoneNumber, UserName, Password, IsAdmin) VALUES (?, ?, ?, ?, ?, 0)";
 
             prepare = connection.prepareStatement(sql);

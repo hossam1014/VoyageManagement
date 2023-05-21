@@ -59,11 +59,11 @@ public class SignUpPage extends Scene {
         btn_sign_up.setPrefSize(120, 40);
 
         btn_sign_up.setOnAction(event -> {
-            primaryStage.setScene(new LoginPage(primaryStage));
+           // primaryStage.setScene(new LoginPage(primaryStage));
 
-//            SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
-//                    txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
-//            signUpHandler.handle(event);
+           SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
+                    txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
+            signUpHandler.handle(event);
         });
 
         sign_up_box.add(lblFullName, 0, 0);
