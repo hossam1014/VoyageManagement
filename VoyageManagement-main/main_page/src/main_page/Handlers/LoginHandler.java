@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import main_page.Database;
 import main_page.Models.User;
 import main_page.SqlLiteDB;
 
@@ -87,7 +86,7 @@ public class LoginHandler implements EventHandler<ActionEvent> {
                     
 
 //                    alert.showAndWait();
-                    Database.close();
+                    SqlLiteDB.closeConnection(connection);
                 } else {
                     // User does not exist in database, show error message
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -95,7 +94,7 @@ public class LoginHandler implements EventHandler<ActionEvent> {
                     alert.setHeaderText(null);
                     alert.setContentText("Invalid username or password");
                     alert.showAndWait();
-                    Database.close();
+                    SqlLiteDB.closeConnection(connection);
                 }
             }
 

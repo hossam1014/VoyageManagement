@@ -28,4 +28,16 @@ public class SqlLiteDB {
         
         return DriverManager.getConnection(DATABASE_URL);
     }
+    
+    
+    public static void closeConnection(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.close();
+                System.out.println("Database connection closed.");
+            } catch (SQLException e) {
+                System.out.println("Failed to close database connection: " + e.getMessage());
+            }
+        }
+    }
 }

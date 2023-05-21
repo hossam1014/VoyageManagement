@@ -121,6 +121,12 @@ public class TravellingPage extends Scene {
             right.getChildren().add(new CarButtonPage());
         });
         
+        btnbus.setOnAction(x -> {
+            right.getChildren().remove(new CarButtonPage());
+            right.getChildren().add(new BusButtonPage());
+
+        });
+        
         
         HBox hBox = (HBox) this.getRoot();
         hBox.getChildren().addAll(navigator, right);

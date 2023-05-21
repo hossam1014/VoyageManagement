@@ -12,9 +12,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main_page.Database;
+//import main_page.Database;
 import main_page.Helpers.ReportsHelper;
 import main_page.Models.User;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -118,7 +119,7 @@ public class Admin_reports_page extends Scene {
         
         root.getChildren().addAll(lables_box, table, button_box);
         
-        Database.close();
+//        SqlLiteDB.closeConnection();
 
 
         primaryStage.setTitle("Admin Reports");

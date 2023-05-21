@@ -13,8 +13,8 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import main_page.Database;
 import main_page.Models.Reservation;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -41,7 +41,7 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         try {
-            connection = Database.connectDB();
+//            connection = Database.connectDB();
             
             System.out.println(UserId);
 
@@ -69,7 +69,7 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
             
 //            System.out.println(reservations);
 
-            Database.close();
+//            SqlLiteDB.close();
             
 
         } catch (SQLException e) {

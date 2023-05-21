@@ -15,7 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main_page.Database;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -30,7 +30,7 @@ public class GetUsersHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         try {
-            connection = Database.connectDB();
+            connection = SqlLiteDB.connectDB();
             String sql = "SELECT * FROM Users";
 
             prepare = connection.prepareStatement(sql);
@@ -61,7 +61,7 @@ public class GetUsersHandler implements EventHandler<ActionEvent> {
                 alert.showAndWait();
             }
 
-            Database.close();
+            SqlLiteDB.closeConnection(connection);
 
         } catch (SQLException e) {
             e.printStackTrace();

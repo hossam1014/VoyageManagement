@@ -22,12 +22,15 @@ import javafx.stage.Stage;
  *
  * @author hp
  */
-public class BusButtonPage extends Scene {
+public class BusButtonPage extends AnchorPane {
     
-    public BusButtonPage(Stage primaryStage) {
-        super(new AnchorPane(),1050 ,400);
+    public BusButtonPage() {
         
-    RadioButton rad_b1 = new RadioButton("trip1");
+        
+    this.setLayoutX(20);
+    this.setLayoutY(350);
+        
+    RadioButton rad_b1 = new RadioButton("hhhhhhh");
     rad_b1.setPrefSize(120, 38);
     
     Label lblprice1 = new Label("price");
@@ -117,8 +120,10 @@ public class BusButtonPage extends Scene {
     VBox v1 = new VBox(10);
     v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
     
-    AnchorPane busPage = (AnchorPane) this.getRoot();
-    busPage.getChildren().addAll(v1);
+//    AnchorPane busPage = (AnchorPane) this.getRoot();
+//    busPage.getChildren().addAll(v1);
+    this.getChildren().addAll(v1);
+
     }
     
     

@@ -21,9 +21,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.stage.Stage;
-import main_page.Database;
 //import main_page.Handlers.CalcDistanceHandler;
 import main_page.Models.Location;
+import main_page.SqlLiteDB;
 
 /**
  *
@@ -85,7 +85,7 @@ public class DistanceCalculatorPage extends Scene {
 
         try {
 
-            connection = Database.connectDB();
+            connection = SqlLiteDB.connectDB();
 
             String sql = "SELECT * FROM Locations";
 
@@ -99,7 +99,7 @@ public class DistanceCalculatorPage extends Scene {
                     endCityComboBox.getItems().add(cityName);
                 }
 
-                Database.close();
+                SqlLiteDB.closeConnection(connection);
             }
         } catch (SQLException e) {
             e.printStackTrace();
