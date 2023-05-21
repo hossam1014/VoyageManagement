@@ -139,16 +139,16 @@ public class TravellingPage extends Scene {
         btntrain.setOnAction(x -> {
             right.getChildren().remove(new CarButtonPage());
             right.getChildren().remove(new BusButtonPage());
-            right.getChildren().remove(new TrainButtonPage());
-            right.getChildren().add(new FlaghtButtonPage());
+            right.getChildren().remove(new FlaghtButtonPage());
+            right.getChildren().add(new TrainButtonPage());
         });
         
         // handler for train button
         btnflaght.setOnAction(x -> {
             right.getChildren().remove(new CarButtonPage());
-            right.getChildren().remove(new FlaghtButtonPage());
+            right.getChildren().remove(new TrainButtonPage());
             right.getChildren().remove(new BusButtonPage());
-            right.getChildren().add(new TrainButtonPage());
+            right.getChildren().add(new FlaghtButtonPage());
         });
         
         // handler for Previous page button

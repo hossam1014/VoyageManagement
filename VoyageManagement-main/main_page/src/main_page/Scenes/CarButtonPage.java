@@ -141,6 +141,7 @@ public class CarButtonPage extends AnchorPane {
     
         Button btnconferm =new Button("confirm");
         btnconferm.setPrefSize(100, 48);
+        btnconferm.setDisable(true);
         
         //vbox to add controll on it
         VBox v1 = new VBox(10);
@@ -148,5 +149,49 @@ public class CarButtonPage extends AnchorPane {
         
         // add vbox on anchropane
         this.getChildren().addAll(v1);
+        
+        /*///
+                Back End
+                           ///*/
+        //handler for rad button1
+        rad_b1.setOnAction(e ->{
+            if(rad_b1.isSelected()){
+            rad_b2.setDisable(true);
+            rad_b3.setDisable(true);
+            btnconferm.setDisable(false);
+            }
+            else{
+                rad_b2.setDisable(false);
+                rad_b3.setDisable(false);
+                btnconferm.setDisable(true);
+            }
+        });
+        //handler for rad button2
+        rad_b2.setOnAction(e ->{
+            if(rad_b2.isSelected()){
+            rad_b1.setDisable(true);
+            rad_b3.setDisable(true);
+            btnconferm.setDisable(false);
+            }
+            else{
+                rad_b1.setDisable(false);
+                rad_b3.setDisable(false);
+                btnconferm.setDisable(true);
+            }
+        });
+        //handler for rad button3
+        rad_b3.setOnAction(e ->{
+            if(rad_b3.isSelected()){
+            rad_b2.setDisable(true);
+            rad_b1.setDisable(true);
+            btnconferm.setDisable(false);
+            }
+            else{
+                rad_b2.setDisable(false);
+                rad_b1.setDisable(false);
+                btnconferm.setDisable(true);
+            }
+        });
+        
     }
 }
