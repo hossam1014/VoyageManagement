@@ -117,38 +117,43 @@ public class TravellingPage extends Scene {
         
         /*//////  
                    Back End
-                              //////*/        
+                              //////*/
+        
+        CarButtonPage carPage = new CarButtonPage();
+        FlaghtButtonPage flightPage = new FlaghtButtonPage();
+        TrainButtonPage trainPage = new TrainButtonPage();
+        BusButtonPage busPage = new BusButtonPage();
         
         // handler for car button
         btncar.setOnAction(x -> {
-            right.getChildren().remove(new BusButtonPage());
-            right.getChildren().remove(new FlaghtButtonPage());
-            right.getChildren().remove(new TrainButtonPage());
-            right.getChildren().add(new CarButtonPage());
+            right.getChildren().remove(busPage);
+            right.getChildren().remove(flightPage);
+            right.getChildren().remove(trainPage);
+            right.getChildren().add(carPage);
         });
         
         // handler for bus button
         btnbus.setOnAction(x -> {
-            right.getChildren().remove(new CarButtonPage());
-            right.getChildren().remove(new FlaghtButtonPage());
-            right.getChildren().remove(new TrainButtonPage());
-            right.getChildren().add(new BusButtonPage());
+            right.getChildren().add(busPage);
+            right.getChildren().remove(flightPage);
+            right.getChildren().remove(trainPage);
+            right.getChildren().remove(carPage);
         });
         
         // handler for flaght button
         btntrain.setOnAction(x -> {
-            right.getChildren().remove(new CarButtonPage());
-            right.getChildren().remove(new BusButtonPage());
-            right.getChildren().remove(new FlaghtButtonPage());
-            right.getChildren().add(new TrainButtonPage());
+            right.getChildren().remove(busPage);
+            right.getChildren().remove(flightPage);
+            right.getChildren().add(trainPage);
+            right.getChildren().remove(carPage);
         });
         
         // handler for train button
         btnflaght.setOnAction(x -> {
-            right.getChildren().remove(new CarButtonPage());
-            right.getChildren().remove(new TrainButtonPage());
-            right.getChildren().remove(new BusButtonPage());
-            right.getChildren().add(new FlaghtButtonPage());
+            right.getChildren().remove(busPage);
+            right.getChildren().add(flightPage);
+            right.getChildren().remove(trainPage);
+            right.getChildren().remove(carPage);
         });
         
         // handler for Previous page button
