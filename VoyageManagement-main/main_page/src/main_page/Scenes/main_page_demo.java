@@ -34,7 +34,7 @@ public class main_page_demo extends Scene {
     private TableView<Reservation> table;
     private User loggedUser;
 
-//    public main_page_demo(Stage primaryStage) {
+
     public main_page_demo(Stage primaryStage, User user) {
         super(new VBox(), 1250, 760);
 
@@ -42,6 +42,7 @@ public class main_page_demo extends Scene {
         
         int userId = user.getId();
         
+
         VBox vBox = (VBox) this.getRoot();
         vBox.setAlignment(Pos.CENTER);
         vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
@@ -94,28 +95,29 @@ public class main_page_demo extends Scene {
         Button btn_user_report = new Button("User Reports");
 
         btn_report.setOnAction(e -> {
-//            primaryStage.setScene(new Admin_reports_page(primaryStage));
+
             primaryStage.setScene(new Admin_reports_page(primaryStage, loggedUser));
         });
 
         btn_travel.setOnAction(e -> {
-//            primaryStage.setScene(new TravellingPage(primaryStage));
+
             primaryStage.setScene(new TravellingPage(primaryStage, loggedUser));
         });
 
         btn_hotel.setOnAction(e -> {
-//            primaryStage.setScene(new Hotel_Resevation(primaryStage));
+
             primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
         });
 
         btn_tools.setOnAction(e -> {
-//            primaryStage.setScene(new Currency_Converter(primaryStage));
-            primaryStage.setScene(new Currency_Converter(primaryStage, loggedUser));
+
+           primaryStage.setScene(new Currency_Converter(primaryStage, loggedUser));
         });
 
         btn_user_report.setOnAction(e -> {
-//            primaryStage.setScene(new user_reports_page(primaryStage));
-            primaryStage.setScene(new user_reports_page(primaryStage, loggedUser));
+
+ //           primaryStage.setScene(new user_reports_page(primaryStage));
+              primaryStage.setScene(new user_reports_page(primaryStage, loggedUser));
         });
 
 //        btn_hotel.setOnAction(e->{
@@ -129,6 +131,7 @@ public class main_page_demo extends Scene {
 
         // there will be some database code here so dont forget hosam  -----------------------------------------------------------------------------------------
 //        Label user_name = new Label("Adel shakal");
+
         Label user_name = new Label(this.loggedUser.getFullName());
         user_name.setId("user_name_nav");
         user_name.getStyleClass().add("user_name_nav");
@@ -168,6 +171,7 @@ public class main_page_demo extends Scene {
 //        TextField txt_number = new TextField();
         TextField txt_number = new TextField(loggedUser.getPhoneNumber());
 //        TextField txt_age = new TextField(loggedUser.ge);
+
 
         txt_user_name.setPrefWidth(400);
         txt_user_name.setEditable(false);

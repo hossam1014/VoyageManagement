@@ -377,6 +377,7 @@ public class Hotel_Resevation extends Scene {
         /* Previous page */
         prev_page.setOnAction(x ->{
             primaryStage.setScene(new main_page_demo(primaryStage, user));
+           // primaryStage.setScene(new main_page_demo(primaryStage));
         }); 
     }
 }

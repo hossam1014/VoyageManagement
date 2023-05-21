@@ -45,7 +45,7 @@ public class user_reports_page extends Scene{
         
         btn_back.setOnAction(e->{
         primaryStage.setScene(new main_page_demo(primaryStage, user));
-//        primaryStage.setScene(new main_page_demo(primaryStage));
+//       primaryStage.setScene(new main_page_demo(primaryStage));
         });
         
         btn_box.getChildren().addAll(btn_supmit, btn_back);

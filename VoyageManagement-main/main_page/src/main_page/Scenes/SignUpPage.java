@@ -65,7 +65,7 @@ public class SignUpPage extends Scene {
             signUpHandler.handle(event);
             primaryStage.setScene(new LoginPage(primaryStage));
 
-            
+
         });
 
         sign_up_box.add(lblFullName, 0, 0);

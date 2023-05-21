@@ -95,8 +95,8 @@ public class Currency_Converter extends Scene {
         main_page.getStyleClass().add("custom-button");
         main_page.setPrefSize(100, 40);
         main_page.setOnAction(e -> {
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
-//            primaryStage.setScene(new main_page_demo(primaryStage));
+        primaryStage.setScene(new main_page_demo(primaryStage, user));
+         //   primaryStage.setScene(new main_page_demo(primaryStage));
         });
 
         /* Get Children of the page */
