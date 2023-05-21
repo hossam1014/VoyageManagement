@@ -51,9 +51,6 @@ public class BusButtonPage extends AnchorPane {
         lblgotime.setAlignment(Pos.CENTER);
         lblgotime.setPrefSize(150, 75);
         
-    this.setLayoutX(20);
-    this.setLayoutY(350);
-        
         //label for showing time
         Label lbltime = new Label("hh:mm:ss");
         lbltime.setAlignment(Pos.CENTER);
@@ -136,77 +133,13 @@ public class BusButtonPage extends AnchorPane {
         Line l3 =new Line();
         l3.setEndX(1050);
     
-//    Label lblprice2 = new Label("price");
-//    lblprice2.setAlignment(Pos.CENTER);
-//    lblprice2.setPrefSize(150, 75);
-//    
-//    //label for show price
-//    int p2 = 0;
-//    Label lblprice2_2 = new Label(p2+"$");
-//    lblprice2_2.setAlignment(Pos.CENTER);
-//    lblprice2_2.setPrefSize(150, 75);
-//    
-//    Label lblgotime2 = new Label("Time go");
-//    lblgotime2.setAlignment(Pos.CENTER);
-//    lblgotime2.setPrefSize(150, 75);
-//    
-//    Label lbltime2 = new Label("hh:mm:ss");
-//    lbltime2.setAlignment(Pos.CENTER);
-//    lbltime2.setPrefSize(150, 75);
-//    
-//    HBox h2 = new HBox(20);
-//    h2.setPadding(new Insets(20));
-//    h2.getChildren().addAll(rad_b2,lblprice2, lblprice2_2, lblgotime2, lbltime2);
-//    
-//    Line l2 =new Line();
-//    l2.setEndX(1050);
-//    
-//    RadioButton rad_b3 = new RadioButton("trip1");
-//    rad_b3.setPrefSize(120, 38);
-//    
-//    Label lblprice3 = new Label("price");
-//    lblprice3.setAlignment(Pos.CENTER);
-//    lblprice3.setPrefSize(150, 75);
-//    
-//    //label for show price
-//    int p3 = 0;
-//    Label lblprice3_2 = new Label(p3+"$");
-//    lblprice3_2.setAlignment(Pos.CENTER);
-//    lblprice3_2.setPrefSize(150, 75);
-//    
-//    Label lblgotime3 = new Label("Time go");
-//    lblgotime3.setAlignment(Pos.CENTER);
-//    lblgotime3.setPrefSize(150, 75);
-//    
-//    Label lbltime3 = new Label("hh:mm:ss");
-//    lbltime3.setAlignment(Pos.CENTER);
-//    lbltime3.setPrefSize(150, 75);
-//    
-//    HBox h3 = new HBox(20);
-//    h3.setPadding(new Insets(20));
-//    h3.getChildren().addAll(rad_b3,lblprice3, lblprice3_2, lblgotime3, lbltime3);
-//    
-//    Line l3 =new Line();
-//    l3.setEndX(1050);
-    
-    Button btnconferm =new Button("confirm");
-    btnconferm.setPrefSize(100, 48);
-    
-    VBox v1 = new VBox(10);
-    v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
-    
-//    AnchorPane busPage = (AnchorPane) this.getRoot();
-//    busPage.getChildren().addAll(v1);
-    this.getChildren().addAll(v1);
-
-
-//        Button btnconferm =new Button("confirm");
-//        btnconferm.setPrefSize(100, 48);
-//        btnconferm.setDisable(true);
+        Button btnconferm =new Button("confirm");
+        btnconferm.setPrefSize(100, 48);
+        btnconferm.setDisable(true);
         
         //vbox to add controll on it
-//        VBox v1 = new VBox(10);
-//        v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
+        VBox v1 = new VBox(10);
+        v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
         
         // add vbox on anchropane
         this.getChildren().addAll(v1);

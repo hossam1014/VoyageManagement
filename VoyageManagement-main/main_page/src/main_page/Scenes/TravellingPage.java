@@ -109,16 +109,6 @@ public class TravellingPage extends Scene {
         //add button back to navigator
         navigator.getChildren().add(btnback);
         
-        btncar.setOnAction(x -> {
-            right.getChildren().add(new CarButtonPage());
-        });
-        
-        btnbus.setOnAction(x -> {
-            right.getChildren().remove(new CarButtonPage());
-            right.getChildren().add(new BusButtonPage());
-
-        });
-        
         //add controller to right page
         right.getChildren().addAll(h1, date, date_in, h2);
         
