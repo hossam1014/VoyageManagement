@@ -31,7 +31,7 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage, User user, Reservation reservation) {
+    public Hotel_Resevation(Stage primaryStage, User user) {
         
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();

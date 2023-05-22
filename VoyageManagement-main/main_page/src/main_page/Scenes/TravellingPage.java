@@ -83,13 +83,13 @@ public class TravellingPage extends Scene {
         //label for write on it "distance"
         Label lbldis = new Label("Distance");
         lbldis.setLayoutX(410);
-        lbldis.setLayoutY(100);
+        lbldis.setLayoutY(130);
         lbldis.setPrefSize(80, 30);
         
         //label for show distance
         Label lbldist = new Label("plplpl");
         lbldist.setLayoutX(510);
-        lbldist.setLayoutY(100);
+        lbldist.setLayoutY(130);
         lbldist.setPrefSize(80, 30);
         
         //line herziontal with car , bus , train , flaght buttons
@@ -195,6 +195,11 @@ public class TravellingPage extends Scene {
         
         // handler for  back button
         btnback.setOnAction(e -> {
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
+        });
+        
+        //handle for btn next
+        btnnext.setOnAction(e ->{
             primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
      
