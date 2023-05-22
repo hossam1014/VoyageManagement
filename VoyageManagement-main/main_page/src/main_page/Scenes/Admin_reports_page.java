@@ -50,7 +50,7 @@ public class Admin_reports_page extends Scene {
         back.getStyleClass().add("custom-button");
 
         back.setOnAction(e -> {
-           // primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
 //          primaryStage.setScene(new main_page_demo(primaryStage));
         });
         

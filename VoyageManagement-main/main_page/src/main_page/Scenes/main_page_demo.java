@@ -47,8 +47,10 @@ public class main_page_demo extends Scene {
         vBox.setAlignment(Pos.CENTER);
         vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
-        vBox.setStyle("-fx-background-image: url('images/home_page_demo_background.jpg');");
+//        vBox.setStyle("-fx-background-image: url('images/home_page_demo_background.jpg');");
+        vBox.setStyle("-fx-background-color: #5f658b;");
 
+        
         HBox main_page = new HBox(20);
 
         VBox info = new VBox(20);
@@ -84,7 +86,7 @@ public class main_page_demo extends Scene {
         // navigator part of code //
         // adding the photo of the user, dont forget to change adel shakal's photo :)
         Circle img_circle = new Circle(75);
-        Image user_photo = new Image("images/user_photo.jpg", 300, 300, false, true);
+        Image user_photo = new Image("images/user.png", 300, 300, false, true);
         img_circle.setFill(new ImagePattern(user_photo));
 
         // there will be some action handling here amir
@@ -231,25 +233,39 @@ public class main_page_demo extends Scene {
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        TableColumn<Reservation, String> reservationIdCol = new TableColumn<>("Reservation ID");
+        TableColumn<Reservation, String> reservationIdCol = new TableColumn<>("ID");
         reservationIdCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
 
-        TableColumn<Reservation, String> reservationDateCol = new TableColumn<>("Reservation Date");
-        reservationDateCol.setCellValueFactory(new PropertyValueFactory<>("ReserveDate"));
+        TableColumn<Reservation, String> reservationFrom = new TableColumn<>("From");
+        reservationFrom.setCellValueFactory(new PropertyValueFactory<>("From"));
+        
+        TableColumn<Reservation, String> reservationTo = new TableColumn<>("To");
+        reservationTo.setCellValueFactory(new PropertyValueFactory<>("To"));
 
-        TableColumn<Reservation, String> customerNameCol = new TableColumn<>("Package Name");
-        customerNameCol.setCellValueFactory(new PropertyValueFactory<>("PackageName"));
+        TableColumn<Reservation, String> leavingCol = new TableColumn<>("Leaving");
+        leavingCol.setCellValueFactory(new PropertyValueFactory<>("LeavingDate"));
+        
+        TableColumn<Reservation, String> arriveCol = new TableColumn<>("Arrive");
+        arriveCol.setCellValueFactory(new PropertyValueFactory<>("ArrivalDate"));
+        
+        TableColumn<Reservation, String> tranportCol = new TableColumn<>("Trans");
+        tranportCol.setCellValueFactory(new PropertyValueFactory<>("TravelType"));
 
-        TableColumn<Reservation, String> roomNumberCol = new TableColumn<>("Travel Ticket Name");
-        roomNumberCol.setCellValueFactory(new PropertyValueFactory<>("TravelTicketName"));
+        TableColumn<Reservation, String> TripNameCol = new TableColumn<>("Trip");
+        TripNameCol.setCellValueFactory(new PropertyValueFactory<>("TripName"));
 
-        TableColumn<Reservation, String> checkInDateCol = new TableColumn<>("Hotel Name");
-        checkInDateCol.setCellValueFactory(new PropertyValueFactory<>("HotelName"));
+        TableColumn<Reservation, String> hotelNameCol = new TableColumn<>("Hotel");
+        hotelNameCol.setCellValueFactory(new PropertyValueFactory<>("HotelName"));
 
+        TableColumn<Reservation, String> hotelDurationCol = new TableColumn<>("Duration");
+        hotelDurationCol.setCellValueFactory(new PropertyValueFactory<>("HotelDuration"));
+        
+       
         TableColumn<Reservation, String> checkOutDateCol = new TableColumn<>("Total");
-        checkOutDateCol.setCellValueFactory(new PropertyValueFactory<>("Total"));
+        checkOutDateCol.setCellValueFactory(new PropertyValueFactory<>("TotalPrice"));
 
-        table.getColumns().addAll(reservationIdCol, reservationDateCol, customerNameCol, roomNumberCol, checkInDateCol, checkOutDateCol);
+        table.getColumns().addAll(reservationIdCol, reservationFrom, reservationTo, leavingCol, arriveCol,
+                tranportCol, TripNameCol, hotelNameCol, hotelDurationCol);
         table.setItems(FXCollections.observableArrayList(ReportsHelper.getMyReservations(user.getId())));
         table.getStyleClass().add("rounded-table");
         

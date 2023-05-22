@@ -56,10 +56,12 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
 //            System.out.println(result);
 
             while (result.next()) {
-                Reservation reservation = new Reservation(result.getInt("Id"),
-                    result.getString("PackageName"), result.getString("TravelTicketName"),
-                    result.getString("HotelName"), result.getDouble("Total"),
-                    result.getDate("ReserveDate"), result.getInt("UserId"));
+                    Reservation reservation = new Reservation(result.getInt("Id"),
+                            result.getString("From"), result.getString("To"),
+                            result.getString("LeavingDate"), result.getString("ArrivalDate"),
+                            result.getString("TravelType"), result.getString("TripName"),
+                            result.getString("HotelName"), result.getInt("HotelDuration"),
+                            result.getDouble("TotalPrice"), result.getInt("UserId"));
                 
 //                nothing appear here in console ERRORR
                 System.out.println(reservation);
@@ -78,7 +80,7 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
     }
     
     public List<Reservation> getMyReservations() {
-        System.out.println(this.reservations);
+//        System.out.println(this.reservations);
 
         return this.reservations;
     }

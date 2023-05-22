@@ -15,46 +15,74 @@ public class Reservation {
 
 
     private int Id;
-    private String PackageName;
-    private String TravelTicketName;
+    private String From;
+    private String To;
+    private String LeavingDate;
+    private String ArrivalDate;
+    
+    private String TravelType;
+    private String TripName;
+    
     private String HotelName;
-    private double Total;
-    private Date ReserveDate;
+    private int HotelDuration;
+
+
+
+    private double TotalPrice;
     private int UserId;
 
-    public Reservation(int Id, String PackageName, String TravelTicketName, String HotelName, double Total, Date ReserveDate, int UserId) {
+    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
         this.Id = Id;
-        this.PackageName = PackageName;
-        this.TravelTicketName = TravelTicketName;
+        this.From = From;
+        this.To = To;
+        this.LeavingDate = LeavingDate;
+        this.ArrivalDate = ArrivalDate;
+        this.TravelType = TravelType;
+        this.TripName = TripName;
         this.HotelName = HotelName;
-        this.Total = Total;
-        this.ReserveDate = ReserveDate;
+        this.HotelDuration = HotelDuration;
+        this.TotalPrice = TotalPrice;
         this.UserId = UserId;
     }
-    
-    
+
     public int getId() {
         return Id;
     }
 
-    public String getPackageName() {
-        return PackageName;
+    public String getFrom() {
+        return From;
     }
 
-    public String getTravelTicketName() {
-        return TravelTicketName;
+    public String getTo() {
+        return To;
+    }
+
+    public String getLeavingDate() {
+        return LeavingDate;
+    }
+
+    public String getArrivalDate() {
+        return ArrivalDate;
+    }
+
+    public String getTravelType() {
+        return TravelType;
+    }
+
+    public String getTripName() {
+        return TripName;
     }
 
     public String getHotelName() {
         return HotelName;
     }
 
-    public double getTotal() {
-        return Total;
+    public int getHotelDuration() {
+        return HotelDuration;
     }
 
-    public Date getReserveDate() {
-        return ReserveDate;
+    public double getTotalPrice() {
+        return TotalPrice;
     }
 
     public int getUserId() {
@@ -65,29 +93,48 @@ public class Reservation {
         this.Id = Id;
     }
 
-    public void setPackageName(String PackageName) {
-        this.PackageName = PackageName;
+    public void setFrom(String From) {
+        this.From = From;
     }
 
-    public void setTravelTicketName(String TravelTicketName) {
-        this.TravelTicketName = TravelTicketName;
+    public void setTo(String To) {
+        this.To = To;
+    }
+
+    public void setLeavingDate(String LeavingDate) {
+        this.LeavingDate = LeavingDate;
+    }
+
+    public void setArrivalDate(String ArrivalDate) {
+        this.ArrivalDate = ArrivalDate;
+    }
+
+    public void setTravelType(String TravelType) {
+        this.TravelType = TravelType;
+    }
+
+    public void setTripName(String TripName) {
+        this.TripName = TripName;
     }
 
     public void setHotelName(String HotelName) {
         this.HotelName = HotelName;
     }
 
-    public void setTotal(double Total) {
-        this.Total = Total;
+    public void setHotelDuration(int HotelDuration) {
+        this.HotelDuration = HotelDuration;
     }
 
-    public void setReserveDate(Date ReserveDate) {
-        this.ReserveDate = ReserveDate;
+    public void setTotalPrice(double TotalPrice) {
+        this.TotalPrice = TotalPrice;
     }
 
     public void setUserId(int UserId) {
         this.UserId = UserId;
     }
+
+    
+    
     
     
 

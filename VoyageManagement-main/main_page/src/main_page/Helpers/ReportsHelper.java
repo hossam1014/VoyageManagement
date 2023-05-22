@@ -50,7 +50,7 @@ public class ReportsHelper {
     }
 
     public double getTotalProfit() {
-        String query = "SELECT SUM(Total) FROM Reservations";
+        String query = "SELECT SUM(TotalPrice) FROM Reservations";
         try (Connection conn = SqlLiteDB.connectDB();
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
@@ -108,12 +108,14 @@ public class ReportsHelper {
             try (ResultSet result = prepare.executeQuery()) {
                 while (result.next()) {
                     Reservation reservation = new Reservation(result.getInt("Id"),
-                            result.getString("PackageName"), result.getString("TravelTicketName"),
-                            result.getString("HotelName"), result.getDouble("Total"),
-                            result.getDate("ReserveDate"), result.getInt("UserId"));
+                            result.getString("From"), result.getString("To"),
+                            result.getString("LeavingDate"), result.getString("ArrivalDate"),
+                            result.getString("TravelType"), result.getString("TripName"),
+                            result.getString("HotelName"), result.getInt("HotelDuration"),
+                            result.getDouble("TotalPrice"), result.getInt("UserId"));
 
                     // Output the reservation details
-                    System.out.println(reservation);
+//                    System.out.println(reservation);
 
                     reservations.add(reservation);
                 }
