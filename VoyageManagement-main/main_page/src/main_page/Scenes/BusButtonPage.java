@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import static main_page.Scenes.TravellingPage.btnnext;
 
 /**
  *
@@ -138,47 +139,25 @@ public class BusButtonPage extends AnchorPane {
         //line under radio button 3
         Line l3 =new Line();
         l3.setEndX(1050);
-    
-        Button btnconferm =new Button("confirm");
-        btnconferm.setPrefSize(100, 48);
-        btnconferm.setDisable(true);
         
         //vbox to add controll on it
         VBox v1 = new VBox(10);
-        v1.getChildren().addAll( h1,l1,h2,l2, h3,l3,btnconferm);
+        v1.getChildren().addAll( h1,l1,h2,l2, h3,l3);
         
         // add vbox on anchropane
         this.getChildren().addAll(v1);
         
-        /*///
-                Back End
-                           ///*/
-        //handler for rad button1
+        //handle for radio buttons
         rad_b1.setOnAction(e ->{
-            if(rad_b1.isSelected()){
-            btnconferm.setDisable(false);
-            }
-            else{
-                btnconferm.setDisable(true);
-            }
+          btnnext.setDisable(false);
         });
-        //handler for rad button2
+        
         rad_b2.setOnAction(e ->{
-            if(rad_b2.isSelected()){
-            btnconferm.setDisable(false);
-            }
-            else{
-                btnconferm.setDisable(true);
-            }
+          btnnext.setDisable(false);
         });
-        //handler for rad button3
+        
         rad_b3.setOnAction(e ->{
-            if(rad_b3.isSelected()){
-            btnconferm.setDisable(false);
-            }
-            else{
-                btnconferm.setDisable(true);
-            }
+          btnnext.setDisable(false);
         });
     }
     
