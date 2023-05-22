@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -30,10 +31,13 @@ public class TrainButtonPage extends AnchorPane {
         this.setLayoutY(350);
 
     
-    
+        // Create a ToggleGroup to manage the radio buttons
+        ToggleGroup toggleGroup = new ToggleGroup();
+        
         //radio button for trip1
         RadioButton rad_b1 = new RadioButton("trip1");
         rad_b1.setPrefSize(120, 38);
+        rad_b1.setToggleGroup(toggleGroup);
     
         //label for show on it word "price"
         Label lblprice1 = new Label("price");
@@ -66,8 +70,9 @@ public class TrainButtonPage extends AnchorPane {
         l1.setEndX(1050);
     
         //radio button for trip2
-        RadioButton rad_b2 = new RadioButton("trip1");
+        RadioButton rad_b2 = new RadioButton("trip2");
         rad_b2.setPrefSize(120, 38);
+        rad_b2.setToggleGroup(toggleGroup);
         
         //label for show on it word "price"
         Label lblprice2 = new Label("price");
@@ -100,8 +105,9 @@ public class TrainButtonPage extends AnchorPane {
         l2.setEndX(1050);
         
         //radio button for trip3
-        RadioButton rad_b3 = new RadioButton("trip1");
+        RadioButton rad_b3 = new RadioButton("trip3");
         rad_b3.setPrefSize(120, 38);
+        rad_b3.setToggleGroup(toggleGroup);
         
         //label for show on it word "price"
         Label lblprice3 = new Label("price");
@@ -150,39 +156,27 @@ public class TrainButtonPage extends AnchorPane {
         //handler for rad button1
         rad_b1.setOnAction(e ->{
             if(rad_b1.isSelected()){
-            rad_b2.setDisable(true);
-            rad_b3.setDisable(true);
             btnconferm.setDisable(false);
             }
             else{
-                rad_b2.setDisable(false);
-                rad_b3.setDisable(false);
                 btnconferm.setDisable(true);
             }
         });
         //handler for rad button2
         rad_b2.setOnAction(e ->{
             if(rad_b2.isSelected()){
-            rad_b1.setDisable(true);
-            rad_b3.setDisable(true);
             btnconferm.setDisable(false);
             }
             else{
-                rad_b1.setDisable(false);
-                rad_b3.setDisable(false);
                 btnconferm.setDisable(true);
             }
         });
         //handler for rad button3
         rad_b3.setOnAction(e ->{
             if(rad_b3.isSelected()){
-            rad_b2.setDisable(true);
-            rad_b1.setDisable(true);
             btnconferm.setDisable(false);
             }
             else{
-                rad_b2.setDisable(false);
-                rad_b1.setDisable(false);
                 btnconferm.setDisable(true);
             }
         });
