@@ -22,6 +22,7 @@ public class Reservation {
     
     private String TravelType;
     private String TripName;
+    private double TripPrice;
     
     private String HotelName;
     private int HotelDuration;
@@ -31,7 +32,7 @@ public class Reservation {
     private double TotalPrice;
     private int UserId;
 
-    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
+    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
         this.Id = Id;
         this.From = From;
         this.To = To;
@@ -39,10 +40,15 @@ public class Reservation {
         this.ArrivalDate = ArrivalDate;
         this.TravelType = TravelType;
         this.TripName = TripName;
+        this.TripPrice = TripPrice;
         this.HotelName = HotelName;
         this.HotelDuration = HotelDuration;
         this.TotalPrice = TotalPrice;
         this.UserId = UserId;
+    }
+
+    public double getTripPrice() {
+        return TripPrice;
     }
 
     public int getId() {
@@ -133,8 +139,27 @@ public class Reservation {
         this.UserId = UserId;
     }
 
+    public void setTripPrice(double TripPrice) {
+        this.TripPrice = TripPrice;
+    }
+
     
-    
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "Id=" + Id +
+                ", From='" + From + '\'' +
+                ", To='" + To + '\'' +
+                ", LeavingDate='" + LeavingDate + '\'' +
+                ", ArrivalDate='" + ArrivalDate + '\'' +
+                ", TravelType='" + TravelType + '\'' +
+                ", TripName='" + TripName + '\'' +
+                ", HotelName='" + HotelName + '\'' +
+                ", HotelDuration=" + HotelDuration +
+                ", TotalPrice=" + TotalPrice +
+                ", UserId=" + UserId +
+                '}';
+    }
     
     
 

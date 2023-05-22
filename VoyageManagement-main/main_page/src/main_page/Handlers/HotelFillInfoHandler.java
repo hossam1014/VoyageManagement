@@ -121,5 +121,10 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
         }
         return true;
     }
+    
+    
+    public long calculateDateDifference() {
+        return ChronoUnit.DAYS.between(start_date, end_date);
+    }
 }
 

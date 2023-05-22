@@ -111,6 +111,7 @@ public class ReportsHelper {
                             result.getString("From"), result.getString("To"),
                             result.getString("LeavingDate"), result.getString("ArrivalDate"),
                             result.getString("TravelType"), result.getString("TripName"),
+                            result.getDouble("TripPrice"),
                             result.getString("HotelName"), result.getInt("HotelDuration"),
                             result.getDouble("TotalPrice"), result.getInt("UserId"));
 

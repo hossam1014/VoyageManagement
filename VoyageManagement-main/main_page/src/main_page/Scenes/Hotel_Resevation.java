@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import main_page.Handlers.HotelFillInfoHandler;
+import main_page.Models.Reservation;
 import main_page.Models.User;
 
 /**
@@ -30,7 +31,7 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage, User user) {
+    public Hotel_Resevation(Stage primaryStage, User user, Reservation reservation) {
         
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
@@ -199,6 +200,8 @@ public class Hotel_Resevation extends Scene {
         rads[0].setOnAction(e -> {
             if (false == rads[0].isSelected()) {
                 rads[0].setSelected(true);
+                reservation.setHotelName("5 Star");
+
             } else {
                 var_hotel_type = 24;
                 rads[1].setSelected(false);
@@ -211,6 +214,8 @@ public class Hotel_Resevation extends Scene {
         rads[1].setOnAction(e -> {
             if (false == rads[1].isSelected()) {
                 rads[1].setSelected(true);
+                reservation.setHotelName("4 Star");
+
             } else {
                 var_hotel_type = 17;
                 rads[0].setSelected(false);
@@ -223,6 +228,8 @@ public class Hotel_Resevation extends Scene {
         rads[2].setOnAction(e -> {
             if (false == rads[2].isSelected()) {
                 rads[2].setSelected(true);
+                reservation.setHotelName("3 Star");
+
             } else {
                 var_hotel_type = 12;
                 rads[0].setSelected(false);
@@ -235,6 +242,8 @@ public class Hotel_Resevation extends Scene {
         rads[3].setOnAction(e -> {
             if (false == rads[3].isSelected()) {
                 rads[3].setSelected(true);
+                reservation.setHotelName("Motel");
+
             } else {
                 var_hotel_type = 6;
                 rads[0].setSelected(false);
@@ -370,6 +379,9 @@ public class Hotel_Resevation extends Scene {
 
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
+            double totalPrice = Double.parseDouble(total_price.getText()) + reservation.getTripPrice();
+            reservation.setTotalPrice(totalPrice);
+            reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
             total_price.setText("");
             primaryStage.setScene(new Bill(primaryStage, user));
         });

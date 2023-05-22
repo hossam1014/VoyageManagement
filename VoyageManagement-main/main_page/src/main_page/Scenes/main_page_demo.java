@@ -106,10 +106,10 @@ public class main_page_demo extends Scene {
             primaryStage.setScene(new TravellingPage(primaryStage, loggedUser));
         });
 
-        btn_hotel.setOnAction(e -> {
-  //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
-            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
-        });
+//        btn_hotel.setOnAction(e -> {
+//  //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
+//            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
+//        });
 
         btn_tools.setOnAction(e -> {
   //          primaryStage.setScene(new Currency_Converter(primaryStage));
