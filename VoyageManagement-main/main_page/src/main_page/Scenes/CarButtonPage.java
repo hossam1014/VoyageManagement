@@ -27,7 +27,7 @@ import static main_page.Scenes.TravellingPage.btnnext;
  */
 public class CarButtonPage extends AnchorPane {
     
-    private Trip trip = new Trip();
+    private Trip tripCar = new Trip();
 
 
     
@@ -168,31 +168,31 @@ public class CarButtonPage extends AnchorPane {
         //handle for radio buttons
         rad_b1.setOnAction(e ->{
           btnnext.setDisable(false);
-          trip.setLeavingDate("09:00 AM");
-          trip.setArrivalDate("05:00 PM");
-          trip.setTripName("M-travel");
-          trip.setTripPrice(78);
+          tripCar.setLeavingDate("09:00 AM");
+          tripCar.setArrivalDate("12:00PM");
+          tripCar.setTripName("O-Travell");
+          tripCar.setTripPrice(25);
         });
         
         rad_b2.setOnAction(e ->{
           btnnext.setDisable(false);
-          trip.setLeavingDate("04:00 AM");
-          trip.setArrivalDate("09:00 PM");
-          trip.setTripName("S-travel");
-          trip.setTripPrice(25);
+          tripCar.setLeavingDate("1:30PM");
+          tripCar.setArrivalDate("3:30PM");
+          tripCar.setTripName("B-Travell");
+          tripCar.setTripPrice(23);
         });
         
         rad_b3.setOnAction(e ->{
           btnnext.setDisable(false);
-          trip.setLeavingDate("02:00 AM");
-          trip.setArrivalDate("03:00 PM");
-          trip.setTripName("L-travel");
-          trip.setTripPrice(36);
+          tripCar.setLeavingDate("5:30PM");
+          tripCar.setArrivalDate("7:00PM");
+          tripCar.setTripName("N-trevell");
+          tripCar.setTripPrice(30);
         });
     }
 
     public Trip getTrip() {
-        return trip;
+        return tripCar;
     }
     
     

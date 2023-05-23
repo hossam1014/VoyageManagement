@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import main_page.Models.Trip;
 import static main_page.Scenes.TravellingPage.btnnext;
 
 /**
@@ -25,6 +26,8 @@ import static main_page.Scenes.TravellingPage.btnnext;
  * @author hp
  */
 public class BusButtonPage extends AnchorPane {
+    
+    private Trip tripBus = new Trip();
     
     public BusButtonPage() {
    
@@ -160,14 +163,29 @@ public class BusButtonPage extends AnchorPane {
         //handle for radio buttons
         rad_b1.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripBus.setLeavingDate("8:30AM");
+          tripBus.setArrivalDate("2:00PM");
+          tripBus.setTripName("S-Travell");
+          tripBus.setTripPrice(12);
         });
         
         rad_b2.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripBus.setLeavingDate("12:30PM");
+          tripBus.setArrivalDate("4:45PM");
+          tripBus.setTripName("A-Travell");
+          tripBus.setTripPrice(10);
         });
         
         rad_b3.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripBus.setLeavingDate("3:15PM");
+          tripBus.setArrivalDate("7:40PM");
+          tripBus.setTripName("H-trevell");
+          tripBus.setTripPrice(16);
         });
+    }
+    public Trip getTrip() {
+        return tripBus;
     }
 }

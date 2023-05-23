@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import main_page.Models.Trip;
 import static main_page.Scenes.TravellingPage.btnnext;
 
 /**
@@ -26,7 +27,10 @@ import static main_page.Scenes.TravellingPage.btnnext;
  */
 public class FlaghtButtonPage extends AnchorPane {
     
+    private Trip tripFlaght = new Trip();
+    
     public FlaghtButtonPage() {
+        
         
         this.setLayoutX(20);
         this.setLayoutY(350);
@@ -159,14 +163,29 @@ public class FlaghtButtonPage extends AnchorPane {
         //handle for radio buttons
         rad_b1.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripFlaght.setLeavingDate("10:30PM");
+          tripFlaght.setArrivalDate("11:00PM");
+          tripFlaght.setTripName("SH-trevell");
+          tripFlaght.setTripPrice(100);
         });
         
         rad_b2.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripFlaght.setLeavingDate("12:30PM");
+          tripFlaght.setArrivalDate("1:45PM");
+          tripFlaght.setTripName("A-trevell");
+          tripFlaght.setTripPrice(90);
         });
         
         rad_b3.setOnAction(e ->{
           btnnext.setDisable(false);
+          tripFlaght.setLeavingDate("3:15PM");
+          tripFlaght.setArrivalDate("4:00PM");
+          tripFlaght.setTripName("F-trevell");
+          tripFlaght.setTripPrice(130);
         });
     }
+     public Trip getTrip() {
+        return tripFlaght;
+    } 
 }
