@@ -54,7 +54,6 @@ public class main_page_demo extends Scene {
         info.setAlignment(Pos.CENTER);
         info.setId("home_page_info");
         info.getStyleClass().add("home_page_info");
-//        vBox.setStyle("-fx-background-image: url('/images/home_page_demo_background.jpg');");
 
         VBox navigator = new VBox(20);
         navigator.setPadding(new Insets(10));
