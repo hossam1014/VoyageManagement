@@ -1,7 +1,12 @@
 package main_page.Scenes;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -14,9 +19,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import main_page.Handlers.TravellingPageHundler;
+import main_page.Models.Location;
+import main_page.Models.Reservation;
+
 import main_page.Models.User;
-import  main_page.Scenes.CarButtonPage;
+import main_page.SqlLiteDB;
 /**
  *
  * @author sayed
@@ -34,12 +41,21 @@ public class TravellingPage extends Scene {
     public static Button btntrain = new Button("Train");
     public static Button btnflaght = new Button("Flaght");
     public static Boolean information_isFilled = false;
+    
+    private List<Location> locations = new ArrayList<>();
+    
+    private Location location1;
+    private Location location2;
+    
+    private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, 0, 0);
+
 
    
     public TravellingPage(Stage primaryStage, User user) {
 
 
         super(new HBox(20), 1250, 760);
+        
 
 
         //Travelling Reservation Page
@@ -70,6 +86,21 @@ public class TravellingPage extends Scene {
         endCityComboBox.setPrefSize(100, 38);
         endCityComboBox.setLayoutX(650);
         endCityComboBox.setLayoutY(42);
+        
+        this.getComboBoxesValues();
+        
+        startCityComboBox.setOnAction(event -> {
+                String selectedCity = startCityComboBox.getSelectionModel().getSelectedItem();
+                location1 = getLocationByName(selectedCity);
+                reservation.setFrom(selectedCity);
+        });
+
+        endCityComboBox.setOnAction(event -> {
+                String selectedCity = endCityComboBox.getSelectionModel().getSelectedItem();
+                location2 = getLocationByName(selectedCity);
+                reservation.setTo(selectedCity);
+        });
+        
 
         //right page conterllor
         //from where travael
@@ -84,10 +115,10 @@ public class TravellingPage extends Scene {
         lblto.setLayoutY(42);
         
         //label for write on it "distance"
-        Label lbldis = new Label("Distance");
-        lbldis.setLayoutX(410);
-        lbldis.setLayoutY(130);
-        lbldis.setPrefSize(80, 30);
+        Button btnDis = new Button("Distance");
+        btnDis.setLayoutX(410);
+        btnDis.setLayoutY(130);
+        btnDis.setPrefSize(80, 30);
         
         //TextField for show distance
         TextField txtdist = new TextField();
@@ -139,7 +170,7 @@ public class TravellingPage extends Scene {
         navigator.getChildren().addAll(btnback);
         
         //add controller to right page
-        right.getChildren().addAll(h1, h2,lbldis,txtdist,l3,l4,btnnext,lblto,endCityComboBox);
+        right.getChildren().addAll(h1, h2,btnDis,txtdist,l3,l4,btnnext,lblto,endCityComboBox);
         
         HBox hBox = (HBox) this.getRoot();
         hBox.setStyle("-fx-background-color: #e5eff1");
@@ -156,6 +187,7 @@ public class TravellingPage extends Scene {
         
         // handler for car button
         btncar.setOnAction(x -> {
+            reservation.setTravelType("Car");
             right.getChildren().remove(busPage);
             right.getChildren().remove(flightPage);
             right.getChildren().remove(trainPage);
@@ -165,6 +197,7 @@ public class TravellingPage extends Scene {
         
         // handler for bus button
         btnbus.setOnAction(x -> {
+            reservation.setTravelType("Bus");
             right.getChildren().add(busPage);
             right.getChildren().remove(flightPage);
             right.getChildren().remove(trainPage);
@@ -174,6 +207,7 @@ public class TravellingPage extends Scene {
         
         // handler for flaght button
         btntrain.setOnAction(x -> {
+            reservation.setTravelType("Train");
             right.getChildren().remove(busPage);
             right.getChildren().remove(flightPage);
             right.getChildren().add(trainPage);
@@ -183,6 +217,7 @@ public class TravellingPage extends Scene {
         
         // handler for train button
         btnflaght.setOnAction(x -> {
+            reservation.setTravelType("Flight");
             right.getChildren().remove(busPage);
             right.getChildren().add(flightPage);
             right.getChildren().remove(trainPage);
@@ -191,6 +226,20 @@ public class TravellingPage extends Scene {
             
         });
         
+        btnDis.setOnAction(x -> {
+
+            if (location1 != null && location2 != null) {
+                // Calculate the distance
+                double distance = calculateHaversineDistance();
+                
+                double roundedDistance = Math.round(distance * 100.0) / 100.0;                
+
+                // Update the TextField with the calculated distance
+                txtdist.setText(String.valueOf(roundedDistance));
+            }   
+        });
+        
+        
         // handler for  back button
         btnback.setOnAction(e -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));
@@ -198,8 +247,78 @@ public class TravellingPage extends Scene {
         
         //handle for btn next
         btnnext.setOnAction(e ->{
+            
+            
             primaryStage.setScene(new Hotel_Resevation(primaryStage, user));
         });
      
-    }              
+    }
+    
+    
+    
+    
+    private void getComboBoxesValues() {
+
+        try {
+
+            connection = SqlLiteDB.connectDB();
+
+            String sql = "SELECT * FROM Locations";
+
+            // Execute the SQL statement
+            try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
+
+                // Add the city names to the combo boxes
+                while (resultSet.next()) {
+                    Location location = new Location(resultSet.getString("CityName"),
+                            resultSet.getDouble("Latitude"), resultSet.getDouble("Longitude")
+                    );
+                    
+                    locations.add(location);
+
+
+                    startCityComboBox.getItems().add(location.getCityName());
+                    endCityComboBox.getItems().add(location.getCityName());
+                    
+                }
+                
+                
+
+                SqlLiteDB.closeConnection(connection);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private double calculateHaversineDistance() {
+        
+        double startLatitude = location1.getLatitude();
+        double startLongitude = location1.getLongitude();
+        double endLatitude = location2.getLatitude();
+        double endLongitude = location2.getLongitude();
+        
+
+        double earthRadius = 6371; // km
+
+        double deltaLat = Math.toRadians(endLatitude - startLatitude);
+        double deltaLon = Math.toRadians(endLongitude - startLongitude);
+
+        double a = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2)
+                + Math.cos(Math.toRadians(startLatitude)) * Math.cos(Math.toRadians(endLatitude))
+                * Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return earthRadius * c; // km
+    }
+    
+    private Location getLocationByName(String cityName) {
+    for (Location location : locations) {
+        if (location.getCityName().equals(cityName)) {
+            return location;
+        }
+    }
+    return null;
+}
 }
