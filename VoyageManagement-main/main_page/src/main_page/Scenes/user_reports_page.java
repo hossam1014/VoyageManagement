@@ -11,6 +11,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import main_page.Models.User;
 
@@ -25,18 +29,20 @@ public class user_reports_page extends Scene{
         super(new VBox(20), 1250, 760);
         VBox main_box = (VBox) this.getRoot();
         HBox btn_box = new HBox(20);
+        btn_box.setAlignment(Pos.CENTER);
         main_box.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-        main_box.setStyle("-fx-background-image: url('images/user_reports.jpg');");
+        main_box.setStyle("-fx-background-color: #1a5d7f");
         main_box.setAlignment(Pos.CENTER_LEFT);
         main_box.setPadding(new Insets(20));
         
         Label lbl_header = new Label("Please, enter your issue!");
+        lbl_header.getStyleClass().add("custom-label");
         
         TextArea txt_report = new TextArea();
         txt_report.setPrefRowCount(15); // Set the number of visible rows
         txt_report.setWrapText(true);
         txt_report.setId("user_reports");
-        Button btn_supmit = new Button("Supmit");
+        Button btn_supmit = new Button("Submit");
         btn_supmit.setPrefSize(120, 40);
         Button btn_back = new Button("Back");
         btn_back.setId("btn_back");
@@ -44,7 +50,7 @@ public class user_reports_page extends Scene{
         btn_back.setPrefSize(120, 40);
         
         btn_back.setOnAction(e->{
-        primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
 //       primaryStage.setScene(new main_page_demo(primaryStage));
         });
         

@@ -26,7 +26,7 @@ public class LoginPage extends Scene {
         this.getStylesheets().add(getClass().getResource("/main_page/login_signup_style.css").toExternalForm());
         
         VBox vBox = (VBox) this.getRoot();
-        vBox.setStyle("-fx-background-image: url('images/login_background3.png');");
+        vBox.setStyle("-fx-background-color: #e5eff1");
  
         HBox centr_box = new HBox(20);
         centr_box.setAlignment(Pos.CENTER);
@@ -45,7 +45,7 @@ public class LoginPage extends Scene {
         Label lblPassword = new Label("password");
         PasswordField txtPassword = new PasswordField();
 
-        Button btn_log_in = new Button("Sign Up");
+        Button btn_log_in = new Button("Sign In");
         btn_log_in.setPrefSize(120, 40);
 
         btn_log_in.setOnAction(event -> {

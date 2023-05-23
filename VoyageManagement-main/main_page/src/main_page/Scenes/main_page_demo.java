@@ -48,8 +48,7 @@ public class main_page_demo extends Scene {
         vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
 //        vBox.setStyle("-fx-background-image: url('images/home_page_demo_background.jpg');");
-        vBox.setStyle("-fx-background-color: #5f658b;");
-
+        vBox.setStyle("-fx-background-color: #e5eff1;");
         
         HBox main_page = new HBox(20);
 
@@ -106,10 +105,10 @@ public class main_page_demo extends Scene {
             primaryStage.setScene(new TravellingPage(primaryStage, loggedUser));
         });
 
-//        btn_hotel.setOnAction(e -> {
-//  //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
-//            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
-//        });
+        btn_hotel.setOnAction(e -> {
+  //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
+            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
+        });
 
         btn_tools.setOnAction(e -> {
   //          primaryStage.setScene(new Currency_Converter(primaryStage));
@@ -136,16 +135,9 @@ public class main_page_demo extends Scene {
         user_name.setId("user_name_nav");
         user_name.getStyleClass().add("user_name_nav");
 
-        Line l1 = new Line();
-        l1.setScaleX(1);
-        l1.setScaleY(1);
-        l1.setScaleZ(1);
+        Line l1 = new Line(-127,0,212,0);
         l1.setLayoutX(129);
         l1.setLayoutY(226);
-        l1.setStartX(-127);
-        l1.setStartY(0);
-        l1.setEndX(212);
-        l1.setEndY(0);
         l1.setStroke(Color.WHITE);
         navigator.setPadding(new Insets(20));
 

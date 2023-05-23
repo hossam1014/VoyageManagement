@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Line;
@@ -47,7 +48,7 @@ public class TravellingPage extends Scene {
         
         
         AnchorPane right = new AnchorPane();
-
+        
         //styling panes
         navigator.setMinSize(200, 760);
         navigator.getStyleClass().add("navigator");
@@ -56,9 +57,11 @@ public class TravellingPage extends Scene {
         
         // btn go back to main page 
         Button btnback = new Button("Back");
-        btnback.setPrefSize(150, 50);
-        btnback.setLayoutX(25);
+        btnback.setPrefSize(100, 40);
+        btnback.getStyleClass().add("custom-button");
+        btnback.setLayoutX(50);
         btnback.setLayoutY(330);
+       
         
         // two cmbobox 
         startCityComboBox = new ComboBox<>();
@@ -86,25 +89,19 @@ public class TravellingPage extends Scene {
         lbldis.setLayoutY(130);
         lbldis.setPrefSize(80, 30);
         
-        //label for show distance
-        Label lbldist = new Label("plplpl");
-        lbldist.setLayoutX(510);
-        lbldist.setLayoutY(130);
-        lbldist.setPrefSize(80, 30);
+        //TextField for show distance
+        TextField txtdist = new TextField();
+        txtdist.setPromptText("0.0");
+        txtdist.setLayoutX(510);
+        txtdist.setLayoutY(130);
+        txtdist.setPrefSize(100, 35);
+        txtdist.setEditable(false);
         
         //line herziontal with car , bus , train , flaght buttons
-        Line l3 = new Line();
-        l3.setStartX(255);
-        l3.setStartY(240);
-        l3.setEndX(795);
-        l3.setEndY(240);
+        Line l3 = new Line(255,240,795,240);
         
         // line under buttons
-        Line l4 = new Line();
-        l4.setStartX(255);
-        l4.setStartY(310);
-        l4.setEndX(795);
-        l4.setEndY(310);
+        Line l4 = new Line(255,310,795,310);
         
         //button next properties
         btnnext.setPrefSize(120, 48);
@@ -142,9 +139,10 @@ public class TravellingPage extends Scene {
         navigator.getChildren().addAll(btnback);
         
         //add controller to right page
-        right.getChildren().addAll(h1, h2,lbldis,lbldist,l3,l4,btnnext,lblto,endCityComboBox);
+        right.getChildren().addAll(h1, h2,lbldis,txtdist,l3,l4,btnnext,lblto,endCityComboBox);
         
         HBox hBox = (HBox) this.getRoot();
+        hBox.setStyle("-fx-background-color: #e5eff1");
         hBox.getChildren().addAll(navigator, right);
         
         /*//////  

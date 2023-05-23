@@ -39,6 +39,7 @@ public class Hotel_Resevation extends Scene {
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         AnchorPane page = new AnchorPane();
+        page.setStyle("-fx-background-color: #e5eff1");
 
         root.getChildren().addAll(page);
 
@@ -46,7 +47,7 @@ public class Hotel_Resevation extends Scene {
         Button prev_page = new Button("Back");
         prev_page.setLayoutX(50);
         prev_page.setLayoutY(350);
-        prev_page.setPrefSize(120, 48);
+        prev_page.setPrefSize(100, 40);
         prev_page.getStyleClass().add("custom-button");
 
         /* Radio Buttons Declerations */
@@ -66,7 +67,7 @@ public class Hotel_Resevation extends Scene {
 
         /* hotel type radio buttons in HBox */
         HBox hotelTypeRB = new HBox(40);
-        hotelTypeRB.setLayoutX(340);
+        hotelTypeRB.setLayoutX(320);
         hotelTypeRB.setLayoutY(99);
         hotelTypeRB.getChildren().addAll(rads[0], rads[1], rads[2], rads[3]);
 
@@ -101,13 +102,13 @@ public class Hotel_Resevation extends Scene {
 
         /* Room Capacity */
         Label r_capacity = new Label("Capacity");
-        r_capacity.setLayoutX(790);
+        r_capacity.setLayoutX(800);
         r_capacity.setLayoutY(215);
         r_capacity.setPrefSize(141, 48);
 
         /* room capacity radio buttons */
         VBox roomCapacityRB = new VBox(10);
-        roomCapacityRB.setLayoutX(740);
+        roomCapacityRB.setLayoutX(750);
         roomCapacityRB.setLayoutY(270);
         roomCapacityRB.getChildren().addAll(rads[7], rads[8], rads[9]);
 
@@ -152,6 +153,7 @@ public class Hotel_Resevation extends Scene {
         booking_price.setLayoutX(420);
         booking_price.setLayoutY(600);
         booking_price.setPrefSize(130, 38);
+        
         /* Total Price value */
         total_price.setAlignment(Pos.CENTER);
         total_price.setLayoutX(560);
@@ -200,7 +202,7 @@ public class Hotel_Resevation extends Scene {
         rads[0].setOnAction(e -> {
             if (false == rads[0].isSelected()) {
                 rads[0].setSelected(true);
-                reservation.setHotelName("5 Star");
+//                reservation.setHotelName("5 Star");
 
             } else {
                 var_hotel_type = 24;
@@ -214,7 +216,7 @@ public class Hotel_Resevation extends Scene {
         rads[1].setOnAction(e -> {
             if (false == rads[1].isSelected()) {
                 rads[1].setSelected(true);
-                reservation.setHotelName("4 Star");
+ //               reservation.setHotelName("4 Star");
 
             } else {
                 var_hotel_type = 17;
@@ -228,7 +230,7 @@ public class Hotel_Resevation extends Scene {
         rads[2].setOnAction(e -> {
             if (false == rads[2].isSelected()) {
                 rads[2].setSelected(true);
-                reservation.setHotelName("3 Star");
+//                reservation.setHotelName("3 Star");
 
             } else {
                 var_hotel_type = 12;
@@ -242,7 +244,7 @@ public class Hotel_Resevation extends Scene {
         rads[3].setOnAction(e -> {
             if (false == rads[3].isSelected()) {
                 rads[3].setSelected(true);
-                reservation.setHotelName("Motel");
+//                reservation.setHotelName("Motel");
 
             } else {
                 var_hotel_type = 6;
@@ -379,9 +381,9 @@ public class Hotel_Resevation extends Scene {
 
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
-            double totalPrice = Double.parseDouble(total_price.getText()) + reservation.getTripPrice();
-            reservation.setTotalPrice(totalPrice);
-            reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
+//            double totalPrice = Double.parseDouble(total_price.getText()) + reservation.getTripPrice();
+//            reservation.setTotalPrice(totalPrice);
+//            reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
             total_price.setText("");
             primaryStage.setScene(new Bill(primaryStage, user));
         });

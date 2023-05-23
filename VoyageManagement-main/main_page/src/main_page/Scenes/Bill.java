@@ -28,6 +28,8 @@ public class Bill extends Scene {
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
+        root.setStyle("-fx-background-color: #e5eff1");
+        
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
 
@@ -96,6 +98,7 @@ public class Bill extends Scene {
         /* Button to go back to main page */
         Button goToMainPage = new Button("Back");
         goToMainPage.getStyleClass().add("custom-button");
+        goToMainPage.setPrefSize(90, 35);
 
         goToMainPage.setOnAction(x -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));

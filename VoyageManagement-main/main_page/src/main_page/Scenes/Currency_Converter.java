@@ -46,10 +46,10 @@ public class Currency_Converter extends Scene {
     public Currency_Converter(Stage primaryStage, User user) {
         super(new StackPane(), 1250, 760);
         StackPane root = (StackPane) this.getRoot();
-        root.setStyle("-fx-background-image: url('images/currency_converter.jpg');");
+        root.setStyle("-fx-background-color: #e5eff1");
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
-        VBox page = new VBox(30);
+        VBox page = new VBox(35);
         page.setAlignment(Pos.CENTER);
         root.getChildren().add(page);
 
@@ -57,7 +57,7 @@ public class Currency_Converter extends Scene {
         GridPane info = new GridPane();
         info.setAlignment(Pos.CENTER);
         info.setPadding(new Insets(20));
-        info.setHgap(20);
+        info.setHgap(25);
         info.setVgap(20);
 
         /* Labels */
@@ -83,6 +83,7 @@ public class Currency_Converter extends Scene {
 
         /* Convert button */
         Button btn_convert = new Button("Convert");
+        btn_convert.setPrefSize(80, 35);
 
         /* converted currency TextField result */
         converted_currency.setPromptText("0.0");
@@ -94,6 +95,7 @@ public class Currency_Converter extends Scene {
         Button main_page = new Button("Back");
         main_page.getStyleClass().add("custom-button");
         main_page.setPrefSize(100, 40);
+        
         main_page.setOnAction(e -> {
         primaryStage.setScene(new main_page_demo(primaryStage, user));
          //   primaryStage.setScene(new main_page_demo(primaryStage));
