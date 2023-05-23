@@ -200,3 +200,12 @@
 .radio-button:selected .radio-mark {
     -fx-background-color: white;
 }
+
+.combo-box {
+    -fx-control-inner-background: linear-gradient(to bottom, #1f6d82, #288fad);
+    -fx-background-color: linear-gradient(to bottom, #1f6d82, #288fad);
+    -fx-background-radius: 3, 2;
+    -fx-text-fill: white;   /* why its not working!!! */
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}

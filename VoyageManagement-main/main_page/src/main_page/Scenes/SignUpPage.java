@@ -40,79 +40,39 @@ public class SignUpPage extends Scene {
         sign_up_box.setId("card");
 
         
-        Label lblFullName = new Label("fullname");
+        Label lblFullName = new Label("Full name");
         TextField txtFullName = new TextField();
 
-        Label lblEmail = new Label("email");
+        Label lblEmail = new Label("Email address");
         TextField txtEmail = new TextField();
 
         Label lblPhoneNumber = new Label("Phone number");
         TextField txtPhoneNumber = new TextField();
 
-        Label lblUserName = new Label("username");
+        Label lblUserName = new Label("Username");
         TextField txtUserName = new TextField();
 
-        Label lblPassword = new Label("password");
+        Label lblPassword = new Label("Password");
         PasswordField txtPassword = new PasswordField();
 
         Button btn_sign_up = new Button("Sign Up");
         btn_sign_up.setPrefSize(120, 40);
 
         btn_sign_up.setOnAction(event -> {
-
             SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
                     txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
             signUpHandler.handle(event);
             primaryStage.setScene(new LoginPage(primaryStage));
-
-
         });
 
-        sign_up_box.add(lblFullName, 0, 0);
-        sign_up_box.add(txtFullName, 1, 0);
-        sign_up_box.add(lblEmail, 0, 1);
-        sign_up_box.add(txtEmail, 1, 1);
-        sign_up_box.add(lblPhoneNumber, 0, 2);
-        sign_up_box.add(txtPhoneNumber, 1, 2);
-        sign_up_box.add(lblUserName, 0, 3);
-        sign_up_box.add(txtUserName, 1, 3);
-        sign_up_box.add(lblPassword, 0, 4);
-        sign_up_box.add(txtPassword, 1, 4);
+        sign_up_box.addRow(0, lblFullName, txtFullName);
+        sign_up_box.addRow(1, lblEmail, txtEmail);
+        sign_up_box.addRow(2, lblPhoneNumber, txtPhoneNumber);
+        sign_up_box.addRow(3, lblUserName, txtUserName);
+        sign_up_box.addRow(4, lblPassword, txtPassword);
 
         centr_box.getChildren().addAll(sign_up_box);
         
         vBox.getChildren().addAll(centr_box, btn_sign_up);
-        
-        
-//        HBox hBox1 = new HBox(15);
-//        hBox1.setAlignment(Pos.CENTER);
-//        HBox hBox2 = new HBox(15);
-//        hBox2.setAlignment(Pos.CENTER);
-//        HBox hBox3 = new HBox(15);
-//        hBox3.setAlignment(Pos.CENTER);
-//        HBox hBox4 = new HBox(15);
-//        hBox4.setAlignment(Pos.CENTER);
-//        HBox hBox5 = new HBox(15);
-//        hBox5.setAlignment(Pos.CENTER);
-//
-//        hBox1.getChildren().addAll(lblFullName, txtFullName);
-//
-//        hBox2.getChildren().addAll(lblEmail, txtEmail);
-//
-//        hBox3.getChildren().addAll(lblPhoneNumber, txtPhoneNumber);
-//
-//        hBox4.getChildren().addAll(lblUserName, txtUserName);
-//
-//        hBox5.getChildren().addAll(lblPassword, txtPassword);
-
-//        primaryStage.setScene(this);
-//        txtFullName.getStyleClass().add("text-field");
-//        txtEmail.getStyleClass().add("text-field");
-//        txtPhoneNumber.getStyleClass().add("text-field");
-//        txtUserName.getStyleClass().add("text-field");
-//        txtPassword.getStyleClass().add("text-field");
-        primaryStage.setTitle("SignUp");
-//        primaryStage.show();
     }
-
 }

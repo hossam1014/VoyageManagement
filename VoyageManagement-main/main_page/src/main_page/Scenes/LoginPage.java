@@ -76,7 +76,5 @@ public class LoginPage extends Scene {
         
         vBox.getChildren().addAll(centr_box, btn_log_in);
         vBox.setAlignment(Pos.CENTER);
-        
-        primaryStage.setTitle("Login");
     }
 }

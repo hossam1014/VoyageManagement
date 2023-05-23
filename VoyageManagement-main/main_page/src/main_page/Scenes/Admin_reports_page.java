@@ -120,10 +120,5 @@ public class Admin_reports_page extends Scene {
         root.getChildren().addAll(lables_box, table, button_box);
         
 //        SqlLiteDB.closeConnection();
-
-
-        primaryStage.setTitle("Admin Reports");
     }
-    
-   
 }

@@ -8,13 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import main_page.Models.User;
 
@@ -23,8 +18,7 @@ import main_page.Models.User;
  * @author amir
  */
 public class user_reports_page extends Scene{
-    
-//    public user_reports_page(Stage primaryStage) {
+
     public user_reports_page(Stage primaryStage, User user) {
         super(new VBox(20), 1250, 760);
         VBox main_box = (VBox) this.getRoot();
@@ -51,16 +45,9 @@ public class user_reports_page extends Scene{
         
         btn_back.setOnAction(e->{
             primaryStage.setScene(new main_page_demo(primaryStage, user));
-//       primaryStage.setScene(new main_page_demo(primaryStage));
         });
         
         btn_box.getChildren().addAll(btn_supmit, btn_back);
         main_box.getChildren().addAll(lbl_header, txt_report, btn_box);
-        
-        
-        primaryStage.setTitle("Reports");
-        
-
     }
-    
 }

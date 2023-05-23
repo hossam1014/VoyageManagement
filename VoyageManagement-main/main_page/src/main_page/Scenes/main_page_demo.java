@@ -1,6 +1,5 @@
 package main_page.Scenes;
 
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -41,7 +40,6 @@ public class main_page_demo extends Scene {
         loggedUser = user;
         
         int userId = user.getId();
-        
 
         VBox vBox = (VBox) this.getRoot();
         vBox.setAlignment(Pos.CENTER);
@@ -52,7 +50,7 @@ public class main_page_demo extends Scene {
         
         HBox main_page = new HBox(20);
 
-        VBox info = new VBox(20);
+        VBox info = new VBox(30);
         info.setAlignment(Pos.CENTER);
         info.setId("home_page_info");
         info.getStyleClass().add("home_page_info");
@@ -142,8 +140,8 @@ public class main_page_demo extends Scene {
         navigator.setPadding(new Insets(20));
 
         //user_info part
-        Label lbl_user_info = new Label("User information");
-        lbl_user_info.getStyleClass().add("user_name_nav");
+//        Label lbl_user_info = new Label("User information");
+//        lbl_user_info.getStyleClass().add("user_name_nav");
         Label lbl_full_name = new Label("Full name");
         Label lbl_user_name = new Label("User name");
         Label lbl_email = new Label("Email");
@@ -162,30 +160,17 @@ public class main_page_demo extends Scene {
         TextField txt_email = new TextField(loggedUser.getEmail());
        // TextField txt_number = new TextField();
         TextField txt_number = new TextField(loggedUser.getPhoneNumber());
-        //TextField txt_age = new TextField(loggedUser.ge);
-
 
         txt_user_name.setPrefWidth(400);
         txt_user_name.setEditable(false);
         txt_email.setEditable(false);
         txt_number.setEditable(false);
-//        txt_age.setEditable(false);
 
-        user_info.add(lbl_full_name, 0, 0);
-        user_info.add(txt_full_name, 1, 0);
-
-        user_info.add(lbl_user_name, 0, 1);
-        user_info.add(txt_user_name, 1, 1);
-
-        user_info.add(lbl_email, 0, 2);
-        user_info.add(txt_email, 1, 2);
-
-        user_info.add(lbl_number, 0, 3);
-        user_info.add(txt_number, 1, 3);
-//        user_info.add(lbl_age, 0, 3);
-//        user_info.add(txt_age, 1, 3);
+        user_info.addRow(0, lbl_full_name, txt_full_name);
+        user_info.addRow(1, lbl_user_name, txt_user_name);
+        user_info.addRow(2, lbl_email, txt_email);
+        user_info.addRow(3, lbl_number, txt_number);
         user_info.add(change, 0, 4, 2, 1);
-//        user_info.add(change, 0, 4, 2, 1);
 
         // trip info part
         // some back end and database here also hosam ----------------------------------------------------------------------------------------
@@ -273,13 +258,10 @@ public class main_page_demo extends Scene {
         }
 
 //        info.getChildren().addAll(lbl_user_info, user_info, lbl_trave_info, trip_info);
-        info.getChildren().addAll(lbl_user_info, user_info, table);
+        info.getChildren().addAll(user_info, table);
 
         main_page.getChildren().addAll(navigator, info);
 
         vBox.getChildren().add(main_page);
-
-        primaryStage.setTitle("home page");
-        primaryStage.show();
     }
 }
