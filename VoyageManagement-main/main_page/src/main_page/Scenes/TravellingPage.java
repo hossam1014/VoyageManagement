@@ -198,7 +198,7 @@ public class TravellingPage extends Scene {
         
         //handle for btn next
         btnnext.setOnAction(e ->{
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new Hotel_Resevation(primaryStage, user));
         });
      
     }              
