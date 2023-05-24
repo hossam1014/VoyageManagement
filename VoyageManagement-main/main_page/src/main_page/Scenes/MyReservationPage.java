@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main_page.Scenes;
 
 import java.util.List;
@@ -29,13 +26,8 @@ public class MyReservationPage extends Scene {
     public MyReservationPage(Stage primaryStage, MyReservationsHandler reservationHandler) {
 
         super(new VBox(20), 1250, 760);
-          
 
         reservations = reservationHandler.getMyReservations();
-        
-        
-        
-
 
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -70,13 +62,8 @@ public class MyReservationPage extends Scene {
         // Apply CSS style
         root.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
-        
         loginBtn.setOnAction(x -> {
             primaryStage.setScene(new LoginPage(primaryStage));
         });
-        
-        
-//        primaryStage.show();
     }
-
 }

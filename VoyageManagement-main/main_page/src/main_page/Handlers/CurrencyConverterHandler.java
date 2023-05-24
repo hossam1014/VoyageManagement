@@ -23,7 +23,8 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event){
         if(amount.getText().trim().isEmpty() || true == currency_from.getSelectionModel().isEmpty() || true == currency_to.getSelectionModel().isEmpty()){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Enter Missing Data");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Enter Missing Data");
             errorAlert.showAndWait();
         }   
         else{
@@ -92,7 +93,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
             }
             catch(NumberFormatException ex){
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("Incorrect amount");
+                errorAlert.setHeaderText(null);
                 errorAlert.setContentText("Please, Enter a vaild number of money");
                 errorAlert.showAndWait();
                 return;

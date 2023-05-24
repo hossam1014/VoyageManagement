@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package main_page.Scenes;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -17,7 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
-import javafx.stage.Stage;
 import main_page.Models.Trip;
 import static main_page.Scenes.TravellingPage.btnnext;
 
@@ -28,31 +19,24 @@ import static main_page.Scenes.TravellingPage.btnnext;
 public class CarButtonPage extends AnchorPane {
     
     private Trip tripCar = new Trip();
-
-
-    
-    
    
     public CarButtonPage() {
-        
-    
 
         this.setLayoutX(20);
-        this.setLayoutY(350);
-
+        this.setLayoutY(370);
     
         // Create a ToggleGroup to manage the radio buttons
         ToggleGroup toggleGroup = new ToggleGroup();
         
         //radio button for trip1
-        RadioButton rad_b1 = new RadioButton("O-Travell");
-        rad_b1.setPrefSize(100, 38);
+        RadioButton rad_b1 = new RadioButton("O-Travel");
+        rad_b1.setPrefSize(120, 38);
         rad_b1.setToggleGroup(toggleGroup);
         
         Label lbltimego1 = new Label("Go");
         lbltimego1.setAlignment(Pos.CENTER);
         lbltimego1.setPrefSize(150, 75);
-        Label lbltime1 = new Label("9:00AM");
+        Label lbltime1 = new Label("9:00 AM");
         lbltime1.setAlignment(Pos.CENTER);
         lbltime1.setPrefSize(150, 75);
         
@@ -69,7 +53,7 @@ public class CarButtonPage extends AnchorPane {
         lblarrivetime1.setPrefSize(150, 75);
         
         //label for showing time
-        Label lbltime2 = new Label("12:00PM");
+        Label lbltime2 = new Label("12:00 PM");
         lbltime2.setAlignment(Pos.CENTER);
         lbltime2.setPrefSize(150, 75);
     
@@ -80,24 +64,24 @@ public class CarButtonPage extends AnchorPane {
         
         //line under radio button 2
         Line l1 =new Line();
-        l1.setEndX(1050);
+        l1.setEndX(910);
     
         //radio button for trip2
-        RadioButton rad_b2 = new RadioButton("B-Travell");
-        rad_b2.setPrefSize(100, 38);
+        RadioButton rad_b2 = new RadioButton("B-Travel");
+        rad_b2.setPrefSize(120, 38);
         rad_b2.setToggleGroup(toggleGroup);
         
         //label for time
         Label lbltimego2 = new Label("Go");
         lbltimego2.setAlignment(Pos.CENTER);
         lbltimego2.setPrefSize(150, 75);
-        Label lbltime3 = new Label("1:30PM");
+        Label lbltime3 = new Label("1:30 PM");
         lbltime3.setAlignment(Pos.CENTER);
         lbltime3.setPrefSize(150, 75);
     
         //label for show price
         int p2 = 23;
-        Label lblprice2_2 = new Label(p2+"$");
+        Label lblprice2_2 = new Label(p2+" $");
         lblprice2_2.setAlignment(Pos.CENTER);
         lblprice2_2.setPrefSize(150, 75);
     
@@ -107,7 +91,7 @@ public class CarButtonPage extends AnchorPane {
         lblarrivetime2.setPrefSize(150, 75);
     
         //label for showing time
-        Label lbltime4 = new Label("3:30PM");
+        Label lbltime4 = new Label("3:30 PM");
         lbltime4.setAlignment(Pos.CENTER);
         lbltime4.setPrefSize(150, 75);
     
@@ -118,24 +102,24 @@ public class CarButtonPage extends AnchorPane {
         
         //line under radio button 2
         Line l2 =new Line();
-        l2.setEndX(1050);
+        l2.setEndX(910);
         
         //radio button for trip3
-        RadioButton rad_b3 = new RadioButton("N-trevell");
-        rad_b3.setPrefSize(100, 38);
+        RadioButton rad_b3 = new RadioButton("N-trevel");
+        rad_b3.setPrefSize(120, 38);
         rad_b3.setToggleGroup(toggleGroup);
         
        //label for time
        Label lbltimego3 =new Label("Go");
        lbltimego3.setAlignment(Pos.CENTER);
        lbltimego3.setPrefSize(150, 75);
-       Label lbltime5 = new Label("5:30PM");
+       Label lbltime5 = new Label("5:30 PM");
        lbltime5.setAlignment(Pos.CENTER);
        lbltime5.setPrefSize(150, 75);
     
         //label for show price
         int p3 = 30;
-        Label lblprice3_2 = new Label(p3+"$");
+        Label lblprice3_2 = new Label(p3+" $");
         lblprice3_2.setAlignment(Pos.CENTER);
         lblprice3_2.setPrefSize(150, 75);
         
@@ -145,7 +129,7 @@ public class CarButtonPage extends AnchorPane {
         lblarrivetime3.setPrefSize(150, 75);
         
         //label for showing time  
-        Label lbltime6 = new Label("7:00PM");
+        Label lbltime6 = new Label("7:00 PM");
         lbltime6.setAlignment(Pos.CENTER);
         lbltime6.setPrefSize(150, 75);
         
@@ -156,7 +140,7 @@ public class CarButtonPage extends AnchorPane {
         
         //line under radio button 3
         Line l3 =new Line();
-        l3.setEndX(1050);
+        l3.setEndX(910);
         
         //vbox to add controll on it
         VBox v1 = new VBox(10);
@@ -169,31 +153,29 @@ public class CarButtonPage extends AnchorPane {
         rad_b1.setOnAction(e ->{
           btnnext.setDisable(false);
           tripCar.setLeavingDate("09:00 AM");
-          tripCar.setArrivalDate("12:00PM");
-          tripCar.setTripName("O-Travell");
+          tripCar.setArrivalDate("12:00 PM");
+          tripCar.setTripName("O-Travel");
           tripCar.setTripPrice(25);
         });
         
         rad_b2.setOnAction(e ->{
           btnnext.setDisable(false);
-          tripCar.setLeavingDate("1:30PM");
-          tripCar.setArrivalDate("3:30PM");
-          tripCar.setTripName("B-Travell");
+          tripCar.setLeavingDate("1:30 PM");
+          tripCar.setArrivalDate("3:30 PM");
+          tripCar.setTripName("B-Travel");
           tripCar.setTripPrice(23);
         });
         
         rad_b3.setOnAction(e ->{
           btnnext.setDisable(false);
-          tripCar.setLeavingDate("5:30PM");
-          tripCar.setArrivalDate("7:00PM");
-          tripCar.setTripName("N-trevell");
+          tripCar.setLeavingDate("5:30 PM");
+          tripCar.setArrivalDate("7:00 PM");
+          tripCar.setTripName("N-trevel");
           tripCar.setTripPrice(30);
         });
     }
 
     public Trip getTrip() {
         return tripCar;
-    }
-    
-    
+    } 
 }

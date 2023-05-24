@@ -1,3 +1,4 @@
+
 package main_page.Scenes;
 
 import javafx.collections.FXCollections;
@@ -51,7 +52,6 @@ public class Admin_reports_page extends Scene {
 
         back.setOnAction(e -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));
-//          primaryStage.setScene(new main_page_demo(primaryStage));
         });
         
         ReportsHelper reportHelper = new ReportsHelper();
@@ -85,7 +85,7 @@ public class Admin_reports_page extends Scene {
         //the <person> is the type of opject we want to add
         TableView table = new TableView<person>();
         table.getStyleClass().add("table");
-//                  neme of table                  opject, type        name of column.
+//                  neme of table                  object, type        name of column.
         TableColumn full_name_col = new TableColumn<person, String>("Full Name");
         full_name_col.setCellValueFactory(new PropertyValueFactory<>("FullName"));
         

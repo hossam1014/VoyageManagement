@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package main_page.Scenes;
 
 import javafx.geometry.Insets;
@@ -31,7 +27,6 @@ public class Bill extends Scene {
         root.setStyle("-fx-background-color: #e5eff1");
         
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-
 
         VBox page = new VBox(50);
         root.getChildren().add(page);
@@ -102,8 +97,6 @@ public class Bill extends Scene {
 
         goToMainPage.setOnAction(x -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));
-         //   primaryStage.setScene(new main_page_demo(primaryStage));
-
         });
 
         /* get children of the page */

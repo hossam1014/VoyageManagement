@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package main_page.Scenes;
 
 import javafx.collections.FXCollections;
@@ -42,7 +38,6 @@ public class Currency_Converter extends Scene {
     ));
     public static TextField converted_currency = new TextField();
 
-//    public Currency_Converter(Stage primaryStage) {
     public Currency_Converter(Stage primaryStage, User user) {
         super(new StackPane(), 1250, 760);
         StackPane root = (StackPane) this.getRoot();
@@ -97,8 +92,7 @@ public class Currency_Converter extends Scene {
         main_page.setPrefSize(100, 40);
         
         main_page.setOnAction(e -> {
-        primaryStage.setScene(new main_page_demo(primaryStage, user));
-         //   primaryStage.setScene(new main_page_demo(primaryStage));
+            primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
 
         /* Get Children of the page */
