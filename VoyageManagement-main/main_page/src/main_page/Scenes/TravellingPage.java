@@ -255,6 +255,7 @@ public class TravellingPage extends Scene {
             reservation.setArrivalDate(this.choosedTrip.getArrivalDate());
             reservation.setTripName(this.choosedTrip.getTripName());
             reservation.setTripPrice(this.choosedTrip.getTripPrice());
+            reservation.setUserId(user.getId());
 
             
             primaryStage.setScene(new Hotel_Resevation(primaryStage, user, reservation));

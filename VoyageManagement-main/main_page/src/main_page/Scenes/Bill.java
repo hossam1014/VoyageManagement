@@ -50,7 +50,7 @@ public class Bill extends Scene {
         Label hotelName = new Label("Hotel Name");
         Label hotelCheckInDate = new Label("Hotel Check-in Date");
         Label hotelCheckOutDate = new Label("Hotel Check-out Date ");
-        Label hotelPrice = new Label("Hotel Price");
+        Label hotelPrice = new Label("Total Price");
 
         /* Values from DataBase */
         TextField username_val = new TextField();
@@ -134,7 +134,7 @@ public class Bill extends Scene {
         bill_gridPane.addRow(9, hotelPrice, hotelPrice_val);
 
         /* Button to go back to main page */
-        Button goToMainPage = new Button("Back");
+        Button goToMainPage = new Button("Home Page");
         goToMainPage.getStyleClass().add("custom-button");
         goToMainPage.setPrefSize(90, 35);
 
