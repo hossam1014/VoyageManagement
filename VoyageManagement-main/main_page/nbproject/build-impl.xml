@@ -279,6 +279,20 @@ is divided into following sections:
         <condition else="" property="javac.profile.cmd.line.arg" value="-profile ${javac.profile}">
             <isset property="profile.available"/>
         </condition>
+        <condition else="false" property="jdkBug6558476">
+            <and>
+                <matches pattern="1\.[56]" string="${java.specification.version}"/>
+                <not>
+                    <os family="unix"/>
+                </not>
+            </and>
+        </condition>
+        <condition else="false" property="javac.fork">
+            <or>
+                <istrue value="${jdkBug6558476}"/>
+                <istrue value="${javac.external.vm}"/>
+            </or>
+        </condition>
         <property name="jar.index" value="false"/>
         <property name="jar.index.metainf" value="${jar.index}"/>
         <property name="copylibs.rebase" value="true"/>
