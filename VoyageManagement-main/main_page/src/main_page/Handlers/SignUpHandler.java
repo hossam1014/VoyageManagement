@@ -49,6 +49,17 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
             prepare.setString(5, Password);
 
             int rowsInserted = prepare.executeUpdate();
+            
+            if (UserName.isEmpty() || Password.isEmpty() || FullName.isEmpty()
+                    || Email.isEmpty() || PhoneNumber.isEmpty()) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("please fill all blank fields");
+                alert.showAndWait();
+
+            } else {
 
             if (rowsInserted > 0) {
                 // Sign up successful, show success message
@@ -67,6 +78,7 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                 alert.setContentText("Sign up failed");
                 alert.showAndWait();
 //                Database.close();
+            }
             }
 
         } catch (SQLException e) {

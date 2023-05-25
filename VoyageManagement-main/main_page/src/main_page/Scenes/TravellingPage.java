@@ -19,6 +19,7 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import main_page.Models.Location;
 import main_page.Models.Reservation;
+import main_page.Models.Trip;
 
 import main_page.Models.User;
 import main_page.SqlLiteDB;
@@ -46,7 +47,10 @@ public class TravellingPage extends Scene {
     private Location location2;
     
     private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, "", 0);
-
+    
+    
+    private Trip choosedTrip = new Trip();
+    
    
     public TravellingPage(Stage primaryStage, User user) {
 
@@ -185,6 +189,7 @@ public class TravellingPage extends Scene {
             right.getChildren().remove(flightPage);
             right.getChildren().remove(trainPage);
             right.getChildren().add(carPage);
+            this.choosedTrip = carPage.getTrip();
             btnnext.setVisible(true);
             btnnext.setDisable(true);
         });
@@ -193,6 +198,7 @@ public class TravellingPage extends Scene {
         btnbus.setOnAction(x -> {
             reservation.setTravelType("Bus");
             right.getChildren().add(busPage);
+            this.choosedTrip = busPage.getTrip();
             right.getChildren().remove(flightPage);
             right.getChildren().remove(trainPage);
             right.getChildren().remove(carPage);
@@ -206,6 +212,7 @@ public class TravellingPage extends Scene {
             right.getChildren().remove(busPage);
             right.getChildren().remove(flightPage);
             right.getChildren().add(trainPage);
+            this.choosedTrip = trainPage.getTrip();
             right.getChildren().remove(carPage);
             btnnext.setVisible(true);
             btnnext.setDisable(true);
@@ -216,6 +223,7 @@ public class TravellingPage extends Scene {
             reservation.setTravelType("Flight");
             right.getChildren().remove(busPage);
             right.getChildren().add(flightPage);
+            this.choosedTrip = flightPage.getTrip();
             right.getChildren().remove(trainPage);
             right.getChildren().remove(carPage);
             btnnext.setVisible(true);
@@ -233,7 +241,7 @@ public class TravellingPage extends Scene {
                 // Update the TextField with the calculated distance
                 txtdist.setText(String.valueOf(roundedDistance)+" km");
             }   
-        }); 
+        });
         
         // handler for  back button
         btnback.setOnAction(e -> {
@@ -242,6 +250,13 @@ public class TravellingPage extends Scene {
         
         //handle for btn next
         btnnext.setOnAction(e ->{
+            
+            reservation.setLeavingDate(this.choosedTrip.getLeavingDate());
+            reservation.setArrivalDate(this.choosedTrip.getArrivalDate());
+            reservation.setTripName(this.choosedTrip.getTripName());
+            reservation.setTripPrice(this.choosedTrip.getTripPrice());
+
+            
             primaryStage.setScene(new Hotel_Resevation(primaryStage, user, reservation));
         });
     }
