@@ -19,13 +19,14 @@ import main_page.Models.User;
  */
 public class user_reports_page extends Scene{
 
+    private int i = 0;
     public user_reports_page(Stage primaryStage, User user) {
         super(new VBox(20), 1250, 760);
         VBox main_box = (VBox) this.getRoot();
         HBox btn_box = new HBox(20);
         btn_box.setAlignment(Pos.CENTER);
         main_box.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-        main_box.setStyle("-fx-background-color: #1a5d7f");
+        main_box.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         main_box.setAlignment(Pos.CENTER_LEFT);
         main_box.setPadding(new Insets(20));
         
@@ -46,7 +47,18 @@ public class user_reports_page extends Scene{
         btn_back.setOnAction(e->{
             primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
-        
+        btn_supmit.setOnAction(e -> {
+            if (i % 2 == 0) {
+                main_box.setStyle("-fx-background-image: url('images/trolll.jpg');");
+                main_box.getChildren().remove(txt_report);
+
+            } else {
+                main_box.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
+                main_box.getChildren().add(txt_report);
+
+            }
+            i++;
+        });
         btn_box.getChildren().addAll(btn_supmit, btn_back);
         main_box.getChildren().addAll(lbl_header, txt_report, btn_box);
     }

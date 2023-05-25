@@ -1,4 +1,3 @@
-
 package main_page.Scenes;
 
 import javafx.collections.FXCollections;
@@ -31,19 +30,19 @@ public class Admin_reports_page extends Scene {
 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
         VBox root = (VBox) this.getRoot();
-        root.setId("admin_background");
+//        root.setId("admin_background");
+        root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
+
         root.setAlignment(Pos.TOP_CENTER);
         root.setPadding(new Insets(20));
 
         HBox lables_box = new HBox(20);
         lables_box.setAlignment(Pos.CENTER);
-        
+
 //       Button back = new Button("back");
 //       back.setId("back");
-       
 //       back.setOnAction(e -> {
 //            primaryStage.setScene(new main_page_demo(primaryStage, user));
-
         HBox button_box = new HBox();
 
         Button back = new Button("Back");
@@ -53,7 +52,7 @@ public class Admin_reports_page extends Scene {
         back.setOnAction(e -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));
         });
-        
+
         ReportsHelper reportHelper = new ReportsHelper();
 
         Label lbl_1 = new Label(reportHelper.getUserCount() + " \n Users");
@@ -72,7 +71,6 @@ public class Admin_reports_page extends Scene {
 //        lbl_3.setMinSize(160, 100);
 //        lbl_3.setAlignment(Pos.CENTER);
 //        lbl_3.getStyleClass().add("label_admin");
-
         lbl_4.setMinSize(160, 100);
         lbl_4.setAlignment(Pos.CENTER);
         lbl_4.getStyleClass().add("label_admin");
@@ -88,19 +86,18 @@ public class Admin_reports_page extends Scene {
 //                  neme of table                  object, type        name of column.
         TableColumn full_name_col = new TableColumn<person, String>("Full Name");
         full_name_col.setCellValueFactory(new PropertyValueFactory<>("FullName"));
-        
+
         TableColumn user_name_col = new TableColumn<person, String>("User Name");
         user_name_col.setCellValueFactory(new PropertyValueFactory<>("UserName"));
-        
+
         TableColumn email_col = new TableColumn<person, String>("Email");
         email_col.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
         TableColumn phone_number_col = new TableColumn<person, String>("Phone Number");
         phone_number_col.setCellValueFactory(new PropertyValueFactory<person, String>("PhoneNumber"));
 
-
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        
+
 //        addint data to the table 
 //        
 //        table.getItems().add(new person("amir", "amiralsayed123@gmail.com", 21));
@@ -112,13 +109,12 @@ public class Admin_reports_page extends Scene {
 //        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
 //        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
 //        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-        
         table.getColumns().addAll(full_name_col, user_name_col, email_col, phone_number_col);
-        
+
         table.setItems(FXCollections.observableArrayList(reportHelper.getAllUsers()));
-        
+
         root.getChildren().addAll(lables_box, table, button_box);
-        
+
 //        SqlLiteDB.closeConnection();
     }
 }

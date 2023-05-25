@@ -27,7 +27,7 @@ public class SignUpPage extends Scene {
         VBox vBox = (VBox) this.getRoot();
         vBox.getStyleClass().add("signUp-box");
         vBox.setAlignment(Pos.CENTER);
-        vBox.setStyle("-fx-background-color: #e5eff1");
+        vBox.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         
         HBox centr_box = new HBox(20);
         centr_box.setAlignment(Pos.CENTER);

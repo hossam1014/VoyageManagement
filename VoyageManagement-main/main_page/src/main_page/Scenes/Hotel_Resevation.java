@@ -44,7 +44,7 @@ public class Hotel_Resevation extends Scene {
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         AnchorPane page = new AnchorPane();
-        page.setStyle("-fx-background-color: #e5eff1");
+        page.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
 
         root.getChildren().addAll(page);
 
