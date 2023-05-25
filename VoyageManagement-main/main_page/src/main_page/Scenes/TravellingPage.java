@@ -45,7 +45,7 @@ public class TravellingPage extends Scene {
     private Location location1;
     private Location location2;
     
-    private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, 0, 0);
+    private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, "", 0);
 
    
     public TravellingPage(Stage primaryStage, User user) {
@@ -237,7 +237,7 @@ public class TravellingPage extends Scene {
         
         //handle for btn next
         btnnext.setOnAction(e ->{
-            primaryStage.setScene(new Hotel_Resevation(primaryStage, user));
+            primaryStage.setScene(new Hotel_Resevation(primaryStage, user, reservation));
         });
     }
     

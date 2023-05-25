@@ -102,10 +102,10 @@ public class main_page_demo extends Scene {
             primaryStage.setScene(new TravellingPage(primaryStage, loggedUser));
         });
 
-        btn_hotel.setOnAction(e -> {
+//        btn_hotel.setOnAction(e -> {
   //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
-            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser));
-        });
+//            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser, ));
+//        });
 
         btn_tools.setOnAction(e -> {
   //          primaryStage.setScene(new Currency_Converter(primaryStage));
@@ -247,7 +247,7 @@ public class main_page_demo extends Scene {
         
         
 
-        navigator.getChildren().addAll(img_circle, user_name, l1, btn_travel, btn_hotel,
+        navigator.getChildren().addAll(img_circle, user_name, l1, btn_travel,
                 btn_tools, btn_user_report);
 //
         if (user.isIsAdmin()) {

@@ -62,7 +62,7 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
                             result.getString("TravelType"), result.getString("TripName"),
                             result.getDouble("TripPrice"),
                             result.getString("HotelName"), result.getInt("HotelDuration"),
-                            result.getDouble("TotalPrice"), result.getInt("UserId"));
+                            result.getString("TotalPrice"), result.getInt("UserId"));
                 
 //                nothing appear here in console ERRORR
                 System.out.println(reservation);

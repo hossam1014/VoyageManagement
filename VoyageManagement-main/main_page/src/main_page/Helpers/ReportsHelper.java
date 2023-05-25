@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main_page.Helpers;
 
 import java.sql.Connection;
@@ -10,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.event.ActionEvent;
 import main_page.Models.Reservation;
 import main_page.Models.User;
 import main_page.SqlLiteDB;
@@ -113,7 +109,7 @@ public class ReportsHelper {
                             result.getString("TravelType"), result.getString("TripName"),
                             result.getDouble("TripPrice"),
                             result.getString("HotelName"), result.getInt("HotelDuration"),
-                            result.getDouble("TotalPrice"), result.getInt("UserId"));
+                            result.getString("TotalPrice"), result.getInt("UserId"));
 
                     // Output the reservation details
 //                    System.out.println(reservation);

@@ -3,7 +3,12 @@ package main_page.Scenes;
 import java.time.LocalDate;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -11,6 +16,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+
 import main_page.Handlers.HotelFillInfoHandler;
 import main_page.Models.Reservation;
 import main_page.Models.User;
@@ -31,11 +37,10 @@ public class Hotel_Resevation extends Scene {
     public static int var_room_capacity = 0;
     /* End of Global Variable Declerations */
     
-    public Hotel_Resevation(Stage primaryStage, User user) {
-        
+    public Hotel_Resevation(Stage primaryStage, User user, Reservation reservation) {
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
-        
+               
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         AnchorPane page = new AnchorPane();
@@ -200,10 +205,9 @@ public class Hotel_Resevation extends Scene {
 
         /* Hotel Type Radio Button */
         rads[0].setOnAction(e -> {
+            reservation.setHotelName("5 Star");
             if (false == rads[0].isSelected()) {
                 rads[0].setSelected(true);
-//                reservation.setHotelName("5 Star");
-
             } else {
                 var_hotel_type = 24;
                 rads[1].setSelected(false);
@@ -214,10 +218,9 @@ public class Hotel_Resevation extends Scene {
             }
         });
         rads[1].setOnAction(e -> {
+            reservation.setHotelName("4 Star");
             if (false == rads[1].isSelected()) {
                 rads[1].setSelected(true);
- //               reservation.setHotelName("4 Star");
-
             } else {
                 var_hotel_type = 17;
                 rads[0].setSelected(false);
@@ -228,10 +231,9 @@ public class Hotel_Resevation extends Scene {
             }
         });
         rads[2].setOnAction(e -> {
+            reservation.setHotelName("3 Star");
             if (false == rads[2].isSelected()) {
                 rads[2].setSelected(true);
-//                reservation.setHotelName("3 Star");
-
             } else {
                 var_hotel_type = 12;
                 rads[0].setSelected(false);
@@ -242,10 +244,9 @@ public class Hotel_Resevation extends Scene {
             }
         });
         rads[3].setOnAction(e -> {
+            reservation.setHotelName("Motel");
             if (false == rads[3].isSelected()) {
                 rads[3].setSelected(true);
-//                reservation.setHotelName("Motel");
-
             } else {
                 var_hotel_type = 6;
                 rads[0].setSelected(false);
@@ -382,10 +383,12 @@ public class Hotel_Resevation extends Scene {
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
 //            double totalPrice = Double.parseDouble(total_price.getText()) + reservation.getTripPrice();
-//            reservation.setTotalPrice(totalPrice);
-//            reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
+            reservation.setTotalPrice(total_price.getText());
+            reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
+            reservation.setHotel_CheckInDate(start_date[0]);
+            reservation.setHotel_CheckOutDate(end_date[0]);
             total_price.setText("");
-            primaryStage.setScene(new Bill(primaryStage, user));
+            primaryStage.setScene(new Bill(primaryStage, user, reservation));
         });
 
         /* Previous page */

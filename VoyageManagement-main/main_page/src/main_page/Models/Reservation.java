@@ -1,8 +1,7 @@
 
 package main_page.Models;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -21,14 +20,14 @@ public class Reservation {
     private double TripPrice;
     
     private String HotelName;
+    private LocalDate Hotel_CheckInDate;
+    private LocalDate Hotel_CheckOutDate;
     private int HotelDuration;
 
-
-
-    private double TotalPrice;
+    private String TotalPrice;
     private int UserId;
 
-    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
+    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, String TotalPrice, int UserId) {
         this.Id = Id;
         this.From = From;
         this.To = To;
@@ -71,6 +70,14 @@ public class Reservation {
         return TravelType;
     }
 
+    public LocalDate getHotel_CheckInDate() {
+        return Hotel_CheckInDate;
+    }
+
+    public LocalDate getHotel_CheckOutDate() {
+        return Hotel_CheckOutDate;
+    }
+
     public String getTripName() {
         return TripName;
     }
@@ -83,7 +90,7 @@ public class Reservation {
         return HotelDuration;
     }
 
-    public double getTotalPrice() {
+    public String getTotalPrice() {
         return TotalPrice;
     }
 
@@ -122,12 +129,20 @@ public class Reservation {
     public void setHotelName(String HotelName) {
         this.HotelName = HotelName;
     }
+    
+    public void setHotel_CheckOutDate(LocalDate Hotel_CheckOutDate) {
+        this.Hotel_CheckOutDate = Hotel_CheckOutDate;
+    }
+    
+    public void setHotel_CheckInDate(LocalDate Hotel_CheckInDate) {
+        this.Hotel_CheckInDate = Hotel_CheckInDate;
+    }
 
     public void setHotelDuration(int HotelDuration) {
         this.HotelDuration = HotelDuration;
     }
 
-    public void setTotalPrice(double TotalPrice) {
+    public void setTotalPrice(String TotalPrice) {
         this.TotalPrice = TotalPrice;
     }
 
