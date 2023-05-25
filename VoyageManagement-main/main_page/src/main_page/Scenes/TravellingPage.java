@@ -132,6 +132,7 @@ public class TravellingPage extends Scene {
         btnnext.setLayoutX(450);
         btnnext.setLayoutY(600);
         btnnext.setVisible(false);
+        btnnext.setDisable(true);
         
         //edit propertis for buttons
         btncar.setPrefSize(120, 48);
@@ -185,6 +186,7 @@ public class TravellingPage extends Scene {
             right.getChildren().remove(trainPage);
             right.getChildren().add(carPage);
             btnnext.setVisible(true);
+            btnnext.setDisable(true);
         });
         
         // handler for bus button
@@ -195,6 +197,7 @@ public class TravellingPage extends Scene {
             right.getChildren().remove(trainPage);
             right.getChildren().remove(carPage);
             btnnext.setVisible(true);
+            btnnext.setDisable(true);
         });
         
         // handler for flaght button
@@ -205,6 +208,7 @@ public class TravellingPage extends Scene {
             right.getChildren().add(trainPage);
             right.getChildren().remove(carPage);
             btnnext.setVisible(true);
+            btnnext.setDisable(true);
         });
         
         // handler for train button
@@ -215,6 +219,7 @@ public class TravellingPage extends Scene {
             right.getChildren().remove(trainPage);
             right.getChildren().remove(carPage);
             btnnext.setVisible(true);
+            btnnext.setDisable(true);
         });
         
         btnDis.setOnAction(x -> {
