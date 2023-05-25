@@ -46,7 +46,7 @@ public class TravellingPage extends Scene {
     private Location location1;
     private Location location2;
     
-    private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, "", 0);
+    private Reservation reservation = new Reservation(0, "", "", "", "", "", "", 0, "", 0, 0, 0);
     
     
     private Trip choosedTrip = new Trip();

@@ -57,12 +57,12 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
 
             while (result.next()) {
                     Reservation reservation = new Reservation(result.getInt("Id"),
-                            result.getString("From"), result.getString("To"),
+                            result.getString("FromCity"), result.getString("ToCity"),
                             result.getString("LeavingDate"), result.getString("ArrivalDate"),
                             result.getString("TravelType"), result.getString("TripName"),
                             result.getDouble("TripPrice"),
                             result.getString("HotelName"), result.getInt("HotelDuration"),
-                            result.getString("TotalPrice"), result.getInt("UserId"));
+                            result.getDouble("TotalPrice"), result.getInt("UserId"));
                 
 //                nothing appear here in console ERRORR
                 System.out.println(reservation);

@@ -24,10 +24,10 @@ public class Reservation {
     private LocalDate Hotel_CheckOutDate;
     private int HotelDuration;
 
-    private String TotalPrice;
+    private double TotalPrice;
     private int UserId;
 
-    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, String TotalPrice, int UserId) {
+    public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
         this.Id = Id;
         this.From = From;
         this.To = To;
@@ -90,7 +90,7 @@ public class Reservation {
         return HotelDuration;
     }
 
-    public String getTotalPrice() {
+    public double getTotalPrice() {
         return TotalPrice;
     }
 
@@ -142,7 +142,7 @@ public class Reservation {
         this.HotelDuration = HotelDuration;
     }
 
-    public void setTotalPrice(String TotalPrice) {
+    public void setTotalPrice(double TotalPrice) {
         this.TotalPrice = TotalPrice;
     }
 
