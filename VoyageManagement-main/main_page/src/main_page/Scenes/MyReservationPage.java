@@ -1,4 +1,3 @@
-
 package main_page.Scenes;
 
 import java.util.List;
@@ -52,11 +51,13 @@ public class MyReservationPage extends Scene {
 
         table.getColumns().addAll(reservationIdCol, reservationDateCol, customerNameCol, roomNumberCol, checkInDateCol, checkOutDateCol);
         table.setItems(FXCollections.observableArrayList(reservations));
-        
+
         Button loginBtn = new Button();
         loginBtn.setAlignment(Pos.CENTER);
 
         VBox root = (VBox) getRoot();
+        root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
+
         root.getChildren().addAll(table, loginBtn);
 
         // Apply CSS style

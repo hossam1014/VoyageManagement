@@ -58,14 +58,14 @@ public class TravellingPage extends Scene {
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
-        navigator.setId("navigator");
-        navigator.setStyle("-fx-background-color: #e5eff1");
+//        navigator.setId("navigator");
+//        navigator.setStyle("-fx-background-color: #e5eff1");
         
         AnchorPane right = new AnchorPane();
         
         //styling panes
         navigator.setMinSize(200, 760);
-        navigator.getStyleClass().add("navigator");
+//        navigator.getStyleClass().add("navigator");
 
         //navigator controller
         
@@ -170,7 +170,7 @@ public class TravellingPage extends Scene {
         right.getChildren().addAll(h1, h2,btnDis,txtdist,l3,l4,btnnext,lblto,endCityComboBox);
         
         HBox hBox = (HBox) this.getRoot();
-        hBox.setStyle("-fx-background-color: #e5eff1");
+        hBox.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         hBox.getChildren().addAll(navigator, right);
         
         /*//////  

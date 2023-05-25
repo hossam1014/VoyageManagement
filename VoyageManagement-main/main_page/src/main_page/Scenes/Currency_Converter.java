@@ -41,7 +41,7 @@ public class Currency_Converter extends Scene {
     public Currency_Converter(Stage primaryStage, User user) {
         super(new StackPane(), 1250, 760);
         StackPane root = (StackPane) this.getRoot();
-        root.setStyle("-fx-background-color: #e5eff1");
+        root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
         VBox page = new VBox(35);

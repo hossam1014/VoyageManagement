@@ -45,9 +45,7 @@ public class main_page_demo extends Scene {
         vBox.setAlignment(Pos.CENTER);
         vBox.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
-//        vBox.setStyle("-fx-background-image: url('images/home_page_demo_background.jpg');");
-        vBox.setStyle("-fx-background-color: #e5eff1;");
-        
+        vBox.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         HBox main_page = new HBox(20);
 
         VBox info = new VBox(30);
@@ -82,7 +80,8 @@ public class main_page_demo extends Scene {
         // navigator part of code //
         // adding the photo of the user, dont forget to change adel shakal's photo :)
         Circle img_circle = new Circle(75);
-        Image user_photo = new Image("images/user.png", 300, 300, false, true);
+        Image user_photo = new Image("images/user_photo.jpg", 300, 300, false, true);
+//        Image user_photo = new Image("images/user.png", 300, 300, false, true);
         img_circle.setFill(new ImagePattern(user_photo));
 
         // there will be some action handling here amir
