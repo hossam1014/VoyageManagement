@@ -16,7 +16,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import main_page.Handlers.ConfirmBookingHandler;
 
 import main_page.Handlers.HotelFillInfoHandler;
 import main_page.Models.Reservation;
@@ -383,24 +382,11 @@ public class Hotel_Resevation extends Scene {
 
         /* Confirm Booking & Bill */
         confirm.setOnAction(e->{
-            
-//          We first remove any non-numeric 
-//          characters using the replaceAll() method with a regular expression [^\\d.],
-            
-            double totalPrice = Double.parseDouble(total_price.getText().replaceAll("[^\\d.]", "")) 
-                    + reservation.getTripPrice();
-//            reservation.setTotalPrice(total_price.getText());
-            reservation.setTotalPrice(totalPrice);
+//            double totalPrice = Double.parseDouble(total_price.getText()) + reservation.getTripPrice();
+            reservation.setTotalPrice(total_price.getText());
             reservation.setHotelDuration((int)done_reservation.calculateDateDifference());
             reservation.setHotel_CheckInDate(start_date[0]);
             reservation.setHotel_CheckOutDate(end_date[0]);
-            
-//            confirm Booking Handler
-
-            ConfirmBookingHandler handler = new ConfirmBookingHandler(reservation);
-            handler.handle(e);
-            
-            
             total_price.setText("");
             primaryStage.setScene(new Bill(primaryStage, user, reservation));
         });

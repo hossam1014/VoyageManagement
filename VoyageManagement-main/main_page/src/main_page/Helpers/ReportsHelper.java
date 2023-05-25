@@ -104,12 +104,12 @@ public class ReportsHelper {
             try (ResultSet result = prepare.executeQuery()) {
                 while (result.next()) {
                     Reservation reservation = new Reservation(result.getInt("Id"),
-                            result.getString("FromCity"), result.getString("ToCity"),
+                            result.getString("From"), result.getString("To"),
                             result.getString("LeavingDate"), result.getString("ArrivalDate"),
                             result.getString("TravelType"), result.getString("TripName"),
                             result.getDouble("TripPrice"),
                             result.getString("HotelName"), result.getInt("HotelDuration"),
-                            result.getDouble("TotalPrice"), result.getInt("UserId"));
+                            result.getString("TotalPrice"), result.getInt("UserId"));
 
                     // Output the reservation details
 //                    System.out.println(reservation);
