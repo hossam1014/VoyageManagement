@@ -1,0 +1,385 @@
+@startuml
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.PreparedStatement
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.time.LocalDate
+class java.time.temporal.ChronoUnit
+class java.util.ArrayList
+class java.util.List
+class java.util.Optional
+class javafx.application.Application
+class javafx.collections.FXCollections
+class javafx.event.ActionEvent
+class javafx.geometry.Insets
+class javafx.geometry.Pos
+class javafx.scene.Scene
+class javafx.scene.control.Alert
+class javafx.scene.control.Alert.AlertType
+class javafx.scene.control.Button
+class javafx.scene.control.ButtonType
+class javafx.scene.control.ComboBox
+class javafx.scene.control.DatePicker
+class javafx.scene.control.Label
+class javafx.scene.control.PasswordField
+class javafx.scene.control.RadioButton
+class javafx.scene.control.TableColumn
+class javafx.scene.control.TableView
+class javafx.scene.control.TextArea
+class javafx.scene.control.TextField
+class javafx.scene.control.ToggleGroup
+class javafx.scene.control.cell.PropertyValueFactory
+class javafx.scene.image.Image
+class javafx.scene.layout.AnchorPane
+class javafx.scene.layout.GridPane
+class javafx.scene.layout.HBox
+class javafx.scene.layout.StackPane
+class javafx.scene.layout.VBox
+class javafx.scene.paint.Color
+class javafx.scene.paint.ImagePattern
+class javafx.scene.shape.Circle
+class javafx.scene.shape.Line
+class javafx.scene.text.Font
+class javafx.stage.Stage
+class javafx.stage.Window
+class main_page.Handlers.ConfirmBookingHandler
+class main_page.Handlers.CurrencyConverterHandler
+class main_page.Handlers.GetUsersHandler
+class main_page.Handlers.HotelFillInfoHandler
+class main_page.Handlers.LoginHandler
+class main_page.Handlers.MyReservationsHandler
+class main_page.Handlers.SignUpHandler
+class main_page.Handlers.TravellingPageHundler
+class main_page.Helpers.AlertHelper
+class main_page.Helpers.ReportsHelper
+class main_page.Main_page
+class main_page.Models.Location
+class main_page.Models.Reservation
+class main_page.Models.Trip
+class main_page.Models.User
+class main_page.Scenes.Admin_reports_page
+class main_page.Scenes.Bill
+class main_page.Scenes.BusButtonPage
+class main_page.Scenes.CarButtonPage
+class main_page.Scenes.Currency_Converter
+class main_page.Scenes.DistanceCalculatorPage
+class main_page.Scenes.FlaghtButtonPage
+class main_page.Scenes.Hotel_Resevation
+class main_page.Scenes.LoginPage
+class main_page.Scenes.MyReservationPage
+class main_page.Scenes.SignUpPage
+class main_page.Scenes.TrainButtonPage
+class main_page.Scenes.TravellingPage
+class main_page.Scenes.main_page_demo
+class main_page.Scenes.person
+class main_page.Scenes.user_reports_page
+class main_page.SqlLiteDB
+interface javafx.event.EventHandler
+main_page.Handlers.ConfirmBookingHandler ..> java.sql.Connection
+main_page.Handlers.ConfirmBookingHandler ..> java.sql.PreparedStatement
+main_page.Handlers.ConfirmBookingHandler ..> java.sql.ResultSet
+main_page.Handlers.ConfirmBookingHandler ..> java.sql.SQLException
+main_page.Handlers.ConfirmBookingHandler ..> javafx.event.ActionEvent
+main_page.Handlers.ConfirmBookingHandler ..> javafx.scene.Scene
+main_page.Handlers.ConfirmBookingHandler ..> javafx.scene.control.Alert
+main_page.Handlers.ConfirmBookingHandler ..> javafx.scene.control.Label
+main_page.Handlers.ConfirmBookingHandler ..> javafx.scene.layout.VBox
+main_page.Handlers.ConfirmBookingHandler ..> javafx.stage.Stage
+main_page.Handlers.ConfirmBookingHandler ..> main_page.Models.Reservation
+main_page.Handlers.ConfirmBookingHandler ..> main_page.SqlLiteDB
+main_page.Handlers.ConfirmBookingHandler --|> javafx.event.EventHandler
+main_page.Handlers.CurrencyConverterHandler ..> javafx.event.ActionEvent
+main_page.Handlers.CurrencyConverterHandler ..> javafx.scene.control.Alert
+main_page.Handlers.CurrencyConverterHandler ..> main_page.Scenes.Currency_Converter
+main_page.Handlers.CurrencyConverterHandler --|> javafx.event.EventHandler
+main_page.Handlers.GetUsersHandler ..> java.sql.Connection
+main_page.Handlers.GetUsersHandler ..> java.sql.PreparedStatement
+main_page.Handlers.GetUsersHandler ..> java.sql.ResultSet
+main_page.Handlers.GetUsersHandler ..> java.sql.SQLException
+main_page.Handlers.GetUsersHandler ..> javafx.event.ActionEvent
+main_page.Handlers.GetUsersHandler ..> javafx.scene.Scene
+main_page.Handlers.GetUsersHandler ..> javafx.scene.control.Alert
+main_page.Handlers.GetUsersHandler ..> javafx.scene.control.Label
+main_page.Handlers.GetUsersHandler ..> javafx.scene.layout.VBox
+main_page.Handlers.GetUsersHandler ..> javafx.stage.Stage
+main_page.Handlers.GetUsersHandler ..> main_page.SqlLiteDB
+main_page.Handlers.GetUsersHandler --|> javafx.event.EventHandler
+main_page.Handlers.HotelFillInfoHandler ..> java.time.LocalDate
+main_page.Handlers.HotelFillInfoHandler ..> java.time.temporal.ChronoUnit
+main_page.Handlers.HotelFillInfoHandler ..> javafx.event.ActionEvent
+main_page.Handlers.HotelFillInfoHandler ..> javafx.scene.control.Alert
+main_page.Handlers.HotelFillInfoHandler ..> javafx.scene.control.DatePicker
+main_page.Handlers.HotelFillInfoHandler ..> main_page.Scenes.Hotel_Resevation
+main_page.Handlers.HotelFillInfoHandler --|> javafx.event.EventHandler
+main_page.Handlers.LoginHandler ..> java.sql.Connection
+main_page.Handlers.LoginHandler ..> java.sql.PreparedStatement
+main_page.Handlers.LoginHandler ..> java.sql.ResultSet
+main_page.Handlers.LoginHandler ..> java.sql.SQLException
+main_page.Handlers.LoginHandler ..> javafx.event.ActionEvent
+main_page.Handlers.LoginHandler ..> javafx.scene.control.Alert
+main_page.Handlers.LoginHandler ..> main_page.Models.User
+main_page.Handlers.LoginHandler ..> main_page.SqlLiteDB
+main_page.Handlers.LoginHandler --|> javafx.event.EventHandler
+main_page.Handlers.MyReservationsHandler ..> java.sql.Connection
+main_page.Handlers.MyReservationsHandler ..> java.sql.PreparedStatement
+main_page.Handlers.MyReservationsHandler ..> java.sql.ResultSet
+main_page.Handlers.MyReservationsHandler ..> java.sql.SQLException
+main_page.Handlers.MyReservationsHandler ..> java.util.ArrayList
+main_page.Handlers.MyReservationsHandler ..> java.util.List
+main_page.Handlers.MyReservationsHandler ..> javafx.event.ActionEvent
+main_page.Handlers.MyReservationsHandler ..> javafx.scene.control.Alert
+main_page.Handlers.MyReservationsHandler ..> main_page.Models.Reservation
+main_page.Handlers.MyReservationsHandler ..> main_page.SqlLiteDB
+main_page.Handlers.MyReservationsHandler --|> javafx.event.EventHandler
+main_page.Handlers.SignUpHandler ..> java.sql.Connection
+main_page.Handlers.SignUpHandler ..> java.sql.PreparedStatement
+main_page.Handlers.SignUpHandler ..> java.sql.ResultSet
+main_page.Handlers.SignUpHandler ..> java.sql.SQLException
+main_page.Handlers.SignUpHandler ..> javafx.event.ActionEvent
+main_page.Handlers.SignUpHandler ..> javafx.scene.control.Alert
+main_page.Handlers.SignUpHandler ..> main_page.SqlLiteDB
+main_page.Handlers.SignUpHandler --|> javafx.event.EventHandler
+main_page.Handlers.TravellingPageHundler ..> java.time.LocalDate
+main_page.Handlers.TravellingPageHundler ..> java.time.temporal.ChronoUnit
+main_page.Handlers.TravellingPageHundler ..> javafx.event.ActionEvent
+main_page.Handlers.TravellingPageHundler ..> javafx.scene.control.Alert
+main_page.Handlers.TravellingPageHundler ..> javafx.scene.control.DatePicker
+main_page.Handlers.TravellingPageHundler ..> main_page.Scenes.TravellingPage
+main_page.Handlers.TravellingPageHundler --|> javafx.event.EventHandler
+main_page.Helpers.AlertHelper ..> java.util.Optional
+main_page.Helpers.AlertHelper ..> javafx.scene.control.Alert
+main_page.Helpers.AlertHelper ..> javafx.scene.control.ButtonType
+main_page.Helpers.AlertHelper ..> javafx.stage.Window
+main_page.Helpers.ReportsHelper ..> java.sql.Connection
+main_page.Helpers.ReportsHelper ..> java.sql.PreparedStatement
+main_page.Helpers.ReportsHelper ..> java.sql.ResultSet
+main_page.Helpers.ReportsHelper ..> java.sql.SQLException
+main_page.Helpers.ReportsHelper ..> java.util.ArrayList
+main_page.Helpers.ReportsHelper ..> java.util.List
+main_page.Helpers.ReportsHelper ..> main_page.Models.Reservation
+main_page.Helpers.ReportsHelper ..> main_page.Models.User
+main_page.Helpers.ReportsHelper ..> main_page.SqlLiteDB
+main_page.Main_page --|> javafx.application.Application
+main_page.Main_page ..> javafx.geometry.Pos
+main_page.Main_page ..> javafx.scene.Scene
+main_page.Main_page ..> javafx.scene.control.Button
+main_page.Main_page ..> javafx.scene.image.Image
+main_page.Main_page ..> javafx.scene.layout.HBox
+main_page.Main_page ..> javafx.scene.layout.VBox
+main_page.Main_page ..> javafx.stage.Stage
+main_page.Main_page ..> main_page.Scenes.LoginPage
+main_page.Main_page ..> main_page.Scenes.SignUpPage
+main_page.Models.Reservation ..> java.time.LocalDate
+main_page.Scenes.Admin_reports_page ..> javafx.collections.FXCollections
+main_page.Scenes.Admin_reports_page ..> javafx.geometry.Insets
+main_page.Scenes.Admin_reports_page ..> javafx.geometry.Pos
+main_page.Scenes.Admin_reports_page --|> javafx.scene.Scene
+main_page.Scenes.Admin_reports_page ..> javafx.scene.control.Button
+main_page.Scenes.Admin_reports_page ..> javafx.scene.control.Label
+main_page.Scenes.Admin_reports_page ..> javafx.scene.control.TableColumn
+main_page.Scenes.Admin_reports_page ..> javafx.scene.control.TableView
+main_page.Scenes.Admin_reports_page ..> javafx.scene.control.cell.PropertyValueFactory
+main_page.Scenes.Admin_reports_page ..> javafx.scene.layout.HBox
+main_page.Scenes.Admin_reports_page ..> javafx.scene.layout.VBox
+main_page.Scenes.Admin_reports_page ..> javafx.stage.Stage
+main_page.Scenes.Admin_reports_page ..> main_page.Helpers.ReportsHelper
+main_page.Scenes.Admin_reports_page ..> main_page.Models.User
+main_page.Scenes.Admin_reports_page ..> main_page.SqlLiteDB
+main_page.Scenes.Bill ..> javafx.geometry.Insets
+main_page.Scenes.Bill ..> javafx.geometry.Pos
+main_page.Scenes.Bill --|> javafx.scene.Scene
+main_page.Scenes.Bill ..> javafx.scene.control.Button
+main_page.Scenes.Bill ..> javafx.scene.control.Label
+main_page.Scenes.Bill ..> javafx.scene.control.TextField
+main_page.Scenes.Bill ..> javafx.scene.layout.GridPane
+main_page.Scenes.Bill ..> javafx.scene.layout.StackPane
+main_page.Scenes.Bill ..> javafx.scene.layout.VBox
+main_page.Scenes.Bill ..> javafx.stage.Stage
+main_page.Scenes.Bill ..> main_page.Models.Reservation
+main_page.Scenes.Bill ..> main_page.Models.User
+main_page.Scenes.BusButtonPage ..> javafx.geometry.Pos
+main_page.Scenes.BusButtonPage ..> javafx.scene.control.Label
+main_page.Scenes.BusButtonPage ..> javafx.scene.control.RadioButton
+main_page.Scenes.BusButtonPage ..> javafx.scene.control.ToggleGroup
+main_page.Scenes.BusButtonPage --|> javafx.scene.layout.AnchorPane
+main_page.Scenes.BusButtonPage ..> javafx.scene.layout.HBox
+main_page.Scenes.BusButtonPage ..> javafx.scene.layout.VBox
+main_page.Scenes.BusButtonPage ..> javafx.scene.shape.Line
+main_page.Scenes.BusButtonPage ..> main_page.Models.Trip
+main_page.Scenes.BusButtonPage ..> main_page.Scenes.TravellingPage
+main_page.Scenes.CarButtonPage ..> javafx.geometry.Pos
+main_page.Scenes.CarButtonPage ..> javafx.scene.control.Label
+main_page.Scenes.CarButtonPage ..> javafx.scene.control.RadioButton
+main_page.Scenes.CarButtonPage ..> javafx.scene.control.ToggleGroup
+main_page.Scenes.CarButtonPage --|> javafx.scene.layout.AnchorPane
+main_page.Scenes.CarButtonPage ..> javafx.scene.layout.HBox
+main_page.Scenes.CarButtonPage ..> javafx.scene.layout.VBox
+main_page.Scenes.CarButtonPage ..> javafx.scene.shape.Line
+main_page.Scenes.CarButtonPage ..> main_page.Models.Trip
+main_page.Scenes.CarButtonPage ..> main_page.Scenes.TravellingPage
+main_page.Scenes.Currency_Converter ..> javafx.collections.FXCollections
+main_page.Scenes.Currency_Converter ..> javafx.geometry.Insets
+main_page.Scenes.Currency_Converter ..> javafx.geometry.Pos
+main_page.Scenes.Currency_Converter --|> javafx.scene.Scene
+main_page.Scenes.Currency_Converter ..> javafx.scene.control.Button
+main_page.Scenes.Currency_Converter ..> javafx.scene.control.ComboBox
+main_page.Scenes.Currency_Converter ..> javafx.scene.control.Label
+main_page.Scenes.Currency_Converter ..> javafx.scene.control.TextField
+main_page.Scenes.Currency_Converter ..> javafx.scene.layout.GridPane
+main_page.Scenes.Currency_Converter ..> javafx.scene.layout.StackPane
+main_page.Scenes.Currency_Converter ..> javafx.scene.layout.VBox
+main_page.Scenes.Currency_Converter ..> javafx.stage.Stage
+main_page.Scenes.Currency_Converter ..> main_page.Handlers.CurrencyConverterHandler
+main_page.Scenes.Currency_Converter ..> main_page.Models.User
+main_page.Scenes.DistanceCalculatorPage ..> java.sql.Connection
+main_page.Scenes.DistanceCalculatorPage ..> java.sql.DriverManager
+main_page.Scenes.DistanceCalculatorPage ..> java.sql.PreparedStatement
+main_page.Scenes.DistanceCalculatorPage ..> java.sql.ResultSet
+main_page.Scenes.DistanceCalculatorPage ..> java.sql.SQLException
+main_page.Scenes.DistanceCalculatorPage ..> java.util.List
+main_page.Scenes.DistanceCalculatorPage ..> javafx.geometry.Insets
+main_page.Scenes.DistanceCalculatorPage ..> javafx.geometry.Pos
+main_page.Scenes.DistanceCalculatorPage --|> javafx.scene.Scene
+main_page.Scenes.DistanceCalculatorPage ..> javafx.scene.control.Button
+main_page.Scenes.DistanceCalculatorPage ..> javafx.scene.control.ComboBox
+main_page.Scenes.DistanceCalculatorPage ..> javafx.scene.control.Label
+main_page.Scenes.DistanceCalculatorPage ..> javafx.scene.layout.GridPane
+main_page.Scenes.DistanceCalculatorPage ..> javafx.scene.text.Font
+main_page.Scenes.DistanceCalculatorPage ..> javafx.stage.Stage
+main_page.Scenes.DistanceCalculatorPage ..> main_page.Models.Location
+main_page.Scenes.DistanceCalculatorPage ..> main_page.SqlLiteDB
+main_page.Scenes.FlaghtButtonPage ..> javafx.geometry.Pos
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.control.Label
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.control.RadioButton
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.control.ToggleGroup
+main_page.Scenes.FlaghtButtonPage --|> javafx.scene.layout.AnchorPane
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.layout.HBox
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.layout.VBox
+main_page.Scenes.FlaghtButtonPage ..> javafx.scene.shape.Line
+main_page.Scenes.FlaghtButtonPage ..> main_page.Models.Trip
+main_page.Scenes.FlaghtButtonPage ..> main_page.Scenes.TravellingPage
+main_page.Scenes.Hotel_Resevation ..> java.time.LocalDate
+main_page.Scenes.Hotel_Resevation ..> javafx.geometry.Pos
+main_page.Scenes.Hotel_Resevation --|> javafx.scene.Scene
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.Alert
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.Alert.AlertType
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.Button
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.DatePicker
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.Label
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.RadioButton
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.control.TextField
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.layout.AnchorPane
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.layout.HBox
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.layout.StackPane
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.layout.VBox
+main_page.Scenes.Hotel_Resevation ..> javafx.scene.shape.Line
+main_page.Scenes.Hotel_Resevation ..> javafx.stage.Stage
+main_page.Scenes.Hotel_Resevation ..> main_page.Handlers.ConfirmBookingHandler
+main_page.Scenes.Hotel_Resevation ..> main_page.Handlers.HotelFillInfoHandler
+main_page.Scenes.Hotel_Resevation ..> main_page.Models.Reservation
+main_page.Scenes.Hotel_Resevation ..> main_page.Models.User
+main_page.Scenes.LoginPage ..> javafx.geometry.Insets
+main_page.Scenes.LoginPage ..> javafx.geometry.Pos
+main_page.Scenes.LoginPage --|> javafx.scene.Scene
+main_page.Scenes.LoginPage ..> javafx.scene.control.Button
+main_page.Scenes.LoginPage ..> javafx.scene.control.Label
+main_page.Scenes.LoginPage ..> javafx.scene.control.PasswordField
+main_page.Scenes.LoginPage ..> javafx.scene.control.TextField
+main_page.Scenes.LoginPage ..> javafx.scene.layout.GridPane
+main_page.Scenes.LoginPage ..> javafx.scene.layout.HBox
+main_page.Scenes.LoginPage ..> javafx.scene.layout.VBox
+main_page.Scenes.LoginPage ..> javafx.stage.Stage
+main_page.Scenes.LoginPage ..> main_page.Handlers.LoginHandler
+main_page.Scenes.LoginPage ..> main_page.Handlers.MyReservationsHandler
+main_page.Scenes.MyReservationPage ..> java.util.List
+main_page.Scenes.MyReservationPage ..> javafx.collections.FXCollections
+main_page.Scenes.MyReservationPage ..> javafx.geometry.Pos
+main_page.Scenes.MyReservationPage --|> javafx.scene.Scene
+main_page.Scenes.MyReservationPage ..> javafx.scene.control.Button
+main_page.Scenes.MyReservationPage ..> javafx.scene.control.TableColumn
+main_page.Scenes.MyReservationPage ..> javafx.scene.control.TableView
+main_page.Scenes.MyReservationPage ..> javafx.scene.control.cell.PropertyValueFactory
+main_page.Scenes.MyReservationPage ..> javafx.scene.layout.VBox
+main_page.Scenes.MyReservationPage ..> javafx.stage.Stage
+main_page.Scenes.MyReservationPage ..> main_page.Handlers.MyReservationsHandler
+main_page.Scenes.MyReservationPage ..> main_page.Models.Reservation
+main_page.Scenes.SignUpPage ..> javafx.geometry.Insets
+main_page.Scenes.SignUpPage ..> javafx.geometry.Pos
+main_page.Scenes.SignUpPage --|> javafx.scene.Scene
+main_page.Scenes.SignUpPage ..> javafx.scene.control.Button
+main_page.Scenes.SignUpPage ..> javafx.scene.control.Label
+main_page.Scenes.SignUpPage ..> javafx.scene.control.PasswordField
+main_page.Scenes.SignUpPage ..> javafx.scene.control.TextField
+main_page.Scenes.SignUpPage ..> javafx.scene.layout.GridPane
+main_page.Scenes.SignUpPage ..> javafx.scene.layout.HBox
+main_page.Scenes.SignUpPage ..> javafx.scene.layout.VBox
+main_page.Scenes.SignUpPage ..> javafx.stage.Stage
+main_page.Scenes.SignUpPage ..> main_page.Handlers.SignUpHandler
+main_page.Scenes.TrainButtonPage ..> javafx.geometry.Pos
+main_page.Scenes.TrainButtonPage ..> javafx.scene.control.Label
+main_page.Scenes.TrainButtonPage ..> javafx.scene.control.RadioButton
+main_page.Scenes.TrainButtonPage ..> javafx.scene.control.ToggleGroup
+main_page.Scenes.TrainButtonPage --|> javafx.scene.layout.AnchorPane
+main_page.Scenes.TrainButtonPage ..> javafx.scene.layout.HBox
+main_page.Scenes.TrainButtonPage ..> javafx.scene.layout.VBox
+main_page.Scenes.TrainButtonPage ..> javafx.scene.shape.Line
+main_page.Scenes.TrainButtonPage ..> main_page.Models.Trip
+main_page.Scenes.TrainButtonPage ..> main_page.Scenes.TravellingPage
+main_page.Scenes.TravellingPage ..> java.sql.Connection
+main_page.Scenes.TravellingPage ..> java.sql.PreparedStatement
+main_page.Scenes.TravellingPage ..> java.sql.ResultSet
+main_page.Scenes.TravellingPage ..> java.sql.SQLException
+main_page.Scenes.TravellingPage ..> java.util.ArrayList
+main_page.Scenes.TravellingPage ..> java.util.List
+main_page.Scenes.TravellingPage ..> javafx.geometry.Pos
+main_page.Scenes.TravellingPage --|> javafx.scene.Scene
+main_page.Scenes.TravellingPage ..> javafx.scene.control.Button
+main_page.Scenes.TravellingPage ..> javafx.scene.control.ComboBox
+main_page.Scenes.TravellingPage ..> javafx.scene.control.Label
+main_page.Scenes.TravellingPage ..> javafx.scene.control.TextField
+main_page.Scenes.TravellingPage ..> javafx.scene.layout.AnchorPane
+main_page.Scenes.TravellingPage ..> javafx.scene.layout.HBox
+main_page.Scenes.TravellingPage ..> javafx.scene.shape.Line
+main_page.Scenes.TravellingPage ..> javafx.stage.Stage
+main_page.Scenes.TravellingPage ..> main_page.Models.Location
+main_page.Scenes.TravellingPage ..> main_page.Models.Reservation
+main_page.Scenes.TravellingPage ..> main_page.Models.Trip
+main_page.Scenes.TravellingPage ..> main_page.Models.User
+main_page.Scenes.TravellingPage ..> main_page.SqlLiteDB
+main_page.Scenes.main_page_demo ..> javafx.collections.FXCollections
+main_page.Scenes.main_page_demo ..> javafx.geometry.Insets
+main_page.Scenes.main_page_demo ..> javafx.geometry.Pos
+main_page.Scenes.main_page_demo --|> javafx.scene.Scene
+main_page.Scenes.main_page_demo ..> javafx.scene.control.Button
+main_page.Scenes.main_page_demo ..> javafx.scene.control.Label
+main_page.Scenes.main_page_demo ..> javafx.scene.control.TableColumn
+main_page.Scenes.main_page_demo ..> javafx.scene.control.TableView
+main_page.Scenes.main_page_demo ..> javafx.scene.control.TextField
+main_page.Scenes.main_page_demo ..> javafx.scene.control.cell.PropertyValueFactory
+main_page.Scenes.main_page_demo ..> javafx.scene.image.Image
+main_page.Scenes.main_page_demo ..> javafx.scene.layout.GridPane
+main_page.Scenes.main_page_demo ..> javafx.scene.layout.HBox
+main_page.Scenes.main_page_demo ..> javafx.scene.layout.VBox
+main_page.Scenes.main_page_demo ..> javafx.scene.paint.Color
+main_page.Scenes.main_page_demo ..> javafx.scene.paint.ImagePattern
+main_page.Scenes.main_page_demo ..> javafx.scene.shape.Circle
+main_page.Scenes.main_page_demo ..> javafx.scene.shape.Line
+main_page.Scenes.main_page_demo ..> javafx.stage.Stage
+main_page.Scenes.main_page_demo ..> main_page.Helpers.ReportsHelper
+main_page.Scenes.main_page_demo ..> main_page.Models.Reservation
+main_page.Scenes.main_page_demo ..> main_page.Models.User
+main_page.Scenes.user_reports_page ..> javafx.geometry.Insets
+main_page.Scenes.user_reports_page ..> javafx.geometry.Pos
+main_page.Scenes.user_reports_page --|> javafx.scene.Scene
+main_page.Scenes.user_reports_page ..> javafx.scene.control.Button
+main_page.Scenes.user_reports_page ..> javafx.scene.control.Label
+main_page.Scenes.user_reports_page ..> javafx.scene.control.TextArea
+main_page.Scenes.user_reports_page ..> javafx.scene.layout.HBox
+main_page.Scenes.user_reports_page ..> javafx.scene.layout.VBox
+main_page.Scenes.user_reports_page ..> javafx.stage.Stage
+main_page.Scenes.user_reports_page ..> main_page.Models.User
+main_page.SqlLiteDB ..> java.sql.Connection
+main_page.SqlLiteDB ..> java.sql.DriverManager
+main_page.SqlLiteDB ..> java.sql.SQLException
+@enduml

@@ -19,6 +19,9 @@ import static main_page.Scenes.TravellingPage.btnnext;
 public class TrainButtonPage extends AnchorPane {
      
     private Trip tripTrain = new Trip();
+    public static RadioButton rad_b1t = new RadioButton("E-Travel");
+    public static RadioButton rad_b2t = new RadioButton("K-Travel");
+    public static RadioButton rad_b3t = new RadioButton("M-trevel");
     
     public TrainButtonPage() {
         
@@ -29,9 +32,8 @@ public class TrainButtonPage extends AnchorPane {
         ToggleGroup toggleGroup = new ToggleGroup();
         
         //radio button for trip1
-        RadioButton rad_b1 = new RadioButton("E-Travel");
-        rad_b1.setPrefSize(120, 38);
-        rad_b1.setToggleGroup(toggleGroup);
+        rad_b1t.setPrefSize(120, 38);
+        rad_b1t.setToggleGroup(toggleGroup);
         
         Label lbltimego1 = new Label("Time Go");
         lbltimego1.setAlignment(Pos.CENTER);
@@ -60,16 +62,15 @@ public class TrainButtonPage extends AnchorPane {
         //hbox for adding trip2 info
         HBox h1 = new HBox(20);
         h1.setPrefSize(820, 50);
-        h1.getChildren().addAll(rad_b1,lbltimego1,lbltime1, lblprice1_2, lblarrivetime1, lbltime2);
+        h1.getChildren().addAll(rad_b1t,lbltimego1,lbltime1, lblprice1_2, lblarrivetime1, lbltime2);
         
         //line under radio button 2
         Line l1 =new Line();
         l1.setEndX(910);
     
         //radio button for trip2
-        RadioButton rad_b2 = new RadioButton("K-Travel");
-        rad_b2.setPrefSize(120, 38);
-        rad_b2.setToggleGroup(toggleGroup);
+        rad_b2t.setPrefSize(120, 38);
+        rad_b2t.setToggleGroup(toggleGroup);
         
         //label for time
         Label lbltimego2 = new Label("Time Go");
@@ -98,16 +99,15 @@ public class TrainButtonPage extends AnchorPane {
         //hbox for adding trip2 info
         HBox h2 = new HBox(20);
         h2.setPrefSize(820, 50);
-        h2.getChildren().addAll(rad_b2,lbltimego2,lbltime3, lblprice2_2, lblarrivetime2, lbltime4);
+        h2.getChildren().addAll(rad_b2t,lbltimego2,lbltime3, lblprice2_2, lblarrivetime2, lbltime4);
         
         //line under radio button 2
         Line l2 =new Line();
         l2.setEndX(910);
         
         //radio button for trip3
-        RadioButton rad_b3 = new RadioButton("M-trevel");
-        rad_b3.setPrefSize(120, 38);
-        rad_b3.setToggleGroup(toggleGroup);
+        rad_b3t.setPrefSize(120, 38);
+        rad_b3t.setToggleGroup(toggleGroup);
         
        //label for time
        Label lbltimego3 =new Label("Time Go");
@@ -136,7 +136,7 @@ public class TrainButtonPage extends AnchorPane {
         //hbox for adding trip3 info
         HBox h3 = new HBox(20);
         h3.setPrefSize(820, 50);
-        h3.getChildren().addAll(rad_b3,lbltimego3,lbltime5, lblprice3_2, lblarrivetime3, lbltime6);
+        h3.getChildren().addAll(rad_b3t,lbltimego3,lbltime5, lblprice3_2, lblarrivetime3, lbltime6);
         
         //line under radio button 3
         Line l3 =new Line();
@@ -150,7 +150,7 @@ public class TrainButtonPage extends AnchorPane {
         this.getChildren().addAll(v1);
         
         //handle for radio buttons
-        rad_b1.setOnAction(e ->{
+        rad_b1t.setOnAction(e ->{
           btnnext.setDisable(false);
           tripTrain.setLeavingDate("8:30 PM");
           tripTrain.setArrivalDate("2:00 PM");
@@ -158,7 +158,7 @@ public class TrainButtonPage extends AnchorPane {
           tripTrain.setTripPrice(10);
         });
         
-        rad_b2.setOnAction(e ->{
+        rad_b2t.setOnAction(e ->{
           btnnext.setDisable(false);tripTrain.setLeavingDate("5:30PM");
           tripTrain.setLeavingDate("12:30 PM");
           tripTrain.setArrivalDate("4:45 PM");
@@ -166,7 +166,7 @@ public class TrainButtonPage extends AnchorPane {
           tripTrain.setTripPrice(7);
         });
         
-        rad_b3.setOnAction(e ->{
+        rad_b3t.setOnAction(e ->{
           btnnext.setDisable(false);
           tripTrain.setLeavingDate("3:15 PM");
           tripTrain.setArrivalDate("7:40 PM");

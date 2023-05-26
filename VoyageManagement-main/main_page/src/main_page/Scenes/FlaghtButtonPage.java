@@ -19,7 +19,9 @@ import static main_page.Scenes.TravellingPage.btnnext;
 public class FlaghtButtonPage extends AnchorPane {
     
     private Trip tripFlaght = new Trip();
-    
+    public static RadioButton rad_b1f = new RadioButton("SH-Travel");
+    public static RadioButton rad_b2f = new RadioButton("A-Travel");
+    public static RadioButton rad_b3f = new RadioButton("F-trevel");
     public FlaghtButtonPage() {
          
         this.setLayoutX(20);
@@ -29,9 +31,8 @@ public class FlaghtButtonPage extends AnchorPane {
         ToggleGroup toggleGroup = new ToggleGroup();
         
         //radio button for trip1
-        RadioButton rad_b1 = new RadioButton("SH-Travel");
-        rad_b1.setPrefSize(120, 38);
-        rad_b1.setToggleGroup(toggleGroup);
+        rad_b1f.setPrefSize(120, 38);
+        rad_b1f.setToggleGroup(toggleGroup);
         
         Label lbltimego1 = new Label("Go");
         lbltimego1.setAlignment(Pos.CENTER);
@@ -60,16 +61,15 @@ public class FlaghtButtonPage extends AnchorPane {
         //hbox for adding trip2 info
         HBox h1 = new HBox(20);
         h1.setPrefSize(820, 50);
-        h1.getChildren().addAll(rad_b1,lbltimego1,lbltime1, lblprice1_2, lblarrivetime1, lbltime2);
+        h1.getChildren().addAll(rad_b1f,lbltimego1,lbltime1, lblprice1_2, lblarrivetime1, lbltime2);
         
         //line under radio button 2
         Line l1 =new Line();
         l1.setEndX(910);
     
         //radio button for trip2
-        RadioButton rad_b2 = new RadioButton("A-Travel");
-        rad_b2.setPrefSize(120, 38);
-        rad_b2.setToggleGroup(toggleGroup);
+        rad_b2f.setPrefSize(120, 38);
+        rad_b2f.setToggleGroup(toggleGroup);
         
         //label for time
         Label lbltimego2 = new Label("Go");
@@ -98,16 +98,15 @@ public class FlaghtButtonPage extends AnchorPane {
         //hbox for adding trip2 info
         HBox h2 = new HBox(20);
         h2.setPrefSize(820, 50);
-        h2.getChildren().addAll(rad_b2,lbltimego2,lbltime3, lblprice2_2, lblarrivetime2, lbltime4);
+        h2.getChildren().addAll(rad_b2f,lbltimego2,lbltime3, lblprice2_2, lblarrivetime2, lbltime4);
         
         //line under radio button 2
         Line l2 =new Line();
         l2.setEndX(910);
         
         //radio button for trip3
-        RadioButton rad_b3 = new RadioButton("F-trevel");
-        rad_b3.setPrefSize(120, 38);
-        rad_b3.setToggleGroup(toggleGroup);
+        rad_b3f.setPrefSize(120, 38);
+        rad_b3f.setToggleGroup(toggleGroup);
         
        //label for time
        Label lbltimego3 =new Label("Go");
@@ -136,7 +135,7 @@ public class FlaghtButtonPage extends AnchorPane {
         //hbox for adding trip3 info
         HBox h3 = new HBox(20);
         h3.setPrefSize(820, 50);
-        h3.getChildren().addAll(rad_b3,lbltimego3,lbltime5, lblprice3_2, lblarrivetime3, lbltime6);
+        h3.getChildren().addAll(rad_b3f,lbltimego3,lbltime5, lblprice3_2, lblarrivetime3, lbltime6);
         
         //line under radio button 3
         Line l3 =new Line();
@@ -150,7 +149,7 @@ public class FlaghtButtonPage extends AnchorPane {
         this.getChildren().addAll(v1);
         
         //handle for radio buttons
-        rad_b1.setOnAction(e ->{
+        rad_b1f.setOnAction(e ->{
           btnnext.setDisable(false);
           tripFlaght.setLeavingDate("10:30 PM");
           tripFlaght.setArrivalDate("11:00 PM");
@@ -158,7 +157,7 @@ public class FlaghtButtonPage extends AnchorPane {
           tripFlaght.setTripPrice(100);
         });
         
-        rad_b2.setOnAction(e ->{
+        rad_b2f.setOnAction(e ->{
           btnnext.setDisable(false);
           tripFlaght.setLeavingDate("12:30 PM");
           tripFlaght.setArrivalDate("1:45 PM");
@@ -166,7 +165,7 @@ public class FlaghtButtonPage extends AnchorPane {
           tripFlaght.setTripPrice(90);
         });
         
-        rad_b3.setOnAction(e ->{
+        rad_b3f.setOnAction(e ->{
           btnnext.setDisable(false);
           tripFlaght.setLeavingDate("3:15 PM");
           tripFlaght.setArrivalDate("4:00 PM");

@@ -20,6 +20,18 @@ import javafx.stage.Stage;
 import main_page.Models.Location;
 import main_page.Models.Reservation;
 import main_page.Models.Trip;
+import static main_page.Scenes.CarButtonPage.rad_b1c;
+import static main_page.Scenes.CarButtonPage.rad_b2c;
+import static main_page.Scenes.CarButtonPage.rad_b3c;
+import static main_page.Scenes.BusButtonPage.rad_b1b;
+import static main_page.Scenes.BusButtonPage.rad_b2b;
+import static main_page.Scenes.BusButtonPage.rad_b3b;
+import static main_page.Scenes.TrainButtonPage.rad_b1t;
+import static main_page.Scenes.TrainButtonPage.rad_b2t;
+import static main_page.Scenes.TrainButtonPage.rad_b3t;
+import static main_page.Scenes.FlaghtButtonPage.rad_b1f;
+import static main_page.Scenes.FlaghtButtonPage.rad_b2f;
+import static main_page.Scenes.FlaghtButtonPage.rad_b3f;
 
 import main_page.Models.User;
 import main_page.SqlLiteDB;
@@ -177,6 +189,14 @@ public class TravellingPage extends Scene {
                    Back End
                               //////*/
         
+//        handle cmbobox
+
+         
+        btncar.disableProperty().bind(startCityComboBox.valueProperty().isNull().or(endCityComboBox.valueProperty().isNull()));
+        btnbus.disableProperty().bind(startCityComboBox.valueProperty().isNull().or(endCityComboBox.valueProperty().isNull()));
+        btntrain.disableProperty().bind(startCityComboBox.valueProperty().isNull().or(endCityComboBox.valueProperty().isNull()));
+        btnflaght.disableProperty().bind(startCityComboBox.valueProperty().isNull().or(endCityComboBox.valueProperty().isNull()));
+        
         CarButtonPage carPage = new CarButtonPage();
         FlaghtButtonPage flightPage = new FlaghtButtonPage();
         TrainButtonPage trainPage = new TrainButtonPage();
@@ -184,6 +204,9 @@ public class TravellingPage extends Scene {
         
         // handler for car button
         btncar.setOnAction(x -> {
+            rad_b1c.setSelected(false);
+            rad_b2c.setSelected(false);
+            rad_b3c.setSelected(false);
             reservation.setTravelType("Car");
             right.getChildren().remove(busPage);
             right.getChildren().remove(flightPage);
@@ -196,6 +219,9 @@ public class TravellingPage extends Scene {
         
         // handler for bus button
         btnbus.setOnAction(x -> {
+            rad_b1b.setSelected(false);
+            rad_b2b.setSelected(false);
+            rad_b3b.setSelected(false);
             reservation.setTravelType("Bus");
             right.getChildren().add(busPage);
             this.choosedTrip = busPage.getTrip();
@@ -208,6 +234,9 @@ public class TravellingPage extends Scene {
         
         // handler for flaght button
         btntrain.setOnAction(x -> {
+            rad_b1t.setSelected(false);
+            rad_b2t.setSelected(false);
+            rad_b3t.setSelected(false);
             reservation.setTravelType("Train");
             right.getChildren().remove(busPage);
             right.getChildren().remove(flightPage);
@@ -220,6 +249,9 @@ public class TravellingPage extends Scene {
         
         // handler for train button
         btnflaght.setOnAction(x -> {
+            rad_b1f.setSelected(false);
+            rad_b2f.setSelected(false);
+            rad_b3f.setSelected(false);
             reservation.setTravelType("Flight");
             right.getChildren().remove(busPage);
             right.getChildren().add(flightPage);
