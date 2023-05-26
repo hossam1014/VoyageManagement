@@ -24,10 +24,13 @@ public class Bill extends Scene {
         super(new StackPane(),1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
+        /* Background image */ 
         root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
         
+        /* Get style.css */ 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
 
+        /* Containing Bill GridPane & Back Button */
         VBox page = new VBox(50);
         root.getChildren().add(page);
         page.setAlignment(Pos.CENTER);
@@ -84,7 +87,6 @@ public class Bill extends Scene {
         username_val.setMinWidth(160);
         username_val.setMaxWidth(160);
         
-        
         travllingFrom_val.setMinWidth(160);
         travllingFrom_val.setMaxWidth(160);
         travllingTo_val.setMinWidth(160);
@@ -108,16 +110,16 @@ public class Bill extends Scene {
         /* Set Data */
         username_val.setText(user.getUserName());
         
-        travllingFrom_val.setText(""+reservation.getFrom());
-        travllingTo_val.setText(""+reservation.getTo());
-        tranportaionType_val.setText(""+reservation.getTravelType());
-        tripName_val.setText(""+reservation.getTripName());
-        tripPrice_val.setText(""+reservation.getTripPrice());
+        travllingFrom_val.setText(reservation.getFrom());
+        travllingTo_val.setText(reservation.getTo());
+        tranportaionType_val.setText(reservation.getTravelType());
+        tripName_val.setText(reservation.getTripName());
+        tripPrice_val.setText(reservation.getTripPrice()+" $");
         
-        hotelName_val.setText(""+reservation.getHotelName());
+        hotelName_val.setText(reservation.getHotelName());
         hotelCheckInDate_val.setText(""+reservation.getHotel_CheckInDate());
         hotelCheckOutDate_val.setText(""+reservation.getHotel_CheckOutDate());
-        hotelPrice_val.setText(""+reservation.getTotalPrice());
+        hotelPrice_val.setText(reservation.getTotalPrice()+" $");
 
         /* Adding Labels & Values */
         bill_gridPane.addRow(0, username, username_val);
@@ -136,7 +138,7 @@ public class Bill extends Scene {
         /* Button to go back to main page */
         Button goToMainPage = new Button("Home Page");
         goToMainPage.getStyleClass().add("custom-button");
-        goToMainPage.setPrefSize(90, 35);
+        goToMainPage.setPrefSize(110, 40);
 
         goToMainPage.setOnAction(x -> {
             primaryStage.setScene(new main_page_demo(primaryStage, user));

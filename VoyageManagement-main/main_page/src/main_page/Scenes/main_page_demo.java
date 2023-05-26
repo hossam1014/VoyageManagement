@@ -1,3 +1,4 @@
+
 package main_page.Scenes;
 
 import javafx.collections.FXCollections;
@@ -68,15 +69,6 @@ public class main_page_demo extends Scene {
         user_info.setPrefSize(800, 200);
         user_info.setId("user_info");
 
-//        GridPane trip_info = new GridPane();
-//        trip_info.setPadding(new Insets(20));
-//
-//        trip_info.setHgap(200);
-//        trip_info.setVgap(10);
-//        trip_info.setAlignment(Pos.CENTER);
-//        trip_info.setPrefSize(800, 200);
-//        trip_info.setId("user_info");
-
         // navigator part of code //
         // adding the photo of the user, dont forget to change adel shakal's photo :)
         Circle img_circle = new Circle(75);
@@ -87,46 +79,32 @@ public class main_page_demo extends Scene {
         // there will be some action handling here amir
         Button btn_travel = new Button("Traveling");
         Button btn_hotel = new Button("Hotels");
-        Button btn_tools = new Button("Tools");
+        Button btn_tools = new Button("Currency Converter");
         Button btn_report = new Button("Admin Reports");
-        Button btn_user_report = new Button("User Reports");
+        Button btn_user_report = new Button("Reports");
 
         btn_report.setOnAction(e -> {
- //           primaryStage.setScene(new Admin_reports_page(primaryStage));
             primaryStage.setScene(new Admin_reports_page(primaryStage, loggedUser));
         });
 
         btn_travel.setOnAction(e -> {
-  //          primaryStage.setScene(new TravellingPage(primaryStage));
             primaryStage.setScene(new TravellingPage(primaryStage, loggedUser));
         });
 
-//        btn_hotel.setOnAction(e -> {
-  //          primaryStage.setScene(new Hotel_Resevation(primaryStage));
-//            primaryStage.setScene(new Hotel_Resevation(primaryStage, loggedUser, ));
-//        });
-
         btn_tools.setOnAction(e -> {
-  //          primaryStage.setScene(new Currency_Converter(primaryStage));
            primaryStage.setScene(new Currency_Converter(primaryStage, loggedUser));
         });
 
         btn_user_report.setOnAction(e -> {
- //           primaryStage.setScene(new user_reports_page(primaryStage));
               primaryStage.setScene(new user_reports_page(primaryStage, loggedUser));
         });
 
-//        btn_hotel.setOnAction(e->{
-//        primaryStage.setScene(new MyReservationPage(primaryStage));
-//        });
-        btn_travel.setMinSize(150, 40);
-        btn_hotel.setMinSize(150, 40);
-        btn_tools.setMinSize(150, 40);
-        btn_report.setMinSize(150, 40);
-        btn_user_report.setMinSize(150, 40);
-
-        // there will be some database code here so dont forget hosam  -----------------------------------------------------------------------------------------
-     //   Label user_name = new Label("Adel shakal");
+        btn_travel.setMinSize(160, 40);
+        btn_hotel.setMinSize(160, 40);
+        btn_tools.setMinSize(160, 40);
+        btn_report.setMinSize(160, 40);
+        btn_user_report.setMinSize(160, 40);
+        
         Label user_name = new Label(this.loggedUser.getFullName());
         user_name.setId("user_name_nav");
         user_name.getStyleClass().add("user_name_nav");
@@ -138,25 +116,19 @@ public class main_page_demo extends Scene {
         navigator.setPadding(new Insets(20));
 
         //user_info part
-//        Label lbl_user_info = new Label("User information");
-//        lbl_user_info.getStyleClass().add("user_name_nav");
         Label lbl_full_name = new Label("Full name");
         Label lbl_user_name = new Label("User name");
         Label lbl_email = new Label("Email");
         Label lbl_number = new Label("Phone number");
-//        Label lbl_age = new Label("Age");
 
         Button change = new Button("Change");
 
-        // back end and database part -----------------------------------------------------------------------------------------------------------------------------
+        // back end and database part 
+        
         // you have to get all these data from sign, login, traveling and hotel pages
-//        TextField txt_full_name = new TextField();
         TextField txt_full_name = new TextField(loggedUser.getFullName());
-//        TextField txt_user_name = new TextField();
         TextField txt_user_name = new TextField(loggedUser.getUserName());
-       // TextField txt_email = new TextField();
         TextField txt_email = new TextField(loggedUser.getEmail());
-       // TextField txt_number = new TextField();
         TextField txt_number = new TextField(loggedUser.getPhoneNumber());
 
         txt_user_name.setPrefWidth(400);
@@ -170,41 +142,13 @@ public class main_page_demo extends Scene {
         user_info.addRow(3, lbl_number, txt_number);
         user_info.add(change, 0, 4, 2, 1);
 
-        // trip info part
-        // some back end and database here also hosam ----------------------------------------------------------------------------------------
-//        Label lbl_destination = new Label("Destination");
-//        Label lbl_current_location = new Label("Current Location");
-//        Label lbl_hotel_name = new Label("Hotel Name");
-////        Label lbl_trave_info = new Label("Traveling Information");
-//
-//        TextField txt_destination = new TextField();
-//        TextField txt_current_location = new TextField();
-//        TextField txt_hotel_name = new TextField();
-
-//        txt_destination.setEditable(false);
-//        txt_current_location.setEditable(false);
-//        txt_hotel_name.setEditable(false);
-//        txt_destination.setPrefWidth(400);
-
         change.setOnAction(e -> {
             txt_user_name.setEditable(true);
             txt_email.setEditable(true);
             txt_number.setEditable(true);
-//            txt_age.setEditable(true);
-//            txt_destination.setEditable(true);
-//            txt_current_location.setEditable(true);
-//            txt_hotel_name.setEditable(true);
-
         });
 
-//        trip_info.add(lbl_destination, 0, 0);
-//        trip_info.add(txt_destination, 1, 0);
-//        trip_info.add(lbl_current_location, 0, 2);
-//        trip_info.add(txt_current_location, 1, 2);
-//        trip_info.add(lbl_hotel_name, 0, 3);
-//        trip_info.add(txt_hotel_name, 1, 3);
-
-//table part
+        /* table part */
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -255,7 +199,6 @@ public class main_page_demo extends Scene {
             navigator.getChildren().remove(btn_report); // Remove the button from the container
         }
 
-//        info.getChildren().addAll(lbl_user_info, user_info, lbl_trave_info, trip_info);
         info.getChildren().addAll(user_info, table);
 
         main_page.getChildren().addAll(navigator, info);

@@ -41,21 +41,22 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     }
     
     @Override
-    /* Handling 'Done' Button */
+    /* Handling "Done" Button */
     public void handle(ActionEvent event) {  
         try{
             if(null == date_in || null == date_out || null == start_date || null == end_date){
                 total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("Please, Enter Check Date");
+                errorAlert.setHeaderText(null);
+                errorAlert.setContentText("Please, Enter Check Date");
                 errorAlert.showAndWait();
             }
             else if(start_date.compareTo(end_date) >= 0){
                 total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("Invalid Date");
+                errorAlert.setHeaderText(null);
                 errorAlert.setContentText("Please, Enter a valid Check Date");
                 errorAlert.showAndWait();
                 date_in.setValue(null);
@@ -65,14 +66,16 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 total_price.setText("");
                 confirm.setDisable(true);
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                errorAlert.setHeaderText("Invalid Date");
+                errorAlert.setHeaderText(null);
                 errorAlert.setContentText("Sorry, You Can't book more than 14 days");
                 errorAlert.showAndWait();
                 date_out.setValue(null);
             }
             else{
+                /* Checks if all the inforamtions are filled */ 
                 information_isFilled = checkInformation(start_date,end_date);
                 if(information_isFilled){
+                    /* calculating total price */
                     int number_of_days = (int)ChronoUnit.DAYS.between(start_date, end_date);
                     int total_price_value = number_of_days * var_hotel_type;
                     total_price_value += (((double)var_room_price/2) * total_price_value);
@@ -91,38 +94,43 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     public boolean checkInformation(LocalDate start_date, LocalDate end_date){
         if(0 == var_hotel_type){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Select Hotel Type");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Select Hotel Type");
             errorAlert.showAndWait();
             return false;
         }
         if(0 == var_room_price){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Select Room Price");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Select Room Price");
             errorAlert.showAndWait();
             return false;
         }
         if(0 == var_room_capacity){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Select Room Capacity");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Select Room Capacity");
             errorAlert.showAndWait();
             return false;
         }
         if(null == start_date){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Select Check-in Date");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Select Check-in Date");
             errorAlert.showAndWait();
             return false;
         }
         if(null == end_date){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Please, Select Check-out Date");
+            errorAlert.setHeaderText(null);
+            errorAlert.setContentText("Please, Select Check-out Date");
             errorAlert.showAndWait();
             return false;
         }
         return true;
     }
     
-    
+    /* Calculating the duration of Hotel Check */
     public long calculateDateDifference() {
         return ChronoUnit.DAYS.between(start_date, end_date);
     }
