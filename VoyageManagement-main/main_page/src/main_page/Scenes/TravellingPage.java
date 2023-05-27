@@ -92,9 +92,10 @@ public class TravellingPage extends Scene {
         // two cmbobox 
         startCityComboBox = new ComboBox<>();
         startCityComboBox.setPrefSize(170, 40);
+        
         endCityComboBox = new ComboBox<>();
         endCityComboBox.setPrefSize(170, 40);
-        endCityComboBox.setLayoutX(650);
+        endCityComboBox.setLayoutX(550);
         endCityComboBox.setLayoutY(42);
         
         this.getComboBoxesValues();
@@ -120,33 +121,33 @@ public class TravellingPage extends Scene {
         //to where travael
         Label lblto = new Label("To");
         lblto.setPrefSize(40, 30);
-        lblto.setLayoutX(600);
+        lblto.setLayoutX(500);
         lblto.setLayoutY(42);
         
         //label for write on it "distance"
         Button btnDis = new Button("Distance");
-        btnDis.setLayoutX(420);
+        btnDis.setLayoutX(320);
         btnDis.setLayoutY(130);
         btnDis.setPrefSize(100, 38);
         
         //TextField for show distance
         TextField txtdist = new TextField();
         txtdist.setPromptText("0.0 km");
-        txtdist.setLayoutX(540);
+        txtdist.setLayoutX(440);
         txtdist.setLayoutY(130);
         txtdist.setPrefSize(100, 38);
         txtdist.setEditable(false);
         
         //line herziontal with car , bus , train , flaght buttons
-        Line l3 = new Line(255,240,795,240);
+        Line l3 = new Line(170,240,715,240);
         
         // line under buttons
-        Line l4 = new Line(255,310,795,310);
+        Line l4 = new Line(170,310,715,310);
         
         //button next properties
         btnnext.setPrefSize(120, 48);
-        btnnext.setLayoutX(450);
-        btnnext.setLayoutY(600);
+        btnnext.setLayoutX(380);
+        btnnext.setLayoutY(610);
         btnnext.setVisible(false);
         btnnext.setDisable(true);
         
@@ -161,7 +162,7 @@ public class TravellingPage extends Scene {
 
         //put control in h box
         HBox h1 = new HBox(10);
-        h1.setLayoutX(180);
+        h1.setLayoutX(65);
         h1.setLayoutY(42);
         h1.getChildren().addAll(lblfrom, startCityComboBox);
         h1.setPrefSize(390, 38);
@@ -170,7 +171,7 @@ public class TravellingPage extends Scene {
         // add buttons in hbox
         HBox h2 = new HBox(20);
         h2.setPrefSize(540, 50);
-        h2.setLayoutX(255);
+        h2.setLayoutX(170);
         h2.setLayoutY(250);
         h2.getChildren().addAll(btncar, btntrain, btnflaght, btnbus);
         

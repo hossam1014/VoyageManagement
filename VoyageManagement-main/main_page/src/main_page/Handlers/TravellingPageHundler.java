@@ -1,3 +1,4 @@
+
 package main_page.Handlers;
 
 import java.time.LocalDate;
@@ -5,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
-import java.time.temporal.ChronoUnit;
 import static main_page.Scenes.TravellingPage.information_isFilled;
 import static main_page.Scenes.TravellingPage.btncar;
 import static main_page.Scenes.TravellingPage.btnbus;
@@ -19,6 +19,7 @@ import static main_page.Scenes.TravellingPage.btnflaght;
  * @author sayed
  */
 public class TravellingPageHundler implements EventHandler<ActionEvent> {
+    
     public LocalDate Date;
     public DatePicker Date_in;
 
@@ -28,8 +29,6 @@ public class TravellingPageHundler implements EventHandler<ActionEvent> {
     public void setDate_in(DatePicker Date_in) {
         this.Date_in = Date_in;
     }
-
-    
 
     @Override
     public void handle(ActionEvent event) {

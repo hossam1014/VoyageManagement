@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package main_page.Handlers;
 
 import javafx.event.ActionEvent;
@@ -21,6 +17,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event){
+        /* Checking if any Field is impty */
         if(amount.getText().trim().isEmpty() || true == currency_from.getSelectionModel().isEmpty() || true == currency_to.getSelectionModel().isEmpty()){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText(null);
@@ -32,6 +29,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
                 /* Calculating the converted currency */
                 Double amount_val = Double.parseDouble(amount.getText());
                 Double currency = 0.0;
+                /* Converting from Egyptian Pound to the other input currency */
                 if("Egyptian Pound" == currency_from.getValue()){
                     if("Egyptian Pound" == currency_to.getValue()){
                         currency = amount_val;
@@ -46,6 +44,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
                         currency = (double)amount_val * 0.030;
                     }
                 }
+                /* Converting from US Dollar to the other input currency */
                 else if("US Dollar" == currency_from.getValue()){
                     if("Egyptian Pound" == currency_to.getValue()){
                         currency = (double)amount_val * 30.95;
@@ -60,6 +59,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
                         currency = (double)amount_val * 0.92;
                     }
                 }
+                /* Converting from UK Pound to the other input currency */
                 else if("UK Pound" == currency_from.getValue()){
                     if("Egyptian Pound" == currency_to.getValue()){
                         currency = (double)amount_val * 38.46;
@@ -74,6 +74,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
                         currency = (double)amount_val * 1.15;
                     }
                 }
+                /* Converting from Europe Euro to the other input currency */
                 else if("Europe Euro" == currency_from.getValue()){
                     if("Egyptian Pound" == currency_to.getValue()){
                         currency = (double)amount_val * 33.53;
@@ -91,6 +92,7 @@ public class CurrencyConverterHandler implements EventHandler<ActionEvent>{
                 /* Set Converted currency textField */
                 converted_currency.setText("" + currency);
             }
+            /* Catching NumberFormatException & show Error message(Invalid amount of money) */
             catch(NumberFormatException ex){
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText(null);

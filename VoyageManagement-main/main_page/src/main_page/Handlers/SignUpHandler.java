@@ -61,24 +61,24 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
 
             } else {
 
-            if (rowsInserted > 0) {
-                // Sign up successful, show success message
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Sign up successful!");
-                alert.showAndWait();
-                
-//                Database.close();
-            } else {
-                // Sign up failed, show error message
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Sign up failed");
-                alert.showAndWait();
-//                Database.close();
-            }
+                if (rowsInserted > 0) {
+                    // Sign up successful, show success message
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Sign up successful!");
+                    alert.showAndWait();
+
+    //                Database.close();
+                } else {
+                    // Sign up failed, show error message
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Sign up failed");
+                    alert.showAndWait();
+    //                Database.close();
+                }   
             }
 
         } catch (SQLException e) {

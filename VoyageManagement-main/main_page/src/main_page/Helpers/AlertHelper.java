@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main_page.Helpers;
 
 import java.util.Optional;
@@ -18,7 +15,6 @@ import javafx.stage.Window;
 public class AlertHelper {
 
     public static boolean result = false;
-    
     
     public static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);

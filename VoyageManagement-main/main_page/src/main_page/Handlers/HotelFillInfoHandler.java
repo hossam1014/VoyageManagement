@@ -1,3 +1,4 @@
+
 package main_page.Handlers;
 
 import static main_page.Scenes.Hotel_Resevation.information_isFilled;
@@ -19,11 +20,13 @@ import static main_page.Scenes.Hotel_Resevation.var_room_price;
  */
 public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     
-    public LocalDate start_date;
-    public LocalDate end_date;
-    public DatePicker date_in;
-    public DatePicker date_out; 
+    /* DataField for Hotel Handle Class */
+    private LocalDate start_date;
+    private LocalDate end_date;
+    private DatePicker date_in;
+    private DatePicker date_out; 
 
+    /* Setters for Data fields */
     public void setStart_date(LocalDate start_date) {
         this.start_date = start_date;
     }
@@ -44,6 +47,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
     /* Handling "Done" Button */
     public void handle(ActionEvent event) {  
         try{
+            /* Checking if the user didn't leave an impty field */
             if(null == date_in || null == date_out || null == start_date || null == end_date){
                 total_price.setText("");
                 confirm.setDisable(true);
@@ -52,6 +56,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 errorAlert.setContentText("Please, Enter Check Date");
                 errorAlert.showAndWait();
             }
+            /* Checking if the user enter an end date that's less than start_date */
             else if(start_date.compareTo(end_date) >= 0){
                 total_price.setText("");
                 confirm.setDisable(true);
@@ -62,6 +67,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 date_in.setValue(null);
                 date_out.setValue(null);
             }
+            /* Checking if the user enter an duration more then max allowed duration for booking(14 days) */
             else if(ChronoUnit.DAYS.between(start_date, end_date) > 14){
                 total_price.setText("");
                 confirm.setDisable(true);
@@ -80,11 +86,14 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                     int total_price_value = number_of_days * var_hotel_type;
                     total_price_value += (((double)var_room_price/2) * total_price_value);
                     total_price_value += (((double)var_room_capacity/3) * total_price_value);
+                    
+                    /* Sets Hotel Price */
                     total_price.setText(total_price_value+ " $");
                     confirm.setDisable(false);
                 }
             }
         }
+        /* Catching NullPointerException */
         catch(NullPointerException e){
             e.printStackTrace();
         }

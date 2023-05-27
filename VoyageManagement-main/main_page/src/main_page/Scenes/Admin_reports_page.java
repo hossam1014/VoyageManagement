@@ -1,3 +1,4 @@
+
 package main_page.Scenes;
 
 import javafx.collections.FXCollections;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 //import main_page.Database;
 import main_page.Helpers.ReportsHelper;
 import main_page.Models.User;
-import main_page.SqlLiteDB;
+//import main_page.SqlLiteDB;
 
 /**
  *
@@ -23,14 +24,13 @@ import main_page.SqlLiteDB;
  */
 public class Admin_reports_page extends Scene {
 
-//    public Admin_reports_page(Stage primaryStage) {
     public Admin_reports_page(Stage primaryStage, User user) {
 
         super(new VBox(20), 1250, 760);
 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
         VBox root = (VBox) this.getRoot();
-//        root.setId("admin_background");
+        
         root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
 
         root.setAlignment(Pos.TOP_CENTER);
@@ -39,14 +39,11 @@ public class Admin_reports_page extends Scene {
         HBox lables_box = new HBox(20);
         lables_box.setAlignment(Pos.CENTER);
 
-//       Button back = new Button("back");
-//       back.setId("back");
-//       back.setOnAction(e -> {
-//            primaryStage.setScene(new main_page_demo(primaryStage, user));
         HBox button_box = new HBox();
 
         Button back = new Button("Back");
         back.setPrefSize(120, 40);
+        back.setAlignment(Pos.CENTER);
         back.getStyleClass().add("custom-button");
 
         back.setOnAction(e -> {
@@ -57,7 +54,6 @@ public class Admin_reports_page extends Scene {
 
         Label lbl_1 = new Label(reportHelper.getUserCount() + " \n Users");
         Label lbl_2 = new Label(reportHelper.getReservationCount() + " \n Reservations");
-//        Label lbl_3 = new Label("24 \n Loged in");
         Label lbl_4 = new Label(reportHelper.getTotalProfit() + " $ \n Profit");
 
         lbl_1.setMinSize(160, 100);
@@ -68,9 +64,6 @@ public class Admin_reports_page extends Scene {
         lbl_2.setAlignment(Pos.CENTER);
         lbl_2.getStyleClass().add("label_admin");
 
-//        lbl_3.setMinSize(160, 100);
-//        lbl_3.setAlignment(Pos.CENTER);
-//        lbl_3.getStyleClass().add("label_admin");
         lbl_4.setMinSize(160, 100);
         lbl_4.setAlignment(Pos.CENTER);
         lbl_4.getStyleClass().add("label_admin");

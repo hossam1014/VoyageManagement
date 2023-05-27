@@ -72,8 +72,8 @@ public class main_page_demo extends Scene {
         // navigator part of code //
         // adding the photo of the user, dont forget to change adel shakal's photo :)
         Circle img_circle = new Circle(75);
-        Image user_photo = new Image("images/user_photo.jpg", 300, 300, false, true);
-//        Image user_photo = new Image("images/user.png", 300, 300, false, true);
+//        Image user_photo = new Image("images/user_photo.jpg", 300, 300, false, true);
+        Image user_photo = new Image("images/user.png", 300, 300, false, true);
         img_circle.setFill(new ImagePattern(user_photo));
 
         // there will be some action handling here amir

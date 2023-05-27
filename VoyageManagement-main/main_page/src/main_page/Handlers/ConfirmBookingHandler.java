@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main_page.Handlers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import main_page.Models.Reservation;
 import main_page.SqlLiteDB;
 
@@ -29,8 +20,6 @@ public class ConfirmBookingHandler implements EventHandler<ActionEvent> {
     public ConfirmBookingHandler(Reservation reservation) {
         this.reservation = reservation;
     }
-    
-    
     
     @Override
     public void handle(ActionEvent event){
@@ -60,7 +49,5 @@ public class ConfirmBookingHandler implements EventHandler<ActionEvent> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    
-    
+    } 
 }

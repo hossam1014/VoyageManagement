@@ -91,37 +91,37 @@ public class ReportsHelper {
     
     public static List<Reservation> getMyReservations(int userId) {
         
-    List<Reservation> reservations = new ArrayList<>();
+        List<Reservation> reservations = new ArrayList<>();
 
-    try (Connection connection = SqlLiteDB.connectDB()) {
-        System.out.println(userId);
+        try (Connection connection = SqlLiteDB.connectDB()) {
+            System.out.println(userId);
 
-        String sql = "SELECT * FROM Reservations WHERE UserId = ?";
+            String sql = "SELECT * FROM Reservations WHERE UserId = ?";
 
-        try (PreparedStatement prepare = connection.prepareStatement(sql)) {
-            prepare.setInt(1, userId);
+            try (PreparedStatement prepare = connection.prepareStatement(sql)) {
+                prepare.setInt(1, userId);
 
-            try (ResultSet result = prepare.executeQuery()) {
-                while (result.next()) {
-                    Reservation reservation = new Reservation(result.getInt("Id"),
-                            result.getString("FromCity"), result.getString("ToCity"),
-                            result.getString("LeavingDate"), result.getString("ArrivalDate"),
-                            result.getString("TravelType"), result.getString("TripName"),
-                            result.getDouble("TripPrice"),
-                            result.getString("HotelName"), result.getInt("HotelDuration"),
-                            result.getDouble("TotalPrice"), result.getInt("UserId"));
+                try (ResultSet result = prepare.executeQuery()) {
+                    while (result.next()) {
+                        Reservation reservation = new Reservation(result.getInt("Id"),
+                                result.getString("FromCity"), result.getString("ToCity"),
+                                result.getString("LeavingDate"), result.getString("ArrivalDate"),
+                                result.getString("TravelType"), result.getString("TripName"),
+                                result.getDouble("TripPrice"),
+                                result.getString("HotelName"), result.getInt("HotelDuration"),
+                                result.getDouble("TotalPrice"), result.getInt("UserId"));
 
-                    // Output the reservation details
-//                    System.out.println(reservation);
+                        // Output the reservation details
+    //                    System.out.println(reservation);
 
-                    reservations.add(reservation);
+                        reservations.add(reservation);
+                    }
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
     
-    return reservations;
-}
+        return reservations;
+    }
 }
