@@ -63,7 +63,10 @@ public class SignUpPage extends Scene {
             SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),
                     txtPhoneNumber.getText(), txtUserName.getText(), txtPassword.getText());
             signUpHandler.handle(event);
-            primaryStage.setScene(new LoginPage(primaryStage));
+            if(signUpHandler.isValidForm())
+            {
+                primaryStage.setScene(new LoginPage(primaryStage));
+            }
         });
 
         sign_up_box.addRow(0, lblFullName, txtFullName);

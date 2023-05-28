@@ -25,6 +25,8 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
     private String PhoneNumber;
     private String UserName;
     private String Password;
+    
+    private boolean isValidForm;
 
     public SignUpHandler(String fullName, String email, String phoneNumber, String userName, String password) {
         FullName = fullName;
@@ -67,7 +69,9 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                     alert.setTitle("Information Message");
                     alert.setHeaderText(null);
                     alert.setContentText("Sign up successful!");
+                    this.isValidForm = true;
                     alert.showAndWait();
+                    
 
     //                Database.close();
                 } else {
@@ -84,5 +88,9 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    public boolean isValidForm() {
+        return this.isValidForm;
     }
 }
