@@ -50,8 +50,7 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
             prepare.setString(4, UserName);
             prepare.setString(5, Password);
 
-            int rowsInserted = prepare.executeUpdate();
-            
+           
             if (UserName.isEmpty() || Password.isEmpty() || FullName.isEmpty()
                     || Email.isEmpty() || PhoneNumber.isEmpty()) {
 
@@ -62,6 +61,9 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                 alert.showAndWait();
 
             } else {
+                
+                int rowsInserted = prepare.executeUpdate();
+
 
                 if (rowsInserted > 0) {
                     // Sign up successful, show success message
