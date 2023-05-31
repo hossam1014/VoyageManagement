@@ -126,8 +126,8 @@ and enhanced social interactions.
  ## Made By:
 <ul>
   <li><a href="https://github.com/Sayedabdalsamie">sayed abdalsamie
-  <li><a href="https://github.com/amiresaye6">Hossam Mustfa 
-  <li><a href="https://github.com/Shimaa-esmat">Amir Alsayed(Prof)
+  <li><a href="https://github.com/hossam1014">Hossam Mustfa 
+  <li><a href="https://github.com/amiresaye6">Amir Alsayed(Prof)
   <li><a href="https://github.com/EhabMagdyy">Ehab Magdy
 </ul>
 
