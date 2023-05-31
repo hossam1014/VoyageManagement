@@ -31,14 +31,10 @@ public class LoginHandler implements EventHandler<ActionEvent> {
     
     private boolean isLoggedIn = false;
 
-
-    
     public LoginHandler(String userName, String password) {
         UserName = userName;
         Password = password;
     }
-    
-    
 
     @Override
     public void handle(ActionEvent event) {
@@ -65,24 +61,14 @@ public class LoginHandler implements EventHandler<ActionEvent> {
             } else {
 
                 if (result.next()) {
-                    // User exists in database, show success message
-//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                    alert.setTitle("Information Message");
-//                    alert.setHeaderText(null);
-//                    alert.setContentText("Login successful!");
                     System.out.println(result.getString("FullName"));
-//                    userId = result.getInt("Id");
                     this.loggedUser = new User(result.getInt("Id"),
                             result.getString("UserName"), result.getString("FullName"),
                             result.getString("Email"), result.getString("PhoneNumber"),
                             result.getString("Password"), result.getBoolean("IsAdmin"));
                     
-                    
                     isLoggedIn = true;
-                    
-                    
 
-//                    alert.showAndWait();
                     SqlLiteDB.closeConnection(connection);
                 } else {
                     // User does not exist in database, show error message

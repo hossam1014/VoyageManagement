@@ -13,10 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-//import main_page.Database;
 import main_page.Helpers.ReportsHelper;
 import main_page.Models.User;
-//import main_page.SqlLiteDB;
 
 /**
  *
@@ -91,23 +89,11 @@ public class Admin_reports_page extends Scene {
 
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-//        addint data to the table 
-//        
-//        table.getItems().add(new person("amir", "amiralsayed123@gmail.com", 21));
-//        table.getItems().add(new person("hosam", "hosam14@gmail.com", 21));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
-//        table.getItems().add(new person("adel shakal", "adel_elgamed12@gmail.com", 46));
         table.getColumns().addAll(full_name_col, user_name_col, email_col, phone_number_col);
 
         table.setItems(FXCollections.observableArrayList(reportHelper.getAllUsers()));
 
         root.getChildren().addAll(lables_box, table, button_box);
 
-//        SqlLiteDB.closeConnection();
     }
 }

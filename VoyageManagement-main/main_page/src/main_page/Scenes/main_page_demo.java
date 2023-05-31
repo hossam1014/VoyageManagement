@@ -30,7 +30,6 @@ import main_page.Models.User;
  */
 public class main_page_demo extends Scene {
 
-//     List<Reservation> reservations;
     private TableView<Reservation> table;
     private User loggedUser;
 
@@ -82,6 +81,7 @@ public class main_page_demo extends Scene {
         Button btn_tools = new Button("Currency Converter");
         Button btn_report = new Button("Admin Reports");
         Button btn_user_report = new Button("Reports");
+        Button btn_logout = new Button("Logout");
 
         btn_report.setOnAction(e -> {
             primaryStage.setScene(new Admin_reports_page(primaryStage, loggedUser));
@@ -98,12 +98,17 @@ public class main_page_demo extends Scene {
         btn_user_report.setOnAction(e -> {
               primaryStage.setScene(new user_reports_page(primaryStage, loggedUser));
         });
+        
+        btn_logout.setOnAction(e -> {
+              primaryStage.setScene(new LoginPage(primaryStage));
+        });
 
         btn_travel.setMinSize(160, 40);
         btn_hotel.setMinSize(160, 40);
         btn_tools.setMinSize(160, 40);
         btn_report.setMinSize(160, 40);
         btn_user_report.setMinSize(160, 40);
+        btn_logout.setMinSize(160, 40);
         
         Label user_name = new Label(this.loggedUser.getFullName());
         user_name.setId("user_name_nav");
@@ -152,6 +157,7 @@ public class main_page_demo extends Scene {
         table = new TableView<>();
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
+        /* User Reservation info table */
         TableColumn<Reservation, String> reservationIdCol = new TableColumn<>("ID");
         reservationIdCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
 
@@ -191,13 +197,14 @@ public class main_page_demo extends Scene {
         
 
         navigator.getChildren().addAll(img_circle, user_name, l1, btn_travel,
-                btn_tools, btn_user_report);
+                btn_tools, btn_user_report,btn_report, btn_logout);
 //
-        if (user.isIsAdmin()) {
-            navigator.getChildren().add(btn_report); // Add the button to the container
-        } else {
-            navigator.getChildren().remove(btn_report); // Remove the button from the container
-        }
+        if (!user.isIsAdmin()) {
+            navigator.getChildren().remove(btn_report); // Add the button to the container
+      }  
+//        } else {
+//            navigator.getChildren().remove(btn_report); // Remove the button from the container
+//        }
 
         info.getChildren().addAll(user_info, table);
 

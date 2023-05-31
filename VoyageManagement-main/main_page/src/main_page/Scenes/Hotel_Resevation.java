@@ -146,11 +146,13 @@ public class Hotel_Resevation extends Scene {
         date_in.setLayoutY(448);
         date_in.setPrefSize(203, 38);
         date_in.setPromptText("DD-MM-YYYY");
+        date_in.setEditable(false);
         
         date_out.setLayoutX(630);
         date_out.setLayoutY(500);
         date_out.setPrefSize(203, 38);
         date_out.setPromptText("DD-MM-YYYY");
+        date_out.setEditable(false);
 
         infoDone.setPrefSize(83, 38);
         infoDone.setLayoutX(800);
@@ -408,7 +410,7 @@ public class Hotel_Resevation extends Scene {
 
         /* Previous page */
         prev_page.setOnAction(x ->{
-            primaryStage.setScene(new main_page_demo(primaryStage, user));
+            primaryStage.setScene(new TravellingPage(primaryStage, user));
         }); 
     }
 }

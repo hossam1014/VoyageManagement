@@ -19,7 +19,6 @@ import main_page.Models.User;
  */
 public class user_reports_page extends Scene{
 
-//    private int i = 0;
     public user_reports_page(Stage primaryStage, User user) {
         super(new VBox(20), 1250, 760);
         VBox main_box = (VBox) this.getRoot();
@@ -52,19 +51,12 @@ public class user_reports_page extends Scene{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Message");
             alert.setHeaderText(null);
-//            if (i >= 1) {
-//                main_box.setStyle("-fx-background-image: url('images/trolll.jpg');");
-//                main_box.getChildren().remove(txt_report);
-//                alert.setContentText("You have already submitted a report!");
-//            } else {
-//                main_box.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
-//                main_box.getChildren().add(txt_report);
-                alert.setContentText("Your report has been received successfully");
-//            }
+            alert.setContentText("Your report has been received successfully");
             alert.showAndWait();
+            /* Go back to main page demo */
             primaryStage.setScene(new main_page_demo(primaryStage, user));
-//            i++;
         });
+        
         btn_box.getChildren().addAll(btn_supmit, btn_back);
         main_box.getChildren().addAll(lbl_header, txt_report, btn_box);
     }

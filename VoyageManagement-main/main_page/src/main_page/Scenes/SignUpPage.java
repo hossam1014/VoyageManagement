@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -58,6 +59,14 @@ public class SignUpPage extends Scene {
 
         Button btn_sign_up = new Button("Sign Up");
         btn_sign_up.setPrefSize(120, 40);
+        
+        txtPassword.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                btn_sign_up.fire();
+            }
+        });
+        
+        
 
         btn_sign_up.setOnAction(event -> {
             SignUpHandler signUpHandler = new SignUpHandler(txtFullName.getText(), txtEmail.getText(),

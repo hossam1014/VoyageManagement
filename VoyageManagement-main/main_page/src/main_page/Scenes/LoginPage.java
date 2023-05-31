@@ -13,7 +13,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main_page.Handlers.LoginHandler;
-import main_page.Handlers.MyReservationsHandler;
 
 /**
  *
@@ -48,6 +47,9 @@ public class LoginPage extends Scene {
 
         Button btn_log_in = new Button("Sign In");
         btn_log_in.setPrefSize(120, 40);
+        
+        Button btn_register = new Button("Sign Up");
+        btn_register.setPrefSize(120, 40);
 
         btn_log_in.setOnAction(event -> {
 //            primaryStage.setScene(new main_page_demo(primaryStage));
@@ -61,12 +63,17 @@ public class LoginPage extends Scene {
             if (loginHandler.isLoggedIn())
             {
                 main_page_demo mainPage = new main_page_demo(primaryStage, loginHandler.getUser());
-//                reservationsHandler.handle(event);
-//                primaryStage.setScene(new MyReservationPage(primaryStage, reservationsHandler));
                 primaryStage.setScene(mainPage);
-
             }
         });
+        
+        
+        btn_register.setOnAction(event -> {
+            primaryStage.setScene(new SignUpPage(primaryStage));
+        });
+        
+        HBox BtnBox = new HBox(20);
+        BtnBox.setAlignment(Pos.CENTER);
         
         log_in_box.add(lblUserName, 0, 0);
         log_in_box.add(txtUserName, 1, 0);
@@ -75,7 +82,9 @@ public class LoginPage extends Scene {
         
         centr_box.getChildren().addAll(log_in_box);
         
-        vBox.getChildren().addAll(centr_box, btn_log_in);
+        BtnBox.getChildren().addAll(btn_log_in, btn_register);
+        
+        vBox.getChildren().addAll(centr_box, BtnBox);
         vBox.setAlignment(Pos.CENTER);
     }
 }

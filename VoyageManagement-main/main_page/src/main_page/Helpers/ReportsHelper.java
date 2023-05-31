@@ -18,7 +18,7 @@ import main_page.SqlLiteDB;
 public class ReportsHelper {
      
     public int getUserCount() {
-        String query = "SELECT COUNT(*) FROM Users";
+        String query = "SELECT COUNT(*) FROM Users WHERE IsAdmin = 0";
         try (Connection conn = SqlLiteDB.connectDB();
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {

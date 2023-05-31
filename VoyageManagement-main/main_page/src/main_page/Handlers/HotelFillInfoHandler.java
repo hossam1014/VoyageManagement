@@ -64,7 +64,7 @@ public class HotelFillInfoHandler implements EventHandler<ActionEvent> {
                 errorAlert.setHeaderText(null);
                 errorAlert.setContentText("Please, Enter a valid Check Date");
                 errorAlert.showAndWait();
-                date_in.setValue(null);
+//                date_in.setValue(null);
                 date_out.setValue(null);
             }
             /* Checking if the user enter an duration more then max allowed duration for booking(14 days) */

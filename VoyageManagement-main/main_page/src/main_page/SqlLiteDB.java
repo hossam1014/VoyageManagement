@@ -13,16 +13,6 @@ public class SqlLiteDB {
     private static final String DATABASE_URL = "jdbc:sqlite:src/main_page/database/voyage_management";
     
     public static Connection connectDB() throws SQLException {
-        
-//        String drivers = "org.sqllite.JDBC";
-//
-//        
-//        try {    
-//            Class.forName(drivers);
-//        } catch (ClassNotFoundException e) {
-//                System.out.println(e.getMessage());
-//        }
-        
         return DriverManager.getConnection(DATABASE_URL);
     }
     

@@ -31,20 +31,20 @@ public class ConfirmBookingHandler implements EventHandler<ActionEvent> {
         try (Connection conn = SqlLiteDB.connectDB();
          PreparedStatement stmt = conn.prepareStatement(insertQuery)) {
             
-        stmt.setString(1, reservation.getFrom());
-        stmt.setString(2, reservation.getTo());
-        stmt.setString(3, reservation.getLeavingDate());
-        stmt.setString(4, reservation.getArrivalDate());
-        stmt.setString(5, reservation.getTravelType());
-        stmt.setString(6, reservation.getTripName());
-        stmt.setDouble(7, reservation.getTripPrice());
-        stmt.setString(8, reservation.getHotelName());
-        stmt.setInt(9, reservation.getHotelDuration());
-        stmt.setDouble(10, reservation.getTotalPrice());
-        stmt.setInt(11, reservation.getUserId());
+            stmt.setString(1, reservation.getFrom());
+            stmt.setString(2, reservation.getTo());
+            stmt.setString(3, reservation.getLeavingDate());
+            stmt.setString(4, reservation.getArrivalDate());
+            stmt.setString(5, reservation.getTravelType());
+            stmt.setString(6, reservation.getTripName());
+            stmt.setDouble(7, reservation.getTripPrice());
+            stmt.setString(8, reservation.getHotelName());
+            stmt.setInt(9, reservation.getHotelDuration());
+            stmt.setDouble(10, reservation.getTotalPrice());
+            stmt.setInt(11, reservation.getUserId());
 
-        stmt.executeUpdate();
-        System.out.println("Reservation inserted successfully.");
+            stmt.executeUpdate();
+            System.out.println("Reservation inserted successfully.");
         
         } catch (SQLException e) {
             e.printStackTrace();

@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
 import main_page.Models.Reservation;
-import main_page.SqlLiteDB;
 
 /**
  *
@@ -27,18 +25,15 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
 
 
     private int UserId;
-//
-//    
+  
     public MyReservationsHandler(int userId) {
         UserId = userId;
     }
-    
     
     @Override
     public void handle(ActionEvent event) {
 
         try {
-//            connection = Database.connectDB();
             
             System.out.println(UserId);
 
@@ -61,15 +56,10 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
                             result.getString("HotelName"), result.getInt("HotelDuration"),
                             result.getDouble("TotalPrice"), result.getInt("UserId"));
                 
-//                nothing appear here in console ERRORR
                 System.out.println(reservation);
                 
                 reservations.add(reservation);
             }
-            
-//            System.out.println(reservations);
-
-//            SqlLiteDB.close();
             
 
         } catch (SQLException e) {
@@ -78,9 +68,6 @@ public class MyReservationsHandler implements EventHandler<ActionEvent> {
     }
     
     public List<Reservation> getMyReservations() {
-//        System.out.println(this.reservations);
-
         return this.reservations;
     }
-
 }

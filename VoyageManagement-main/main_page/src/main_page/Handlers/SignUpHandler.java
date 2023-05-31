@@ -50,7 +50,7 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
             prepare.setString(4, UserName);
             prepare.setString(5, Password);
 
-           
+           /* Checking if the user didn't fill all the information */
             if (UserName.isEmpty() || Password.isEmpty() || FullName.isEmpty()
                     || Email.isEmpty() || PhoneNumber.isEmpty()) {
 
@@ -64,7 +64,6 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                 
                 int rowsInserted = prepare.executeUpdate();
 
-
                 if (rowsInserted > 0) {
                     // Sign up successful, show success message
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -74,8 +73,6 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                     this.isValidForm = true;
                     alert.showAndWait();
                     
-
-    //                Database.close();
                 } else {
                     // Sign up failed, show error message
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -83,7 +80,6 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
                     alert.setHeaderText(null);
                     alert.setContentText("Sign up failed");
                     alert.showAndWait();
-    //                Database.close();
                 }   
             }
 
@@ -92,6 +88,7 @@ public class SignUpHandler implements EventHandler<ActionEvent> {
         }
     }
     
+    /* SignUp successfully */
     public boolean isValidForm() {
         return this.isValidForm;
     }
