@@ -100,5 +100,14 @@ public class Currency_Converter extends Scene {
 
         /* convert Button Handler */
         btn_convert.setOnAction(new CurrencyConverterHandler());
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

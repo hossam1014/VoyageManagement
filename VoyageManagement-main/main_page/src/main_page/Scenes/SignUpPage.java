@@ -25,6 +25,8 @@ public class SignUpPage extends Scene {
 
         super(new VBox(20), 1250, 760);
         this.getStylesheets().add(getClass().getResource("/main_page/login_signup_style.css").toExternalForm());
+        
+        
         VBox vBox = (VBox) this.getRoot();
         vBox.getStyleClass().add("signUp-box");
         vBox.setAlignment(Pos.CENTER);
@@ -32,6 +34,9 @@ public class SignUpPage extends Scene {
         
         HBox centr_box = new HBox(20);
         centr_box.setAlignment(Pos.CENTER);
+        
+        HBox buttonBox = new HBox(20);
+        buttonBox.setAlignment(Pos.CENTER);
 
         GridPane sign_up_box = new GridPane();
         sign_up_box.setPadding(new Insets(20));
@@ -44,6 +49,7 @@ public class SignUpPage extends Scene {
         
         Label lblFullName = new Label("Full name");
         TextField txtFullName = new TextField();
+        txtFullName.requestFocus();
 
         Label lblEmail = new Label("Email address");
         TextField txtEmail = new TextField();
@@ -60,6 +66,29 @@ public class SignUpPage extends Scene {
         Button btn_sign_up = new Button("Sign Up");
         btn_sign_up.setPrefSize(120, 40);
         
+        Button btnSignIn = new Button("SignIn");
+        btnSignIn.setPrefSize(120, 40);
+        
+        txtFullName.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                txtEmail.requestFocus();
+            }
+        });
+        txtEmail.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                txtPhoneNumber.requestFocus();
+            }
+        });
+        txtPhoneNumber.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                txtUserName.requestFocus();
+            }
+        });
+        txtUserName.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                txtPassword.requestFocus();
+            }
+        });
         txtPassword.setOnKeyPressed(e->{
             if(e.getCode() == KeyCode.ENTER){
                 btn_sign_up.fire();
@@ -77,6 +106,12 @@ public class SignUpPage extends Scene {
                 primaryStage.setScene(new LoginPage(primaryStage));
             }
         });
+        
+        btnSignIn.setOnAction(e ->{
+            primaryStage.setScene(new LoginPage(primaryStage));
+        });
+        
+        
 
         sign_up_box.addRow(0, lblFullName, txtFullName);
         sign_up_box.addRow(1, lblEmail, txtEmail);
@@ -85,7 +120,16 @@ public class SignUpPage extends Scene {
         sign_up_box.addRow(4, lblPassword, txtPassword);
 
         centr_box.getChildren().addAll(sign_up_box);
+        buttonBox.getChildren().addAll(btn_sign_up, btnSignIn);
         
-        vBox.getChildren().addAll(centr_box, btn_sign_up);
+        vBox.getChildren().addAll(centr_box, buttonBox);
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

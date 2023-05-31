@@ -26,7 +26,7 @@ public class MyReservationPage extends Scene {
     public MyReservationPage(Stage primaryStage, MyReservationsHandler reservationHandler) {
 
         super(new VBox(20), 1250, 760);
-
+        
         reservations = reservationHandler.getMyReservations();
 
         table = new TableView<>();
@@ -67,5 +67,14 @@ public class MyReservationPage extends Scene {
         loginBtn.setOnAction(x -> {
             primaryStage.setScene(new LoginPage(primaryStage));
         });
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

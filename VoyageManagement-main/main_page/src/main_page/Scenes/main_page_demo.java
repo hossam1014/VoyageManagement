@@ -35,8 +35,8 @@ public class main_page_demo extends Scene {
 
 
     public main_page_demo(Stage primaryStage, User user) {
-        super(new VBox(), 1250, 760);
-
+        super(new VBox(), 1500, 860);
+        
         loggedUser = user;
         
         int userId = user.getId();
@@ -211,5 +211,14 @@ public class main_page_demo extends Scene {
         main_page.getChildren().addAll(navigator, info);
 
         vBox.getChildren().add(main_page);
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

@@ -24,12 +24,14 @@ public class Admin_reports_page extends Scene {
 
     public Admin_reports_page(Stage primaryStage, User user) {
 
-        super(new VBox(20), 1250, 760);
+        super(new VBox(20),1250, 760);
 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
         VBox root = (VBox) this.getRoot();
         
         root.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");
+        
+        primaryStage.setMaximized(true);
 
         root.setAlignment(Pos.TOP_CENTER);
         root.setPadding(new Insets(20));
@@ -94,6 +96,15 @@ public class Admin_reports_page extends Scene {
         table.setItems(FXCollections.observableArrayList(reportHelper.getAllUsers()));
 
         root.getChildren().addAll(lables_box, table, button_box);
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
 
     }
 }

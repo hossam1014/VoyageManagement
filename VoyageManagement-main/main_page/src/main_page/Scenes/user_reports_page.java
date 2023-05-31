@@ -20,7 +20,8 @@ import main_page.Models.User;
 public class user_reports_page extends Scene{
 
     public user_reports_page(Stage primaryStage, User user) {
-        super(new VBox(20), 1250, 760);
+        super(new VBox(20), 1500, 860);
+                
         VBox main_box = (VBox) this.getRoot();
         HBox btn_box = new HBox(20);
         btn_box.setAlignment(Pos.CENTER);
@@ -59,5 +60,14 @@ public class user_reports_page extends Scene{
         
         btn_box.getChildren().addAll(btn_supmit, btn_back);
         main_box.getChildren().addAll(lbl_header, txt_report, btn_box);
+       
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

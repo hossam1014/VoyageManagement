@@ -21,7 +21,7 @@ import main_page.Models.User;
 public class Bill extends Scene {
     
     public Bill(Stage primaryStage, User user, Reservation reservation) {
-        super(new StackPane(),1250, 760);
+        super(new StackPane(), 1250, 760);
         StackPane root = (StackPane)this.getRoot();
         
         /* Background image */ 
@@ -29,7 +29,7 @@ public class Bill extends Scene {
         
         /* Get style.css */ 
         this.getStylesheets().add(getClass().getResource("/main_page/style.css").toExternalForm());
-
+        
         /* Containing Bill GridPane & Back Button */
         VBox page = new VBox(50);
         root.getChildren().add(page);
@@ -146,5 +146,14 @@ public class Bill extends Scene {
 
         /* get children of the page */
         page.getChildren().addAll(bill_gridPane, goToMainPage);
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
 }

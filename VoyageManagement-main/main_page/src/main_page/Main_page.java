@@ -51,6 +51,7 @@ public class Main_page extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Voyage Management");
         primaryStage.setResizable(false);
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 

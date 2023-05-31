@@ -1,6 +1,8 @@
 
 package main_page.Scenes;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,10 +10,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import main_page.Handlers.LoginHandler;
 
 /**
@@ -24,6 +29,8 @@ public class LoginPage extends Scene {
 
         super(new VBox(20), 1250, 760);
         this.getStylesheets().add(getClass().getResource("/main_page/login_signup_style.css").toExternalForm());
+        
+        primaryStage.setMaximized(true);
         
         VBox vBox = (VBox) this.getRoot();
         vBox.setStyle("-fx-background-image: url('images/badkground_every_thing.jpg');");        
@@ -41,6 +48,7 @@ public class LoginPage extends Scene {
         
         Label lblUserName = new Label("username");
         TextField txtUserName = new TextField();
+        txtUserName.requestFocus();
 
         Label lblPassword = new Label("password");
         PasswordField txtPassword = new PasswordField();
@@ -50,6 +58,18 @@ public class LoginPage extends Scene {
         
         Button btn_register = new Button("Sign Up");
         btn_register.setPrefSize(120, 40);
+        
+        txtUserName.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                txtPassword.requestFocus();
+            }
+        });
+        
+        txtPassword.setOnKeyPressed(e->{
+            if(e.getCode() == KeyCode.ENTER){
+                btn_log_in.fire();
+            }
+        });
 
         btn_log_in.setOnAction(event -> {
 //            primaryStage.setScene(new main_page_demo(primaryStage));
@@ -86,5 +106,26 @@ public class LoginPage extends Scene {
         
         vBox.getChildren().addAll(centr_box, BtnBox);
         vBox.setAlignment(Pos.CENTER);
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+
+        // Disable the full screen exit hint
+        primaryStage.setFullScreenExitHint("");
+
+       
+
+        // Delay the appearance of the overlay message until the scene is shown
+        primaryStage.setOnShown(e -> {
+            Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), event -> {
+            }));
+            timeline.play();
+        });
+
+        // Show the stage
+        primaryStage.show();
     }
 }

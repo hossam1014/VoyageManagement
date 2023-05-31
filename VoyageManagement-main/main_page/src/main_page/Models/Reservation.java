@@ -27,6 +27,8 @@ public class Reservation {
     private double TotalPrice;
     private int UserId;
 
+    
+
     public Reservation(int Id, String From, String To, String LeavingDate, String ArrivalDate, String TravelType, String TripName, double TripPrice, String HotelName, int HotelDuration, double TotalPrice, int UserId) {
         this.Id = Id;
         this.From = From;

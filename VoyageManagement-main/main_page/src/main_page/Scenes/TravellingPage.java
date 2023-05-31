@@ -51,7 +51,6 @@ public class TravellingPage extends Scene {
     public static Button btnbus = new Button("Bus");
     public static Button btntrain = new Button("Train");
     public static Button btnflaght = new Button("Flight");
-    public static Boolean information_isFilled = false;
     
     private List<Location> locations = new ArrayList<>();
     
@@ -67,6 +66,8 @@ public class TravellingPage extends Scene {
     public TravellingPage(Stage primaryStage, User user) {
 
         super(new HBox(20), 1250, 760);
+        
+        
 
         //Travelling Reservation Page
         AnchorPane navigator = new AnchorPane();
@@ -124,7 +125,7 @@ public class TravellingPage extends Scene {
         lblto.setLayoutX(500);
         lblto.setLayoutY(42);
         
-        //label for write on it "distance"
+        //Button for "distance"
         Button btnDis = new Button("Distance");
         btnDis.setLayoutX(320);
         btnDis.setLayoutY(130);
@@ -293,6 +294,15 @@ public class TravellingPage extends Scene {
             
             primaryStage.setScene(new Hotel_Resevation(primaryStage, user, reservation));
         });
+        
+        // Set the scene on the stage
+        primaryStage.setScene(this);
+        
+        // Set the stage to full screen
+        primaryStage.setFullScreen(true);
+        
+        // Show the stage
+        primaryStage.show();
     }
     
     private void getComboBoxesValues() {
