@@ -43,14 +43,14 @@ currency converter features, users can make informed decisions and avoid any
 potential inconveniences or fraudulent activities during their travels.
 
 ## UML
-![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/616187d4-b20a-4413-bd75-44b396f19d55)
-![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/0edd35c9-32a4-4aed-bc37-fe4dfe036235)
+![UML1 (3)](https://github.com/hossam1014/VoyageManagement/assets/115981695/a71f2105-b88f-4dfe-b65c-82a1633dacb3)
+![UML1 (3)](https://github.com/hossam1014/VoyageManagement/assets/115981695/a032f945-f5ef-474b-814f-86f7307425c1)
 
 ## Flow chart:
-![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/4df206ae-dc37-40ab-8b89-5df716ab7e20)
+![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/0f49cfe0-9386-40f3-bf23-ecbc5acb39cc)
 
 ## Packages and it’s classes:
-![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/4d5a03f2-2fdc-4634-b015-8edf50a85101)
+![image](https://github.com/hossam1014/VoyageManagement/assets/115981695/4dd6c52c-e37d-419a-be3b-1ecc85756c1f)
 
 ## Problems and it’s solutions:
 1. It was hard to manage all the pages in one package, so we had to make 
@@ -109,19 +109,22 @@ optimized user experience, personalized recommendations, efficient bookings,
 and enhanced social interactions.
 
 ## video
-![video](https://github.com/hossam1014/VoyageManagement/assets/115981695/42045650-ab4e-4d1d-bb82-9981bfe2f6f5)
+
+
+https://github.com/hossam1014/VoyageManagement/assets/115981695/e2e8b242-53ea-4e58-8460-6d16465659f9
+
 
 ## images
-<img width="950" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/ca26cdb4-8c36-45b4-b826-4bfd1e43ebb1">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/8cf296d0-d5b9-46e8-8c4f-3c8fa6b76c81">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/2fd2a481-52fd-49b0-8bd2-02873a43aaff">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/c17b07d7-a0c2-4c01-b734-10cdf7297330">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/6ffde23b-0a13-4d66-8ca9-191201bbf9a9">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/72a2dec3-7e69-4b39-ab69-5f506d9e3d8b">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/708e5272-7bf3-4c4c-aabc-e2e75683a78d">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/3e491f5d-ac42-4126-9f3d-44dac43c7e18">
-<img width="960" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/67ff76cb-9994-4a37-9bc0-b7cbca5e7bd0">
-<img width="937" alt="image" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/8701b594-deb8-4b0e-879e-350e84c9b6f0">
+<img width="960" alt="Screenshot 2023-05-31 194627" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/188e88fa-7c3c-4e57-9ab4-5f3edf2d8ae6">
+<img width="960" alt="Screenshot 2023-05-31 194641" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/2b0ef6fe-d6a0-4f53-8d84-4bfcc937bb17">
+<img width="960" alt="Screenshot 2023-05-31 194651" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/d92763fc-a89f-4c70-9288-a0b3ae83f9ec">
+<img width="960" alt="Screenshot 2023-05-31 194712" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/0871ec4c-46c9-4697-a820-9c9709195fa0">
+<img width="960" alt="Screenshot 2023-05-31 194740" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/a2b4ed0d-5c24-4d2b-bbbf-1c95d0d69a28">
+<img width="960" alt="Screenshot 2023-05-31 194806" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/ce287dcc-ae84-4da8-8ee2-3e9c1780ddfa">
+<img width="960" alt="Screenshot 2023-05-31 194815" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/74a1ff14-2ae3-4a64-8cd7-15fa476f0785">
+<img width="960" alt="Screenshot 2023-05-31 194848" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/f81b7092-cc2a-4c7b-8d5b-256f31a29627">
+<img width="960" alt="Screenshot 2023-05-31 194906" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/6530b686-2bc1-4810-95b6-ef8af7157de1">
+<img width="960" alt="Screenshot 2023-05-31 194922" src="https://github.com/hossam1014/VoyageManagement/assets/115981695/3170912f-0744-4aa0-8bac-387a5c820ab5">
 
  ## Made By:
 <ul>
